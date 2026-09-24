@@ -21,7 +21,7 @@
         <p class="subtitle">Cálculo aplicado à produção animal, com exemplos numéricos rotulados como didáticos.</p>
         <div class="apostila-meta"><span>Zootecnia</span><span>Vaquera Ana, do curral fictício</span><span>peso,Conversion alimentar, produção e pasto</span></div>
         <div class="apostila-hero-links"><a href="../../index.html">Voltar ao site</a><a class="secondary" href="../../index.html#jogo">Abrir o jogo</a></div>
-        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a class="apostila-module-link" href="#capítulo-0-kit-de-fundo-antes-do-cálculo" aria-label="Ir para Pré-Cálculo: Cap 0 — Kit de fundo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a class="apostila-module-link" href="#unidade-1-limites-e-continuidade" aria-label="Ir para Limites: Unidade 1 — Limites"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a class="apostila-module-link" href="#unidade-2-derivadas" aria-label="Ir para Derivadas: Unidade 2 — Derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a class="apostila-module-link" href="#unidade-3-aplicações-da-derivada" aria-label="Ir para Aplicações: Unidade 3 — Aplicações da derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a class="apostila-module-link" href="#unidade-4-integrais" aria-label="Ir para Integrais: Unidade 4 — Integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
+        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a href="#capítulo-0-kit-de-fundo-antes-do-cálculo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a href="#unidade-1-limites-e-continuidade"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a href="#unidade-2-derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a href="#unidade-3-aplicações-da-derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a href="#unidade-5-área-e-edo-separáveis"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
       </div>
       <div class="apostila-hero-art">
         <img class="apostila-cover-image" src="../../assets/capas/capa_zootecnia.png" alt="Capa da apostila de Zootecnia">
@@ -859,10 +859,10 @@ substituir:</strong> (h² + 3h)/h. Em h = 0: 0/0
 (<strong>indeterminado</strong>). <strong>Passo 3 — fatorar:</strong>
 h(h + 3)/h = h + 3 (h ≠ 0). <strong>Passo 4 — substituir:</strong> 0 + 3
 = <strong>3</strong>.</p>
-<p><strong>Resposta:</strong> limite = <strong>3</strong> (número de
-exemplo). Tradução: <strong>logo após o nascimento</strong>, a taxa
-média de ganho se aproxima de 3 kg por unidade de tempo — perto da taxa
-instantânea (derivada da U2).</p>
+<p><strong>Resposta:</strong> limite = <strong>3 kg/mês</strong> (número
+de exemplo, se <code>t</code> estiver em meses). No instante inicial, a
+taxa média de ganho se aproxima de 3 kg por mês; esse é o começo da
+derivada da U2.</p>
 <h4 id="exemplo-3-peso-máximo-assintótico-limite-no-infinito-número-de-exemplo">Exemplo
 3 — Peso máximo assintótico (limite no infinito) <em>(número de
 exemplo)</em></h4>
@@ -946,10 +946,10 @@ perto de 10?</p>
 </table>
 <p><strong>Passo 3 — leitura:</strong> os dois lados miram
 <strong>16</strong>.</p>
-<p><strong>Resposta:</strong> lim (d→10) L(d) = <strong>16</strong>
-(número de exemplo, litros acumulados no modelo). Por ser polinômio, é
-contínuo — o valor é o limite. Moral da Ana: "lactação não pula de 15
-para 17 de um dia para o outro neste modelo — e a conta confirma."</p>
+<p><strong>Resposta:</strong> lim (d→10) L(d) = <strong>16 L</strong>
+(número de exemplo). Por ser polinômio, é contínuo: o limite é o valor
+no ponto. No modelo, a curva não apresenta um salto entre os dias
+vizinhos.</p>
 <blockquote>
 <p>ERRO CLÁSSICO — <strong>ERRO CLÁSSICO (revisão da unidade)</strong> Achar que
 "limite no infinito = número gigante". Não. Limite no infinito pergunta
@@ -1015,7 +1015,7 @@ para o ganho não pular em t = 4 (números de exemplo)".</li>
 <li> Comparei esquerda e direita antes de falar "sem pulo" (passos
 8–10).</li>
 </ul>
-<details><summary>gabarito do guia (clique depois de tentar)</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 5:</strong> 20/t → <strong>0</strong> quando t→∞
 (pedaço que morre).</li>
@@ -1125,14 +1125,14 @@ direta, número de exemplo).</p>
 <p><strong>T4 (N1).</strong> lim (x→4) (x² − 16)/(x − 4) = ? Fatore,
 cancele, substitua (número de exemplo).</p>
 <p><strong>T5 (N2 — usa a tabela).</strong> Na TABELA DE DADOS FICTÍCIOS
-DO REBANHO EXEMPLO, dias 1 a 4, ganho do dia: 0,8; 0,9; 1,0; 1,1
-(kg/dia, exemplo). Calcule a média dos 4 dias. Se o padrão "beirar"
-continuar, qual teto diário a Ana pode chutar (exemplo)? Responda com
-frase + kg/dia.</p>
-<p><strong>T6 (N2 — usa a tabela).</strong> Na mesma tabela, leite dos
-dias 3 (13,0), 4 (13,2) e 8 (14,0) — L/dia, exemplo. O leite
-"estabilizou num teto" perto de 13–14 L/dia ou "explodiu"? Justifique
-com "tende a" em 1 frase.</p>
+DO REBANHO EXEMPLO, o ganho dos dias 1 a 4 foi
+<code>0,8; 0,9; 1,0; 1,1</code> kg/dia. Calcule a média. Esses quatro
+valores bastam para provar que existe um teto? Explique em uma frase
+simples.</p>
+<p><strong>T6 (N2 — usa a tabela).</strong> Na mesma tabela, o leite dos
+dias 3, 4 e 8 foi <code>13,0; 13,2; 14,0</code> L/dia. Calcule a média
+desses três registros. Ela pode ser chamada de limite ou teto sem
+conhecer uma função? Justifique em uma frase.</p>
 <p><strong>T7 (N3 — desafio).</strong> Cocho sem pulo: C(t) = 10 + 4t se
 t &lt; 6; C(t) = at + 4 se t ≥ 6 (kg, exemplo). Ache a para não ter pulo
 em t = 6 e diga em frase o que aconteceria com o lote se a fosse 1
@@ -1148,13 +1148,14 @@ diferentes.</strong> "Esquerda = direita" = sem susto no ponto.</li>
 (número de exemplo).</li>
 <li><strong>T4 → 8.</strong> (x−4)(x+4)/(x−4) = x + 4 → 4 + 4 =
 <strong>8</strong>.</li>
-<li><strong>T5 → média 0,95 kg/dia.</strong> (0,8+0,9+1,0+1,1)/4 = 3,8/4
-= <strong>0,95 kg/dia</strong> (exemplo). Frase: "nos dias 1–4 o ganho
-médio foi 0,95 kg/dia; chute de teto ~1,0–1,2 kg/dia (exemplo) se
-beirar".</li>
-<li><strong>T6 → estabilizou perto do teto.</strong> Frase: "o leite dos
-dias 3, 4 e 8 beira 13–14 L/dia (exemplo), não explode; tende a um teto
-de ~14 L/dia".</li>
+<li><strong>T5 → média 0,95 kg/dia.</strong>
+<code>(0,8+0,9+1,0+1,1)/4=3,8/4=0,95</code>. Quatro observações mostram
+apenas a média do período; não provam um limite nem um teto. Para
+calcular um limite, é preciso uma função ou regra de crescimento.</li>
+<li><strong>T6 → média 13,4 L/dia.</strong>
+<code>(13,0+13,2+14,0)/3=40,2/3=13,4</code>. Essa média descreve somente
+os três dias escolhidos. Não pode ser chamada de limite ou teto sem uma
+regra que diga o que acontece para outros dias.</li>
 <li><strong>T7 → a = 5.</strong> Esquerda: 10 + 24 =
 <strong>34</strong>. Direita: 6a + 4 = 34 → 6a = 30 → <strong>a =
 5</strong>. Se fosse 6, pulo de +6 kg em t = 6 (exemplo) — oferta que
@@ -1485,7 +1486,7 @@ nenhum)</li>
 <li> Zerei E conferi o sinal dos dois lados (passos 6–8).</li>
 <li> Calculei o valor ótimo CA(x*), não só o x* (passo 10).</li>
 </ul>
-<details><summary>gabarito do guia (clique depois de tentar)</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 3:</strong> CA(x) = 0,25x + 5 + <strong>25/x</strong>
 (número de exemplo).</li>
@@ -1658,9 +1659,9 @@ ganho de hoje (exemplo)".</li>
 <li><strong>T4 → O′(t) = 20 − t; O′(10) = 10.</strong> u = t, v =
 20−0,5t → 1·v + t·(−0,5) = 20−0,5t−0,5t. Em 10: <strong>10
 (exemplo)</strong>.</li>
-<li><strong>T5 → variação 0,2 kg/dia por dia.</strong> (6,4−6,2)/1 =
-<strong>0,2 (exemplo)</strong>. É média de 1 dia, não derivada
-instantânea.</li>
+<li><strong>T5 → variação média = 0,2 kg/dia.</strong>
+<code>(6,4−6,2)/1 dia = 0,2 kg/dia</code>. É a taxa média entre os dias
+1 e 2, não uma derivada instantânea.</li>
 <li><strong>T6 → sim, piorou.</strong> Frase: "de 6,08 para 9,0 kg/kg
 (exemplo): mais ração por quilo de ganho no dia 9".</li>
 <li><strong>T7 → E′(d) = (d² − 36)/d²; zera em d = 6 (d &gt;
@@ -1844,12 +1845,11 @@ exemplo)</em></h4>
 significa P <strong>descendo</strong> no modelo)</li>
 <li>t &gt; 3 → <strong>+</strong> (cresce de novo)</li>
 </ul>
-<p><strong>Resposta:</strong> o modelo cresce para t &lt; 1 e t &gt; 3,
-e <strong>diminui</strong> entre 1 e 3 (números de exemplo). <em>Aula de
-leitura:</em> o sinal negativo da derivada de peso acumulado é um alerta
-de <strong>modelo</strong> — em crescimento real você esperaria P′ ≥ 0;
-use o teste para <strong>questionar</strong> a curva, não só para marcar
-X.</p>
+<p><strong>Resposta:</strong> o modelo cresce para <code>t&lt;1</code> e
+<code>t&gt;3</code>, e diminui entre <code>1</code> e <code>3</code>
+(números de exemplo). Como <code>P(t)</code> representa um acumulado,
+essa parte decrescente é um alerta de modelagem: um peso acumulado não
+deveria voltar atrás dentro da história fictícia.</p>
 <h4 id="exemplo-2-otimização-área-máxima-com-200-m-de-cerca-número-de-exemplo">Exemplo
 2 — Otimização: área máxima com 200 m de cerca <em>(número de
 exemplo)</em></h4>
@@ -1978,7 +1978,7 @@ significa "sem bônus" para a cabeça seguinte)</li>
 <li> Usei a 2ª derivada como prova rápida (passo 7).</li>
 <li> Calculei L(x*) e conferi com os vizinhos (passos 8–9).</li>
 </ul>
-<details><summary>gabarito do guia (clique depois de tentar)</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 4:</strong> 4x = 400 → <strong>x* = 100
 cabeças</strong> (número de exemplo).</li>
@@ -2064,9 +2064,9 @@ exemplo).</li>
 <li>P′ = 6t² − 24t + 18 = 6(t² − 4t + 3) = <strong>6(t − 1)(t −
 3)</strong>.</li>
 <li>Zeros: 1 e 3. Sinais: <strong>+ , − , +</strong>. <em>Tradução:</em>
-taxa acelera no começo, "cai para o chão" no meio do modelo, volta a
-subir — discuta com o professor se o modelo faz sentido biológico (o
-teste da derivada serve também para <strong>audit</strong> curva).</li>
+a taxa acelera no começo, fica menor no meio do modelo e volta a subir.
+Isso sugere revisar as hipóteses do modelo; o teste da derivada ajuda a
+encontrar onde a curva muda de direção.</li>
 </ul>
 <p><strong>Ex6 → x = 15.</strong> 150x = 30x + 1800 → 120x = 1800 →
 <strong>x = 15</strong> (número de exemplo). <em>Conferência:</em> R =
@@ -2245,8 +2245,9 @@ curso</h3>
 dia")</td>
 </tr>
 <tr class="odd">
-<td>Área entre curvas (receita × custo do lote)</td>
-<td>Prejuízo/lucro <strong>acumulado</strong> do lote</td>
+<td>Integral entre curvas (receita − custo)</td>
+<td>Resultado acumulado com sinal; positivo é lucro, negativo é prejuízo
+no modelo</td>
 </tr>
 </tbody>
 </table>
@@ -2263,6 +2264,8 @@ que só o campo dá.</p>
 <li>Escreva cada termo com expoente explícito.</li>
 <li><strong>Soma 1 no expoente</strong>.</li>
 <li><strong>Divide pelo novo expoente</strong>.</li>
+<li><strong>Caso especial:</strong> se <code>n = −1</code>, use
+<code>∫ x^(−1) dx = ln|x| + C</code>; não divida por zero.</li>
 <li>Simplifique e <strong>some + C</strong> (indefinida) — ou aplique
 limites (definida).</li>
 </ol>
@@ -2427,7 +2430,7 @@ exemplo)".</li>
 <li> Conferi por trapézio/triângulo antes de assinar a resposta (passos
 7–8).</li>
 </ul>
-<details><summary>gabarito do guia (clique depois de tentar)</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 3:</strong> F(d) = 6d + <strong>0,15d²</strong>
 (número de exemplo).</li>
@@ -2543,13 +2546,14 @@ sombreada?</p>
 conferir (número de exemplo).</p>
 <p><strong>T4 (N1).</strong> ∫ de 0 até 5 de (6 + 2t) dt (kg/dia,
 exemplo). Interprete como consumo de 5 dias.</p>
-<p><strong>T5 (N2 — usa a tabela).</strong> Na TABELA DE DADOS FICTÍCIOS
-DO REBANHO EXEMPLO, some o leite dos dias 1–4 (12,0+12,5+13,0+13,2 =
-50,7 L, exemplo) como "integral discreta". Compare com ∫ de 0 até 4 de
-(11 + 0,5t) dt = 48. Qual deu maior? 1 frase.</p>
+<p><strong>T5 (N2 — usa a tabela).</strong> Some os quatro registros de
+leite dos dias 1–4: <code>12,0+12,5+13,0+13,2</code>. Depois calcule
+<code>∫₀⁴(11+0,5t)dt</code>. Os dois resultados são a mesma coisa?
+Explique em uma frase, separando <strong>soma discreta</strong> de
+<strong>integral de um modelo contínuo</strong>.</p>
 <p><strong>T6 (N2 — usa a tabela).</strong> Some o consumo MS dos dias
-1–3 (6,2+6,4+6,5 = 19,1 kg, exemplo). Se a taxa fosse constante 6,4
-kg/dia por 3 dias, o total seria o mesmo? Mostre a conta do
+1–3: <code>6,2+6,4+6,5</code>. Se a taxa fosse constante em
+<code>6,4 kg/dia</code> por 3 dias, o total seria igual? Faça a conta do
 retângulo.</p>
 <p><strong>T7 (N3 — desafio).</strong> Receita R(x) = 40x e custo C(x) =
 20x + 100 no intervalo [0, 15] (exemplo). Calcule a área entre curvas ∫
@@ -2564,36 +2568,41 @@ fig13 = lucro/prejuízo acumulado do lote (receita menos custo).</li>
 (2x⁴+3x²)′ = 8x³+6x.</li>
 <li><strong>T4 → 55.</strong> Antiderivada 6t + t². F(5) = 30 + 25 =
 <strong>55 kg (exemplo)</strong>.</li>
-<li><strong>T5 → tabela: 50,7 L; integral: 48 L.</strong> A tabela deu
-maior (+2,7 L, exemplo). Frase: "o modelo linear subestimou o leite real
-fictício dos 4 dias".</li>
-<li><strong>T6 → não, daria 19,2.</strong> 6,4×3 = <strong>19,2 kg
-(exemplo)</strong>, 0,1 acima da soma 19,1. Retângulo = base ×
-altura.</li>
-<li><strong>T7 → 750.</strong> ∫(20x−100)dx = 10x²−100x de 0 a 15 = 2250
-− 1500 = <strong>750 (exemplo)</strong>. Frase: "receita acima do custo
-somou 750 de lucro acumulado no período (exemplo)".</li>
+<li><strong>T5 → soma dos registros = 50,7 L; integral do modelo = 48
+L.</strong> Os números não são a mesma grandeza: <code>50,7 L</code> é
+uma soma de quatro taxas registradas, enquanto <code>48 L</code> é a
+área sob a função <code>11+0,5t</code> em <code>[0,4]</code>. Para
+aproximar uma integral com a tabela, é preciso informar como cada
+leitura representa o intervalo entre os dias.</li>
+<li><strong>T6 → não.</strong> A soma é
+<code>6,2+6,4+6,5=19,1 kg</code>; com taxa constante,
+<code>6,4×3=19,2 kg</code>, apenas <code>0,1 kg</code> maior. Retângulo
+= base × altura.</li>
+<li><strong>T7 → 750 unidades monetárias de exemplo.</strong>
+<code>∫(20x−100)dx=10x²−100x</code> de <code>0</code> a <code>15</code>
+dá <code>2250−1500=750</code>. A área é positiva; nesse modelo, a
+receita fica acima do custo no intervalo.</li>
 </ul>
 <hr/>
 <h2 id="unidade-5-área-e-edo-separáveis">UNIDADE 5 — ÁREA E EDO
 SEPARÁVEIS</h2>
 <p><img alt="Banner da Unidade 5: equações diferenciais e crescimento." class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/banner_u5_edo.png"/></p>
 <h3 id="abertura-no-curral-fictício-4">Abertura no curral fictício</h3>
-<p><em>A Ana olha o pasto: a biomassa cresce — e quanto mais capim, mais
-cresce (até certo ponto do modelo simples). No paiol, o inverso: a
-qualidade do volumoso cai proporcionalmente ao que resta. "Crescer junto
-com o que tem e decair junto com o que resta — isso tem a mesma cara
-matemática?" Tem: dy/dx = ky.</em></p>
-<p><em>Ela também soma áreas: ganho total sob a curva de taxa, consumo
-total sob a curva de consumo, lucro acumulado entre receita e custo.
-"Área agora eu sei: é integral definida. E o crescer/decair? É
-exponencial."</em></p>
+<p>*A Ana olha o pasto: no modelo, a taxa de crescimento da biomassa é
+proporcional à biomassa que já existe. No paiol, o modelo faz o
+contrário: a qualidade do volumoso decai a uma taxa proporcional ao que
+resta. "Crescer junto com o que tem e decair junto com o que resta têm a
+mesma forma matemática?" Sim: <code>dy/dx=ky</code>, com sinais e
+unidades bem definidos.</p>
+<p><em>Ela também integra taxas: ganho e consumo acumulados, além do
+resultado entre receita e custo. A integral soma valores com o sinal do
+gráfico; a EDO modela crescimento ou decaimento proporcionais.</em></p>
 <blockquote>
-<p>MAPA MENTAL — <strong>MAPA MENTAL DA UNIDADE 5</strong> Área = integral definida
-(taxa → total) → EDO dy/dx = ky (taxa proporcional ao que tem) → solução
-y = y₀·e^(kx) (k&gt;0 cresce; k&lt;0 decai) → separar (dy/y = k dx,
-integra, exponencia) → meia-vida t½ = ln2/|k|. Campo: biomassa,
-qualidade do volumoso, ganho/consumo acumulado.</p>
+<p>MAPA MENTAL — <strong>MAPA MENTAL DA UNIDADE 5</strong> Integral definida (soma
+com sinal) → EDO <code>dy/dx=ky</code> (taxa proporcional ao que existe)
+→ solução <code>y=y₀e^{kx}</code> (<code>k&gt;0</code> cresce;
+<code>k&lt;0</code> decai) → separar, integrar e exponenciar → meia-vida
+<code>t½=ln2/|k|</code>.</p>
 </blockquote>
 <blockquote>
 <p> DIÁRIO DA VAQUERA ANA — aprendendo junto com você No Curral do
@@ -2604,11 +2613,12 @@ k &gt; 0 cresce, e confirmei com t½ = 0,693/|k|. Conselho: sinal do k
 primeiro, conta depois; um sinal troca "dobra" por "cai à metade".</p>
 </blockquote>
 <h3 id="1-do-que-se-trata-4">(1) Do que se trata</h3>
-<p><strong>Parte A — Área sob curva:</strong> a integral
-<strong>definida</strong> é a área entre a curva y = f(x) e o eixo x, de
-a até b. Se a curva está <strong>em cima do eixo</strong>, área =
-integral. Se está <strong>embaixo</strong>, a integral dá sinal negativo
-(área "vale" positivo, mas a integral assina).</p>
+<p><strong>Parte A — Área com sinal:</strong> a integral definida soma
+as áreas com o sinal que aparece no gráfico. Quando <code>f(t)≥0</code>
+em todo o intervalo, a integral é a área acumulada. Quando a curva passa
+abaixo do eixo, a parte negativa reduz o resultado; para medir apenas a
+área geométrica, é preciso separar os trechos e usar valores
+absolutos.</p>
 <p><strong>Parte B — EDO separáveis</strong> (EDO = equação diferencial
 ordinária — equação em que a <strong>derivada</strong> aparece na
 frase): A mais famosa do Cálculo I:</p>
@@ -2695,7 +2705,7 @@ crescimento proporcional. e¹ ≈ 2,72 (cresce ~172% quando kt = 1); e^(−1)
 qualquer EDO simples de cabeça.</p>
 </blockquote>
 <h3 id="3-receita-passo-a-passo-4">(3) Receita passo a passo</h3>
-<p><strong>Receita A — área = integral definida:</strong></p>
+<p><strong>Receita A — integral definida com sinal:</strong></p>
 <ol type="1">
 <li>Identifique a <strong>taxa</strong> f(t) e o intervalo [a, b].</li>
 <li>Integre (Unidade 4).</li>
@@ -2767,9 +2777,11 @@ kg</strong>.</li>
 <li><strong>Repetir em t = 20:</strong> A(20) = 20 + 40 = <strong>60
 kg</strong>; y(20) = 20·e² ≈ 20·7,389 ≈ <strong>147,8 kg</strong>
 (número de exemplo).</li>
-<li><strong>Leitura do modelo (fig20):</strong> linear soma sempre o
-MESMO degrau (+2 kg/mês); exponencial soma 10% do que tem — por isso em
-t = 20 a diferença já é de ~88 kg.</li>
+<li><strong>Leitura do modelo (fig20):</strong> a reta soma
+<code>2 kg</code> por mês; no modelo exponencial, a <strong>taxa
+instantânea</strong> em cada momento é <code>0,1</code> do peso atual.
+Por isso a curva acelera mais e, em <code>t=20</code>, já está cerca de
+<code>88 kg</code> acima da reta.</li>
 <li><strong>Teto (não existe nos dois!):</strong> em t = 30, A = 80 kg e
 y = 20e³ ≈ 401,7 kg (número de exemplo): a reta nunca alcança a curva
 disparando — linear vence no comecinho, exponencial depois.</li>
@@ -2793,7 +2805,7 @@ exponencial supera a linear cedo e não volta atrás".</li>
 <li> Entendi por que a exponencial dispara: soma um pedaço de si mesma
 (passo 10).</li>
 </ul>
-<details><summary>gabarito do guia (clique depois de tentar)</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 6:</strong> y(t) = 20e^(<strong>0,1t</strong>) (número
 de exemplo).</li>
@@ -2803,9 +2815,9 @@ kg</strong>.</li>
 20e² ≈ <strong>147,8 kg</strong>.</li>
 <li><strong>Passo 11:</strong> y(30) = 20e³ ≈ <strong>401,7 kg</strong>
 (números de exemplo, aproximações com e ≈ 2,718).</li>
-<li>Frase-pronta: "os dois modelos partem de 20 kg; o linear soma +2
-kg/mês e o exponencial soma 10% do próprio peso — a curva vence a reta e
-não é alcançada (números de exemplo)".</li>
+<li>Frase-pronta: "os dois modelos partem de 20 kg; a reta soma
+<code>2 kg</code> por mês, enquanto a taxa do modelo exponencial é 10%
+do peso atual em cada instante (números de exemplo)".</li>
 </ul>
 </details>
 <h4 id="exemplo-1-ganho-total-a-partir-da-taxa-diária-área-número-de-exemplo">Exemplo
@@ -2867,8 +2879,8 @@ ln|y| = 0,02x + C.</p>
 <p><strong>Resposta:</strong> a receita de separação de variáveis
 <strong>reproduz</strong> a fórmula que você já vinha usando — agora
 você sabe <strong>de onde ela sai</strong>.</p>
-<h4 id="exemplo-5-novo-lotação-de-pasto-e-meia-vida-área-edo-número-de-exemplo">Exemplo
-5 — NOVO: lotação de pasto e meia-vida (área + EDO) <em>(número de
+<h4 id="exemplo-5-novo-oferta-residual-e-meia-vida-área-edo-número-de-exemplo">Exemplo
+5 — NOVO: oferta residual e meia-vida (área + EDO) <em>(número de
 exemplo)</em></h4>
 <p>Duas perguntas da Ana num exemplo só (números de exemplo).</p>
 <p><strong>(a) Área:</strong> taxa de ganho g(t) = 2 + 0,3t (kg/dia), de
@@ -3264,9 +3276,9 @@ instantânea no dia 10 é menor que a média do período.</li>
 compatível com <code>L″(d)=−0,2</code>.</li>
 <li><strong>Erro comum:</strong> chamar 55 L/dia de taxa; 55 L é volume
 acumulado.</li>
-<li><strong>Limitação do modelo:</strong> parábola admite volume
-negativo após certo intervalo e não representa a curva lactacional de
-forma realista.</li>
+<li><strong>Limitação do modelo:</strong> a parábola admite volume
+negativo após certo intervalo e não inclui outras formas de curva; sua
+adequação a um conjunto de dados precisaria ser verificada.</li>
 </ul>
 <h3 id="v5-e05-unidade-2-aplicação-ligação-implícita-entre-ração-e-ganho">V5-E05
 — Unidade 2 · aplicação · ligação implícita entre ração e ganho</h3>
@@ -3425,12 +3437,12 @@ somar o estoque inicial.</li>
 <li><strong>Limitação do modelo:</strong> taxa linear perfeitamente
 constante, sem medição faltante, evaporação ou flutuação.</li>
 </ul>
-<h3 id="v5-e11-unidade-4-aplicação-integração-por-partes-em-exposição-de-lote">V5-E11
-— Unidade 4 · aplicação · integração por partes em exposição de
-lote</h3>
+<h3 id="v5-e11-unidade-4-aplicação-soma-ponderada-pelo-tempo">V5-E11
+— Unidade 4 · aplicação · soma ponderada pelo tempo</h3>
 <p><strong>Enunciado.</strong> Num modelo fictício,
-<code>N(t)=e^(t/(1 dia))</code> UA. Calcule a exposição ponderada
-<code>E=∫₀⁶ tN(t)dt</code>, em UA·dia².</p>
+<code>N(t)=e^(t/(1 dia))</code> UA. Calcule a soma
+<code>E=∫₀⁶ tN(t)dt</code>, em UA·dia². O fator <code>t</code> dá mais
+peso aos dias finais.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Variáveis, unidades e domínio:</strong> <code>t</code> em
@@ -3991,8 +4003,8 @@ comum</h3>
 </tr>
 <tr class="odd">
 <td>Antiderivada de potência</td>
-<td>∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</td>
-<td>Sobe o expoente, divide (nunca por 0)</td>
+<td>∫ xⁿ dx = xⁿ⁺¹/(n+1) + C, para n≠−1</td>
+<td>Se n=−1, use ln|x| + C; nunca divida por zero</td>
 </tr>
 <tr class="even">
 <td>TFC</td>
@@ -4434,7 +4446,8 @@ disciplina oficial</h3>
 MAT 146. Se algum conteúdo, peso de prova, bibliografia ou sequência
 divergir do que for ministrado em aula:</p>
 <blockquote>
-
+<p><strong>Vale sempre o programa analítico oficial da UFV</strong> e as
+orientações do(a) docente. Programa Analítico (catálogo 2025): <a href="https://www3.dti.ufv.br/dti/catalogo/programa-analitico/60403">https://www3.dti.ufv.br/dti/catalogo/programa-analitico/60403</a></p>
 </blockquote>
 <p>Em caso de dúvida de escopo: <strong>ementa oficial &gt; este livro
 &gt; qualquer grupo de WhatsApp.</strong></p>
@@ -4492,8 +4505,7 @@ por sintoma (índice da Ana)</h3>
 </tbody>
 </table>
 <hr/>
-<h2 id="anexo-v3-confirmação-de-figuras-e-expansão">ANEXO V3 —
-CONFIRMAÇÃO DE FIGURAS E EXPANSÃO</h2>
+<h2 id="anexo-v3-figuras-e-expansão">ANEXO V3 — FIGURAS E EXPANSÃO</h2>
 
 <ul>
 

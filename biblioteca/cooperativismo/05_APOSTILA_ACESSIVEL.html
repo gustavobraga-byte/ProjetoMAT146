@@ -21,7 +21,7 @@
         <p class="subtitle">Taxas, limites e acumulos para compreender a cooperativa como uma história de decisões.</p>
         <div class="apostila-meta"><span>Cooperativismo</span><span>Assembleia da cooperativa fictícia</span><span>cotas, rateio, fundo social e patrimônio</span></div>
         <div class="apostila-hero-links"><a href="../../index.html">Voltar ao site</a><a class="secondary" href="../../index.html#jogo">Abrir o jogo</a></div>
-        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a class="apostila-module-link" href="#capítulo-0-kit-de-fundo-o-que-você-precisa-antes-do-limite" aria-label="Ir para Pré-Cálculo: Cap 0 — Kit de fundo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a class="apostila-module-link" href="#unidade-1-limites-e-continuidade" aria-label="Ir para Limites: Unidade 1 — Limites"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a class="apostila-module-link" href="#unidade-2-derivadas" aria-label="Ir para Derivadas: Unidade 2 — Derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a class="apostila-module-link" href="#unidade-3-aplicações-da-derivada" aria-label="Ir para Aplicações: Unidade 3 — Aplicações da derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a class="apostila-module-link" href="#unidade-4-integrais" aria-label="Ir para Integrais: Unidade 4 — Integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
+        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a href="#capítulo-0-kit-de-fundo-o-que-você-precisa-antes-do-limite"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a href="#unidade-1-limites-e-continuidade"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a href="#unidade-2-derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a href="#unidade-3-aplicações-da-derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a href="#unidade-4-integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
       </div>
       <div class="apostila-hero-art">
         <img class="apostila-cover-image" src="../../assets/capas/capa_cooperativismo.png" alt="Capa da apostila de Cooperativismo">
@@ -697,8 +697,8 @@ germe da derivada.</li>
 <p><img alt="Aproximação bilateral: valores de t abraçando o ponto por esquerda e direita" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig02_limite_aproximacao.png"/></p>
 <p><em>Descrição da figura:</em> reta com ponto a = 4 ao centro; setas
 da esquerda (3,9 → 3,99) e da direita (4,1 → 4,01) convergindo; curva
-P(t) com valores 894 → 900 ← 906 (números de exemplo). Moral: limite
-existe quando os dois lados concordam.</p>
+P(t) com valores 888,05 → 900 ← 906,05 (números de exemplo). Moral: o
+limite existe quando os dois lados convergem.</p>
 <p><img alt="Tabela de aproximação" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig17_tabela_limite.png"/></p>
 <p>O que olhar nesta figura.</p>
 <p>Linha 1: veja os valores de t chegando perto do ponto pela esquerda e
@@ -831,21 +831,21 @@ exemplo)</em></h4>
 <table>
 <thead>
 <tr class="header">
-<th>t</th>
-<th>P(t) = 500 + 80t + 5t²</th>
+<th>t (meses)</th>
+<th>P(t) (mil R$ de exemplo) = 500 + 80t + 5t²</th>
 <th>Cálculo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>3,9</td>
-<td>894,05</td>
-<td>500 + 312 + 82,05</td>
+<td>888,05</td>
+<td>500 + 312 + 76,05</td>
 </tr>
 <tr class="even">
 <td>3,99</td>
-<td>899,5005</td>
-<td>(calculadora)</td>
+<td>898,8005</td>
+<td>500 + 319,2 + 79,6005</td>
 </tr>
 <tr class="odd">
 <td><strong>4</strong></td>
@@ -854,8 +854,8 @@ exemplo)</em></h4>
 </tr>
 <tr class="even">
 <td>4,01</td>
-<td>900,5005</td>
-<td>(calculadora)</td>
+<td>901,2005</td>
+<td>500 + 320,8 + 80,4005</td>
 </tr>
 <tr class="odd">
 <td>4,1</td>
@@ -1177,7 +1177,7 @@ de exemplo)</em></li>
 R$).</label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia passo a passo da U1</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 4 → 250.</strong> <strong>Passo 9 → 0.</strong>
 <strong>Passo 10 → 500.</strong></li>
@@ -1258,9 +1258,10 @@ viagem.</li>
 tangente</strong> (a reta que "encosta" na curva no ponto a). Inclinação
 positiva → curva sobe; negativa → desce.</p>
 <blockquote>
-<p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ:</strong> se P′(4) = 242 (número de
-exemplo, mil R$/mês), escreva a frase-resposta completa com unidade.
-(Modelo: "no 4º mês, o patrimônio cresce a 242 mil R$ por mês".)</p>
+<p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ:</strong> para
+<code>F(t)=3t³+6t²+50t</code>, temos <code>F′(4)=242 mil R\$/mês</code>.
+Escreva a frase-resposta completa com unidade. (Modelo: "no 4º mês, o
+fundo cresce a 242 mil R$ por mês".)</p>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO:</strong> taxa de rendimento da
 cooperativa fictícia = derivada do patrimônio. Taxa de variação do fundo
 = derivada do fundo. Rendimento médio por cota = quociente que você vai
@@ -1421,9 +1422,10 @@ igual <strong>por enquanto</strong>).</p>
 <p><strong>Passo 3 — recheio:</strong> (0,2t² + 10)′ = 0,4t.</p>
 <p><strong>Passo 4 — juntar:</strong> P′(t) = 4(0,2t² + 10)³ · 0,4t =
 <strong>1,6t(0,2t² + 10)³</strong>.</p>
-<p><strong>Resposta:</strong> P′(t) = 1,6t(0,2t² + 10)³. <em>Erro
-clássico:</em> esquecer o 0,4t do recheio. Cadeia
-<strong>sempre</strong> multiplica pela derivada do recheio.</p>
+<p><strong>Resposta:</strong> P′(t) = 1,6t(0,2t² + 10)³, em
+<code>mil R\$ de exemplo/mês</code>, se <code>t</code> for o valor
+numérico em meses. <em>Erro clássico:</em> esquecer o 0,4t do recheio.
+Cadeia <strong>sempre</strong> multiplica pela derivada do recheio.</p>
 <h4 id="exemplo-5-segunda-derivada-o-rendimento-está-acelerando-número-de-exemplo">Exemplo
 5 — Segunda derivada: o rendimento está acelerando? <em>(número de
 exemplo)</em></h4>
@@ -1435,8 +1437,10 @@ exemplo).</p>
 P″(4) = 0 (mudança de ritmo); P″(t) &gt; 0 quando t &gt; 4 → taxa
 <strong>acelera</strong>; P″(t) &lt; 0 quando t &lt; 4 → taxa
 <strong>desacelera</strong>.</p>
-<p><strong>Resposta:</strong> P″(t) = 6t − 24 (número de exemplo). É o
-"pedal" da taxa de patrimônio.</p>
+<p><strong>Resposta:</strong> P′(t) = 3(t−3)(t−5), em
+<code>mil R\$ de exemplo/mês</code>; P″(t) = 6t−24, em
+<code>mil R\$ de exemplo/mês²</code>. A segunda derivada mostra se a
+taxa acelera ou desacelera.</p>
 <h4 id="exemplo-6-novo-taxa-marginal-da-cota-parte-vale-integralizar-mais-uma-número-de-exemplo">Exemplo
 6 (NOVO) — Taxa marginal da cota-parte: vale integralizar mais uma?
 <em>(número de exemplo)</em></h4>
@@ -1445,15 +1449,17 @@ P″(4) = 0 (mudança de ritmo); P″(t) &gt; 0 quando t &gt; 4 → taxa
 na 10ª cota.</p>
 <p><strong>Passo 1 — tipo:</strong> potência + constante×função. Derive
 termo a termo. <strong>Passo 2:</strong> P′(c) = 50 + 4c. <strong>Passo
-3 — ponto:</strong> P′(10) = 50 + 40 = <strong>90</strong>.
-<strong>Resposta:</strong> a 11ª cota acrescenta cerca de
-<strong>90</strong> (mil R$, número de exemplo) ao patrimônio — é a taxa
-marginal. Decisão fictícia: se o custo de captar essa cota for menor que
-90, vale a pena.</p>
+3 — ponto:</strong> P′(10) = 50 + 40 = <strong>90 mil R$ de exemplo por
+cota</strong>. <strong>Resposta:</strong> a 11ª cota acrescenta cerca de
+<strong>90 mil R$ de exemplo por cota</strong> ao patrimônio. É a taxa
+marginal; no modelo, compensa incrementá-la se o custo adicional for
+menor que 90.</p>
 <blockquote>
-<p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ:</strong> por que P′(10) ≈ P(11) − P(10)?
-Teste: P(11) = 550 + 242 = 792; P(10) = 500 + 200 = 700; diferença = 92
-≈ 90. A derivada aproxima o incremento unitário. Guarde.</p>
+<p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ:</strong> por que
+<code>P′(10)≈[P(11)−P(10)]/(1 cota)</code>? Teste:
+<code>P(11)=550+242=792</code> e <code>P(10)=500+200=700</code>; a taxa
+por uma cota é <code>(792−700)/1=92 mil R\$/cota</code>, próxima de
+<code>P′(10)=90 mil R\$/cota</code>.</p>
 </blockquote>
 <h3 id="5-você-faz-10-exercícios-8-originais-2-novos">(5) Você faz —
 10 exercícios (8 originais + 2 novos)</h3>
@@ -1651,8 +1657,8 @@ classificar é U3. Topo exige as duas.</p>
 <ol type="1">
 <li>( ) A derivada em um ponto é a média do período inteiro.</li>
 <li>( ) (u·v)′ = u′·v′.</li>
-<li>( ) Se P(t) = 3t³ + 6t² + 50t, então P′(4) = 242 (números de
-exemplo).</li>
+<li>( ) Se <code>F(t)=3t³+6t²+50t</code> está em mil R$ e <code>t</code>
+em meses, então <code>F′(4)=242 mil R\$/mês</code>.</li>
 <li>( ) Na regra da cadeia, pode esquecer a derivada do recheio se a
 casca for potência.</li>
 <li>( ) f″ &gt; 0 indica que a taxa (f′) está acelerando.</li>
@@ -1663,7 +1669,8 @@ casca for potência.</li>
 <li><strong>F</strong> — derivada é instantânea; média é
 (F(b)−F(a))/(b−a).</li>
 <li><strong>F</strong> — produto é u′v + uv′.</li>
-<li><strong>V</strong> — 9·16 + 48 + 50 = 242.</li>
+<li><strong>V</strong> — <code>9·16 + 48 + 50 = 242</code>, na unidade
+<code>mil R\$/mês</code>.</li>
 <li><strong>F</strong> — cadeia sempre multiplica pelo recheio.</li>
 <li><strong>V</strong> — segunda derivada é a "aceleração".</li>
 </ol>
@@ -1717,7 +1724,7 @@ ponto.</label></li>
 R$/mês).</label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia passo a passo da U2</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 3 → 6t².</strong> <strong>Passo 4 → 24t.</strong>
 <strong>Passo 9 → 310.</strong> <strong>Passo 10 → 150.</strong></li>
@@ -1736,11 +1743,13 @@ DERIVADA</h2>
 <blockquote>
 <p><strong>Abertura na cooperativa fictícia — "O voto do
 rateio".</strong> Assembleia tensa. Na mesa, L(x) = −3x² + 72x − 300
-(R$, número de exemplo). Jéssica deriva: −6x + 72 = 0 → x = 12, valor
-132. "Se passar de 12 cotas, o rateio cai", ela diz. Seu Raimundo:
-"Então votamos 12." Dona Cida completa: "E o galpão? Com 100 m de cerca,
-o quadrado 25×25 dá a maior área." Nesta unidade a derivada vira voto:
-máximo, mínimo, equilíbrio e marginal.</p>
+(R$, número de exemplo). Jéssica deriva: −6x + 72 = 0 → x = 12. Ela
+calcula L(12) = 132 e diz: "Dentro do modelo, o rateio chega ao máximo
+em 12 cotas; depois disso, ele cai." Seu Raimundo pergunta: "Então
+registramos 12 como proposta?" Jéssica responde: "Primeiro confirmamos o
+sinal da derivada e lemos o valor em reais. O número do voto precisa vir
+com a justificativa." Nesta unidade a derivada vira decisão: ajuda a
+encontrar máximo, mínimo, equilíbrio e efeito marginal.</p>
 </blockquote>
 <p>MAPA MENTAL — <strong>MAPA MENTAL DA UNIDADE 3:</strong></p>
 <ul>
@@ -1821,8 +1830,8 @@ curso</h3>
 </tr>
 <tr class="even">
 <td>Máximo de área com cerca fixa</td>
-<td>Dimensão <strong>ótima</strong> de sede/galpão da cooperativa com
-recurso limitado</td>
+<td>Dimensão <strong>ótima</strong> do espaço de atendimento da
+cooperativa com recurso limitado</td>
 </tr>
 <tr class="odd">
 <td>Máximo de rateio/sobra rateável</td>
@@ -2171,8 +2180,8 @@ sobra (no modelo linear simples).</li>
 <summary><strong>Gabarito do mini-quiz U3</strong></summary>
 <ol type="1">
 <li><strong>V</strong> — sinal positivo = subida.</li>
-<li><strong>F</strong> — pode ser mínimo ou ponto de sela/inflexão
-horizontal; confirme o sinal.</li>
+<li><strong>F</strong> — pode ser mínimo ou inflexão horizontal;
+confirme o sinal.</li>
 <li><strong>V</strong> — conta do Exemplo 3.</li>
 <li><strong>V</strong> — definição operacional.</li>
 <li><strong>V</strong> — leitura do Exemplo 5 (receita com inclinação
@@ -2227,7 +2236,7 @@ f(x*).</label></li>
 (R$).</label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia passo a passo da U3</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 3 → 48.</strong> <strong>Passo 4 → 12.</strong>
 <strong>Passo 8 → 188.</strong></li>
@@ -2350,6 +2359,8 @@ assembleia soma 12 meses na mão; com integral, usa a antiderivada.</p>
 <li>Escreva cada termo com expoente explícito.</li>
 <li><strong>Soma 1 no expoente</strong>.</li>
 <li><strong>Divide pelo novo expoente</strong>.</li>
+<li><strong>Caso especial:</strong> se <code>n = −1</code>, use
+<code>∫ x^(−1) dx = ln|x| + C</code>; não divida por zero.</li>
 <li>Simplifique e <strong>some + C</strong> (indefinida) — ou aplique
 limites (definida).</li>
 </ol>
@@ -2659,7 +2670,7 @@ baixo.</label></li>
 frase com unidade.</label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia passo a passo da U4</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 5 → 2,5t².</strong> <strong>Passo 7 → 160.</strong>
 <strong>Passo 9 → 400.</strong></li>
@@ -2896,17 +2907,15 @@ de exemplo)</em></h4>
 <p><strong>Passo 1 — reconhecer:</strong> k = 0,06, A₀ = 100 → A(t) =
 100·e^(0,06t). <strong>Passo 2 — t = 10:</strong> 0,06·10 = 0,6; e^0,6 ≈
 1,8221; A(10) ≈ 100·1,8221 ≈ <strong>182</strong>. <strong>Passo 3 —
-leitura:</strong> de 100 para 182 em 10 meses no modelo exponencial puro
-(sem teto). Compare com o teto de 600 do Exemplo 6 da U1: exponencial
-pura explode; com teto (logístico, fora do escopo) estabiliza. A
-assembleia fictícia usa os dois: exponencial para o curto prazo, teto
-para o longo. <strong>Resposta:</strong> ≈ <strong>182
+leitura:</strong> de 100 para 182 em 10 meses no modelo exponencial, que
+não tem teto. Outro modelo com limite, como o teto de 600 da U1,
+produziria uma curva diferente. Não se podem combinar as duas formas sem
+uma regra de escolha. <strong>Resposta:</strong> ≈ <strong>182
 cooperados</strong> (número de exemplo).</p>
 <blockquote>
-<p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO:</strong> adesão real tem limite
-(mercado, atendimento). Por isso o livro mostra os dois modelos:
-beira-teto (U1) e exponencial (U5). Na prova, siga o enunciado; na vida,
-pergunte qual hipótese vale.</p>
+<p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO:</strong> o modelo exponencial não
+impõe teto. Se a capacidade do sistema for limitada, use um modelo que
+inclua essa restrição; na prova, siga o enunciado.</p>
 </blockquote>
 <h3 id="5-você-faz-7-exercícios-5-originais-2-novos">(5) Você faz — 7
 exercícios (5 originais + 2 novos)</h3>
@@ -3033,9 +3042,9 @@ fictícia tem 48 cooperados como outro registro. (a) Escreva
 <details>
 <summary><b>Gabarito comentado — U5-T5</b></summary>
 <p>(a) <code>A(t) = 100 e^{0,06t}</code>.</p>
-<p>(b) <code>A(10) = 100 × 1,8221 ≈ 182</code> (número de exemplo).
-Exponencial pura explode; com teto de 600 (U1) estabiliza. Curto prazo
-usa exponencial, longo prazo usa teto.</p>
+<p>(b) <code>A(10) = 100 × 1,8221 ≈ 182</code> (número de exemplo). A
+exponencial não tem teto; o modelo de 600 da U1 é diferente. Só misture
+as formas se o enunciado disser quando trocar de modelo.</p>
 </details>
 <p><strong>U5-T6 (N2 — voo, reserva da Cooperativa Exemplo)</strong>
 Reserva fictícia: <code>dR/dt = −0,07·R</code>, <code>R(0) = 600</code>
@@ -3140,7 +3149,7 @@ períodos).</label></li>
 frase e unidade.</label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia passo a passo da U5</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 3 → 400.</strong> <strong>Passo 5 → 0,8.</strong>
 <strong>Passo 7 → ≈ 890</strong> (400 × 2,2255 = 890,2, número de
@@ -3556,8 +3565,10 @@ de exemplo, mil R$). Vizinhança dos dois lados aponta para 900.</p>
 <details>
 <summary><b>Gabarito comentado — B2</b></summary>
 <p>Teto <code>800</code>. <code>S(6) = 4800/46 ≈ 104,3</code>.
-<code>S(12) = 9600/52 ≈ 184,6</code>. Dobrou o tempo, ganhou só ~80.
-Perto do teto, mês extra quase não rende. (Números de exemplo.)</p>
+<code>S(12) = 9600/52 ≈ 184,6</code>. O tempo dobrou, mas o valor apenas
+chegou a menos de um quarto do teto. Portanto, esses pontos mostram
+crescimento menor por mês extra, <strong>não</strong> mostram que a
+curva já está “perto do teto”. (Números de exemplo.)</p>
 </details>
 <p><strong>B3 (U2 — taxa)</strong> Fundo fictício
 <code>F(t) = 3t³ + 6t² + 50t</code> (mil R$, número de exemplo). No mês
@@ -3566,9 +3577,9 @@ escreva a frase. <em>(número de exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — B3</b></summary>
 <p><code>F'(t) = 9t² + 12t + 50</code>.
-<code>F'(6) = 324 + 72 + 50 = 446</code> (número de exemplo, mil
-R$/mês). Frase: no 6º mês, o fundo cresce a 446 mil R$ por mês.
-Instantânea, não média.</p>
+<code>F'(6) = 324 + 72 + 50 = 446 mil R\$ de exemplo/mês</code>. Frase:
+no 6º mês, o fundo cresce a 446 mil R$ de exemplo por mês. Essa taxa é
+instantânea, não média.</p>
 </details>
 <p><strong>B4 (U2 — marginal)</strong> Custo fictício
 <code>C(x) = 0,05x³ + 4x² + 30x</code> (R$, número de exemplo). O mês
@@ -3577,19 +3588,25 @@ M06 tem <code>40</code> cooperados. Calcule <code>C'(40)</code>.
 <details>
 <summary><b>Gabarito comentado — B4</b></summary>
 <p><code>C'(x) = 0,15x² + 8x + 30</code>.
-<code>C'(40) = 240 + 320 + 30 = 590</code> (número de exemplo). Cada
-cooperado a mais perto de 40 custa ~590. Marginal.</p>
+<code>C'(40) = 240 + 320 + 30 = 590 R\$ de exemplo por cooperado</code>.
+Cada cooperado a mais, perto de 40, aumenta o custo local em cerca de
+590.</p>
 </details>
 <p><strong>B5 (U3 — máximo)</strong> Sobras fictícias
-<code>L(x) = −3x² + 72x − 300</code> (R$, número de exemplo). (a) Ache x
-ótimo e L máximo. (b) O mês M06 tem sobras <code>R\$ 132</code> na
-tabela fictícia. Comente. <em>(número de exemplo)</em></p>
+<code>L(x) = −3x² + 72x − 300</code> (R$, número de exemplo). (a) Ache
+<code>x</code> ótimo e <code>L</code> máximo. (b) O mês M06 da tabela
+tem <code>R\$ 132</code> de sobras. O que essa coincidência de valores
+permite afirmar? <em>(número de exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — B5</b></summary>
 <p>(a) <code>L' = −6x + 72 = 0</code> → <code>x = 12</code>.
-<code>L'' = −6 &lt; 0</code> → máximo. <code>L(12) = 132</code> (número
-de exemplo). (b) O M06 bate com o ótimo deste modelo. Nem a mais nem a
-menos. Votem 12.</p>
+<code>L'' = −6 &lt; 0</code> → máximo em <code>x=12</code>, com
+<code>L(12)=132 R\$ de exemplo</code>.</p>
+<p>(b) O valor coincide, mas a tabela usa 40 cooperados e 160 cotas no
+M06, enquanto o modelo foi definido em <code>x=12</code>. Sem saber qual
+quantidade representa <code>x</code> e se os modelos são o mesmo, não se
+pode dizer que o M06 é o ótimo. Coincidir um valor não prova coincidir a
+entrada.</p>
 </details>
 <p><strong>B6 (U3 — equilíbrio)</strong> Receita fictícia
 <code>R(x) = 400x</code>, custo <code>C(x) = 150x + 7500</code> (números
@@ -3598,8 +3615,10 @@ e comente. <em>(número de exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — B6</b></summary>
 <p><code>400x = 150x + 7500</code> → <code>250x = 7500</code> →
-<code>x = 30</code>. <code>R = C = 12000</code> . O M01 está exatamente
-no equilíbrio deste modelo. Abaixo dá prejuízo, acima dá sobra.</p>
+<code>x = 30</code>. <code>R = C = 12000</code> . O M01 tem 30
+cooperados, mas a igualdade com o equilíbrio só vale se <code>x</code>
+representar cooperados no mesmo modelo; abaixo de 30 há prejuízo e acima
+de 30 há sobra nessa função.</p>
 </details>
 <p><strong>B7 (U4 — total do ano)</strong> Taxa fictícia
 <code>r(t) = 30 + 6t</code> (mil R$/mês, número de exemplo), de 0 a 12

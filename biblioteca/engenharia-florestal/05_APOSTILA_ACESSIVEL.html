@@ -21,7 +21,7 @@
         <p class="subtitle">Do tronco que cresce à área que ocupa: limites, derivadas e medidas de manejo em linguagem direta.</p>
         <div class="apostila-meta"><span>Engenharia Florestal</span><span>Guarda Rafa da Mata fictícia</span><span>DAP, área basal, crescimento e inventário</span></div>
         <div class="apostila-hero-links"><a href="../../index.html">Voltar ao site</a><a class="secondary" href="../../index.html#jogo">Abrir o jogo</a></div>
-        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a class="apostila-module-link" href="#2-kit-de-fundo-o-básico-que-a-escola-deixou-passar" aria-label="Ir para Pré-Cálculo: Cap 0 — Kit de fundo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a class="apostila-module-link" href="#3-unidade-1-limites-o-que-acontece-perto-de-um-ponto" aria-label="Ir para Limites: Unidade 1 — Limites"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a class="apostila-module-link" href="#4-unidade-2-derivadas-a-taxa-instantânea" aria-label="Ir para Derivadas: Unidade 2 — Derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a class="apostila-module-link" href="#5-unidade-3-aplicações-da-derivada-crescer-diminuir-e-otimizar" aria-label="Ir para Aplicações: Unidade 3 — Aplicações da derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a class="apostila-module-link" href="#6-unidade-4-integrais-somar-fatias-e-somar-totais" aria-label="Ir para Integrais: Unidade 4 — Integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
+        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a href="#2-kit-de-fundo-o-básico-que-a-escola-deixou-passar"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a href="#3-unidade-1-limites-o-que-acontece-perto-de-um-ponto"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a href="#4-unidade-2-derivadas-a-taxa-instantânea"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a href="#5-unidade-3-aplicações-da-derivada-crescer-diminuir-e-otimizar"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a href="#6-unidade-4-integrais-somar-fatias-e-somar-totais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
       </div>
       <div class="apostila-hero-art">
         <img class="apostila-cover-image" src="../../assets/capas/capa_engenharia-florestal.png" alt="Capa da apostila de Engenharia Florestal">
@@ -902,11 +902,11 @@ crescimento. <em>(número de exemplo)</em></p>
 <summary><b>6. Gabarito comentado — Exercício 4</b></summary>
 <p>(a) Denominador zero só em <code>t = −6</code>. Como
 <code>t ≥ 0</code> no uso, <strong>contínua em todo o domínio de
-uso</strong>. (b) Idades vizinhas dão volumes vizinhos — não existe um
-ano em que o volume "pule" sem explicação. Assim interpolação entre
-idades inventariadas é confiável. <strong>Erro comum:</strong> dizer
-"contínua em todo R". Em t = −6 a fração explode (e −6 anos nem existe
-na floresta).</p>
+uso</strong>. (b) Idades vizinhas dão volumes vizinhos no modelo, sem um
+salto inexplicado. Isso permite interpolar <strong>dentro da curva
+adotada</strong>, mas não garante que os dados entre as medições estejam
+corretos. <strong>Erro comum:</strong> dizer "contínua em todo R". Em t
+= −6 a fração explode (e −6 anos nem existe na floresta).</p>
 </details>
 <hr/>
 <h4 id="bancada-de-treino-da-unidade-1-você-faz">Bancada de treino da
@@ -1124,7 +1124,7 @@ denominador?</label></li>
 denominador zera?</label></li>
 </ul>
 <details>
-<summary><b>Gabarito do guia — confira passo a passo</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 3: <code>V̄(6) = 36/10 = 3,6</code> m³/árvore.</li>
 <li>Passo 7: <code>4/t → 0</code>.</li>
@@ -1664,7 +1664,7 @@ de substituir?</label></li>
 misturar os dois números?</label></li>
 </ul>
 <details>
-<summary><b>Gabarito do guia — confira passo a passo</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 2: miolo <code>u = 1,2t + 8</code>.</li>
 <li>Passo 5: multiplicar por <code>u' = 1,2</code> →
@@ -1687,19 +1687,20 @@ o talhão 7 está denso. Cortar pouco não alivia a competição; cortar
 demais desperdiça estoque. Rafa testa taxas de corte e descobre que o
 lucro sobe até 10 m³/ha/ano e depois cai (números de exemplo). Onde a
 curva vira? Onde o perímetro é mínimo com área fixa? Aplicações da
-derivada respondem: sinal diz se sobe/desce, zero + teste diz onde é
-topo ou vale, restrição reduz tudo a uma variável.</p>
+derivada respondem: o sinal diz se sobe/desce; candidatos e bordas
+precisam de teste para localizar topo ou vale; a restrição reduz tudo a
+uma variável.</p>
 </blockquote>
 <blockquote>
 <p>MAPA MENTAL — <strong>MAPA MENTAL DA UNIDADE 3:</strong> SINAL (3.1, sobe/desce)
 → CRÍTICO + TESTE (3.2, máx ou mín?) → COM RESTRIÇÃO (3.3, 5 passos) →
-DINHEIRO (3.4, lucro/custo). Frase-guia: <em>derive, zere, teste,
-responda com unidade</em>.</p>
+DINHEIRO (3.4, lucro/custo). Frase-guia: <em>derive, liste candidatos e
+bordas, teste e responda com unidade</em>.</p>
 </blockquote>
 <p><img alt="Otimização: lucro máximo e custo mínimo no ponto crítico" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig04_otimizacao_maximo.png"/></p>
-<p><em>Figura fig04 — Otimização. Parábola de lucro com vértice (máximo)
-e curva de custo com vale (mínimo). Derivada zera no topo/vale; 2ª
-derivada diz qual é qual.</em></p>
+<p><em>Figura fig04 — Otimização. Parábola de lucro com máximo e curva
+de custo com mínimo. Nos pontos lisos, a derivada zera; a 2ª derivada e
+a comparação com as bordas classificam o resultado.</em></p>
 <p><img alt="Concavidade" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig11_concavidade.png"/></p>
 <p><em>Figura fig11 — Concavidade. Curva com f'' maior que 0 segura água
 (vale, mínimo); com f'' menor que 0 derrama (topo, máximo). O teste da
@@ -1707,17 +1708,18 @@ derivada diz qual é qual.</em></p>
 <h3 id="mapa-da-unidade-2">Mapa da unidade</h3>
 <blockquote>
 <p>Derivada &gt; 0 → a função <strong>sobe</strong>. Derivada &lt; 0 →
-<strong>desce</strong>. Derivada = 0 → <strong>suspeito de máximo ou
-mínimo</strong>. Em manejo: onde o lucro para de subir? Onde o custo
-para de cair? Onde o volume é máximo?</p>
+<strong>desce</strong>. Derivada = 0 → <strong>candidato</strong>, que
+ainda pode ser máximo, mínimo ou inflexão horizontal. Em manejo: onde o
+lucro para de subir? Onde o custo para de cair? Onde o volume é
+máximo?</p>
 </blockquote>
 <blockquote>
 <p> <strong>DIÁRIO DO GUARDA RAFA — aprendendo junto com você (U3 —
 Otimização)</strong> No talhão 7 da Mata do Caparaózinho (floresta
 fictícia) eu achei <code>L' = 0</code> em 10 m³/ha/ano e saí gritando
 "achei o máximo!" (números de exemplo). Erro: parei no zero sem testar.
-Podia ser mínimo ou ponto de sela — eu não tinha provado nada. Corrigi
-com <code>L'' = −4 &lt; 0</code> e com o teste do sinal
+Podia ser mínimo ou ponto de inflexão horizontal — eu não tinha provado
+nada. Corrigi com <code>L'' = −4 &lt; 0</code> e com o teste do sinal
 (<code>+20</code> antes, <code>−20</code> depois). Aí sim, topo
 confirmado, lucro 280. Conselho: derive, zere, teste e só então responda
 com unidade e frase de manejo.</p>
@@ -1755,10 +1757,10 @@ de <code>f'</code>).</li>
 <strong>crescente</strong>: o talhão não só sobe,
 <strong>acelera</strong>.</li>
 <li><strong>Interpretação:</strong> neste modelo o volume total
-<strong>nunca para de crescer</strong> — e cresce cada vez mais rápido.
-O modelo polinomial tem prazo de validade (no mundo real, a curva satura
-— assíntota da U1). No MAT 146, leia o sinal <strong>no domínio do
-problema</strong>.</li>
+<strong>nunca para de crescer</strong> e cresce cada vez mais rápido. O
+polinômio, porém, não impõe teto; se o exercício quiser um limite
+finito, deve usar outro modelo, como a curva racional da U1. No MAT 146,
+leia o sinal no domínio do problema.</li>
 </ol>
 <p><img alt="Sinal da derivada" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig16_sinal_da_derivada.png"/></p>
 <p><em>Figura fig16 — Sinal da derivada. Onde a derivada é positiva a
@@ -1779,17 +1781,19 @@ expoente par do <code>x²</code> e dizer "sempre cresce". O coeficiente
 <hr/>
 <h4 id="tópico-32-pontos-críticos-e-teste-máximo-mesmo-ou-só-aparência">Tópico
 3.2 — Pontos críticos e teste: máximo mesmo ou só aparência?</h4>
-<p><strong>1. Do que se trata?</strong> <strong>Ponto crítico</strong>
-onde <code>f'(x) = 0</code>. Zero na derivada <strong>não
-garante</strong> extremo — confirme.</p>
+<p><strong>1. Do que se trata?</strong> <strong>Ponto crítico</strong> é
+um ponto do domínio onde <code>f′(x)=0</code> <strong>ou</strong>
+<code>f′(x)</code> não existe. Um zero da derivada <strong>não
+garante</strong> extremo — confirme o tipo e compare com as bordas do
+intervalo.</p>
 <p><strong>2. Por que importa em Engenharia Florestal?</strong> Taxa de
-corte que maximiza lucro, idade de colheita, área que minimiza custo —
-todas se acham zerando a derivada. E o erro "zero = topo" derruba muita
-prova.</p>
+corte que maximiza lucro, idade de colheita e área que minimiza custo
+exigem candidatos, teste e comparação com as bordas. O erro “zero =
+topo” pode perder pontos.</p>
 <p><strong>3. Receita passo a passo</strong></p>
 <ol type="1">
-<li>Derive e ache <code>f'(x) = 0</code> <strong>dentro do intervalo
-útil</strong>.</li>
+<li>Derive e ache, dentro do intervalo útil, onde <code>f′(x)=0</code>
+<strong>ou</strong> onde <code>f′</code> não existe.</li>
 <li><strong>Teste A — 2ª derivada:</strong> <code>f'' &gt; 0</code> →
 mínimo; <code>f'' &lt; 0</code> → máximo.</li>
 <li><strong>Teste B — sinal da 1ª:</strong> + para − → máximo; − para +
@@ -1984,14 +1988,15 @@ Unidade 3 — Rafa marca o desbaste </h4>
 <blockquote>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO:</strong> desbaste ótimo, rotação
 econômica, dimensionamento de viveiro e pátio — tudo é "máximo com
-restrição" em Manejo e Silvicultura. CURIOSIDADE — <strong>CURIOSIDADE:</strong>
-ponto crítico com derivada zero pode ser topo, vale ou nem um nem outro
-(ponto de sela, ex.: <code>x³</code> em 0). Por isso o teste é
-obrigatório. ERRO CLÁSSICO — <strong>ERRO CLÁSSICO:</strong> achar o ponto crítico e
-parar sem testar; esquecer as bordas do intervalo; otimizar com duas
-variáveis sem usar a restrição. PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ:</strong>
-<code>f(x) = x²</code>. Ponto crítico? Máx ou mín? (Resposta:
-<code>x = 0</code>, mínimo, pois <code>f'' = 2 &gt; 0</code>.)</p>
+restrição" em Manejo e Silvicultura. CURIOSIDADE — <strong>CURIOSIDADE:</strong> em
+uma variável, um ponto crítico pode ser máximo, mínimo ou ponto de
+inflexão horizontal, como <code>x³</code> em <code>x=0</code>. Esse
+último não é um extremo. ERRO CLÁSSICO — <strong>ERRO CLÁSSICO:</strong> achar o
+ponto crítico e parar sem testar; esquecer as bordas do intervalo;
+otimizar com duas variáveis sem usar a restrição. PAUSA PARA VOCÊ — <strong>PAUSA PARA
+VOCÊ:</strong> <code>f(x) = x²</code>. Ponto crítico? Máx ou mín?
+(Resposta: <code>x = 0</code>, mínimo, pois
+<code>f'' = 2 &gt; 0</code>.)</p>
 </blockquote>
 <p><strong>Exemplo novo resolvido — cerca com rio (só 3 lados, número de
 exemplo)</strong> Rancho de mudas encostado no rio: cercar 3 lados com
@@ -2135,7 +2140,7 @@ valor do ganho?</label></li>
 manejo?</label></li>
 </ul>
 <details>
-<summary><b>Gabarito do guia — confira passo a passo</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 2: <code>(−20)' = 0</code> (constante some).</li>
 <li>Passo 4: <code>x* = 10</code> m³/ha/ano.</li>
@@ -2204,7 +2209,9 @@ Antiderivada: a potência ao contrário</h4>
 indefinida) desfaz a derivada. Pergunta: <em>"que função tinha esta
 taxa?"</em>.</p>
 <p><strong>Regra da potência ao contrário:</strong>
-<code>∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</code> (para n ≠ −1)</p>
+<code>∫ xⁿ dx = xⁿ⁺¹/(n+1) + C</code> para <code>n≠−1</code>. Quando
+<code>n=−1</code>, use <code>∫ x^(−1) dx = ln|x| + C</code>; não divida
+por zero.</p>
 <p><strong>2. Por que importa em Engenharia Florestal?</strong>
 Incremento vira volume; custo marginal vira custo total; taxa de acúmulo
 de biomassa vira estoque. Tradutor de taxa → quantidade.</p>
@@ -2586,7 +2593,7 @@ pontas × 15)?</label></li>
 (m²)?</label></li>
 </ul>
 <details>
-<summary><b>Gabarito do guia — confira passo a passo</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 4: <code>F(15) = 13,5 − 2,25 = 11,25</code>.</li>
 <li>Passo 5: <code>F(0) = 0</code>.</li>
@@ -2603,18 +2610,19 @@ Unidade 5 — Área sob a curva e EDO: crescimento e decaimento</h2>
 <p><img alt="Banner da Unidade 5: equações diferenciais e crescimento." class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/banner_u5_edo.png"/></p>
 <blockquote>
 <p> <strong>Abertura na floresta fictícia — biomassa que cresce,
-resíduo que some:</strong> no viveiro, a biomassa dobra em ritmo
-proporcional ao que já existe (exponencial). No pátio, a leira de
-resíduo perde metade a cada ~14 anos no modelo (números de exemplo).
-Mesma equação, sinal trocado: <code>dy/dx = ky</code>. Rafa aprende a
-separar variáveis, achar <code>y₀·e^{kx}</code> e calcular meia-vida
-<code>ln2/k</code> — e a nunca confundir com <code>1/k</code>.</p>
+resíduo que some:</strong> no viveiro, a biomassa cresce em ritmo
+proporcional ao que já existe. No pátio, o modelo decai e perde metade a
+cada <code>ln2/|k|</code> períodos; para <code>|k|=0,05/ano</code>, isso
+equivale a cerca de 14 anos. Rafa separa as variáveis, encontra
+<code>y=y₀e^{kx}</code> e não confunde meia-vida com
+<code>1/|k|</code>.</p>
 </blockquote>
 <blockquote>
 <p>MAPA MENTAL — <strong>MAPA MENTAL DA UNIDADE 5:</strong> ÁREA = TOTAL (5.1) →
 EDO PROPORCIONAL (5.2, separa e integra, <code>y₀e^{kx}</code>) →
-DECAIMENTO + MEIA-VIDA (5.3, expoente negativo, <code>ln2/k</code>).
-Sinal do k decide: + cresce, − decai.</p>
+DECAIMENTO + MEIA-VIDA (5.3, expoente negativo,
+<code>T½=ln2/|k|</code>). O sinal de <code>k</code> decide:
+<code>k&gt;0</code> cresce e <code>k&lt;0</code> decai.</p>
 </blockquote>
 <p><img alt="Crescimento exponencial e decaimento com meia-vida" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig06_edo_crescimento.png"/></p>
 <p><em>Figura fig06 — EDO de crescimento/decaimento. Curva subindo
@@ -2632,14 +2640,13 @@ existe"</em> (<code>dy/dx = ky</code>). <code>k &gt; 0</code> →
 <blockquote>
 <p> <strong>DIÁRIO DO GUARDA RAFA — aprendendo junto com você (U5 —
 Área e EDO)</strong> No viveiro da Mata do Caparaózinho (floresta
-fictícia) eu calculei meia-vida como <code>1/k</code> e mandei limpar a
-leira 11 anos atrasado (números de exemplo). Erro duplo: usei
-<code>1/k</code> em vez de <code>ln2/k</code> e deixei o expoente
-positivo no decaimento — a leira "crescia" na conta. Corrigi com
-<code>T½ = 0,693/k</code> e <code>S(t) = S₀·e^{−kt}</code>: a cada
-meia-vida, metade; em 2, resta 1/4. Conselho: sinal do <code>k</code>
-decide tudo; meia-vida independe do estoque inicial — confira sempre o
-sinal antes do número.</p>
+fictícia) eu usei <code>1/|k|</code> como se fosse meia-vida (números de
+exemplo). Erro duplo: usei o tempo característico no lugar de
+<code>ln2/|k|</code> e deixei o expoente positivo no decaimento — a
+leira "crescia" na conta. Corrigi com <code>T½ = ln2/|k|</code>: a cada
+meia-vida, resta metade; após duas, resta um quarto. Conselho: confira o
+sinal de <code>k</code>; na forma <code>S′=−kS</code>, use
+<code>k&gt;0</code> e <code>T½=ln2/k</code>.</p>
 </blockquote>
 <hr/>
 <h4 id="tópico-51-área-sob-a-curva-total-acumulado-produção-transporte-estoque">Tópico
@@ -2758,10 +2765,12 @@ integral: <code>∫ dy/y</code>.</p>
 <hr/>
 <h4 id="tópico-53-decaimento-meia-vida-e-o-sinal-do-k">Tópico 5.3 —
 Decaimento, meia-vida e o sinal do k</h4>
-<p><strong>1. Do que se trata?</strong> Decaimento:
-<code>dS/dt = −k S</code> (k &gt; 0) → <code>S(t) = S₀ e^{−kt}</code>.
-<strong>Meia-vida:</strong> <code>T½ = ln 2 / k</code> (ln 2 ≈ 0,693) —
-independe da quantidade inicial.</p>
+<p><strong>1. Do que se trata?</strong> Decaimento: nesta convenção,
+<code>dS/dt = −kS</code> com <code>k&gt;0</code> →
+<code>S(t)=S₀e^{−kt}</code>. <strong>Meia-vida:</strong>
+<code>T½=ln2/k≈0,693/k</code> — independe da quantidade inicial. Se o
+expoente for escrito como <code>e^{kt}</code> com <code>k&lt;0</code>, a
+mesma fórmula é <code>T½=ln2/|k|</code>.</p>
 <p><strong>2. Por que importa em Engenharia Florestal?</strong>
 Decomposição de resíduo, decaimento de carga/madeira estocada em
 condição X, depleção de estoque, perda de viabilidade — "quanto resta
@@ -2960,16 +2969,16 @@ Meia-vida independe de <code>y₀</code>.</li>
 <li>( ) Solução de <code>dy/dx = ky</code> com <code>y(0) = y₀</code> é
 <code>y = y₀e^{kx}</code>.</li>
 <li>( ) Em decaimento, o expoente é positivo.</li>
-<li>( ) Meia-vida é <code>ln2/k</code> e independe de
+<li>( ) Meia-vida é <code>ln2/|k|</code> e independe de
 <code>y₀</code>.</li>
-<li>( ) <code>1/k</code> é a mesma coisa que meia-vida.</li>
+<li>( ) <code>1/|k|</code> é a mesma coisa que meia-vida.</li>
 </ol>
 <details>
 <summary><b>Respostas do mini-quiz U5</b></summary>
 <ol type="1">
 <li><strong>V</strong>. 2. <strong>V</strong>. 3. <strong>F</strong> — é
 negativo. 4. <strong>V</strong>. 5. <strong>F</strong> —
-<code>1/k</code> é constante de tempo.</li>
+<code>1/|k|</code> é o tempo característico.</li>
 </ol>
 </details>
 <h4 id="-guia-passo-a-passo-biomassa-que-cresce-resíduo-que-some-edo">
@@ -3029,7 +3038,7 @@ A?</label></li>
 (sinais coerentes)?</label></li>
 </ul>
 <details>
-<summary><b>Gabarito do guia — confira passo a passo</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 4: <code>A = 400</code> →
 <code>N(t) = 400 e^{0,06t}</code>.</li>
@@ -3096,9 +3105,10 @@ partida, não taxa</em>. Não esqueci o <code>+ C</code> nem o
 <code>S = 1000e^{0,05t}</code>; em 20 anos ≈ 2718. Leira:
 <code>S(0) = 5000</code>, <code>k = 0,05</code> decaindo (fictício) → ≈
 1839 em 20 anos; meia-vida ~13,9 anos. A cada meia-vida, metade: em 2
-meias-vidas, 1/4; em 3, 1/8. Anotei: <em>sinal do k decide tudo;
-meia-vida é ln2/k, nunca 1/k</em>. Fechei o diário: <em>limite vê o
-longe, derivada mede o agora, integral soma tudo, exponencial repete o
+meias-vidas, 1/4; em 3, 1/8. Anotei: <em>o sinal de <code>k</code>
+decide o crescimento; meia-vida é <code>ln2/|k|</code>, não
+<code>1/|k|</code></em>. Fechei o diário: <em>limite vê o longe,
+derivada mede o agora, integral soma tudo, exponencial repete o
 padrão</em>.</p>
 <blockquote>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ:</strong> escolha 1 dia do diário e refaça
@@ -3170,8 +3180,9 @@ derivada do <strong>miolo</strong></td>
 </tr>
 <tr class="even">
 <td>Máx/mín</td>
-<td>Zere a derivada <strong>e teste</strong> (2ª derivada ou sinal)</td>
-<td><code>f'(x)=0</code>, <code>f''&lt;0</code> máx</td>
+<td>Liste pontos críticos, teste e compare as bordas</td>
+<td><code>f′=0</code> ou <code>f′</code> não existe; classifique o
+ponto</td>
 </tr>
 <tr class="odd">
 <td>Otimização</td>
@@ -3185,8 +3196,9 @@ derivada do <strong>miolo</strong></td>
 </tr>
 <tr class="odd">
 <td>Integral da potência</td>
-<td><strong>Sobe o expoente e divide por ele</strong> (e soma C)</td>
-<td><code>∫xⁿ dx = xⁿ⁺¹/(n+1) + C</code></td>
+<td><strong>Sobe o expoente e divide por ele</strong> (se n≠−1)</td>
+<td><code>∫xⁿ dx = xⁿ⁺¹/(n+1)+C</code>; para n=−1,
+<code>ln|x|+C</code></td>
 </tr>
 <tr class="even">
 <td>Integral definida</td>
@@ -3231,13 +3243,14 @@ derivada do <strong>miolo</strong></td>
 </tr>
 <tr class="even">
 <td>Meia-vida</td>
-<td>ln2 ÷ k (independe da quantidade inicial)</td>
-<td><code>T½ = ln2/k</code></td>
+<td>ln2 ÷ módulo de k (independe da quantidade inicial)</td>
+<td><code>T½ = ln2/|k|</code>; em <code>S′=−kS</code>,
+<code>k&gt;0</code></td>
 </tr>
 <tr class="odd">
 <td>Constante de tempo</td>
-<td>1 ÷ k (<strong>não</strong> é meia-vida)</td>
-<td><code>τ = 1/k</code></td>
+<td>1 ÷ módulo de k (<strong>não</strong> é meia-vida)</td>
+<td><code>τ = 1/|k|</code></td>
 </tr>
 </tbody>
 </table>
@@ -3262,8 +3275,8 @@ fiz o teste</strong> (máx ou mín)?</label></li>
 <code>1/(2√x)</code> e não <code>1/(2x)</code>?</label></li>
 <li><label><input type="checkbox"/>Cadeia: multipliquei pela derivada
 do miolo?</label></li>
-<li><label><input type="checkbox"/>Meia-vida usei <code>ln2/k</code> e
-<strong>não</strong> <code>1/k</code>?</label></li>
+<li><label><input type="checkbox"/>Meia-vida usei <code>ln2/|k|</code>
+e <strong>não</strong> <code>1/|k|</code>?</label></li>
 <li><label><input type="checkbox"/>Unidade: seção m² × metros =
 <strong>m³</strong>; taxa m³/ano × anos =
 <strong>m³</strong>?</label></li>
@@ -3303,8 +3316,9 @@ manejo."</li>
 <li><strong>U4 Integrais:</strong> "Potência ao contrário + C. Definida
 = F(cima) − F(baixo). Fixo é condição inicial, não taxa. m² × m =
 m³."</li>
-<li><strong>U5 EDO:</strong> "Proporcional → exponencial. Cresce = +,
-decai = −. Meia-vida = ln2/k, não 1/k."</li>
+<li><strong>U5 EDO:</strong> "Proporcional → exponencial.
+<code>k&gt;0</code> cresce; <code>k&lt;0</code> decai. Meia-vida =
+<code>ln2/|k|</code>, não <code>1/|k|</code>."</li>
 </ul>
 <h3 id="85-dicionário-nada-é-óbvio-revisão-rápida">8.5 Dicionário NADA É
 ÓBVIO (revisão rápida)</h3>
@@ -3488,8 +3502,8 @@ Troque "B" primeiro.</p>
 (U3).</li>
 <li>[ ] Integro potência, uso TFC <code>F(b)−F(a)</code> e acho o C com
 condição inicial (U4).</li>
-<li>[ ] Resolvo <code>dy/dx = ky</code>, aplico sinal correto e calculo
-meia-vida <code>ln2/k</code> (U5).</li>
+<li>[ ] Resolvo <code>dy/dx = ky</code>, aplico o sinal correto e
+calculo meia-vida <code>ln2/|k|</code> (U5).</li>
 </ol>
 <p><strong>Nota de corte pessoal:</strong> 8/10 ou mais → revise só
 fichas e faça prova antiga. 6–7 → refaça bancadas que errou. Abaixo de 6
@@ -3525,8 +3539,9 @@ definido.</li>
 <code>dy/dx</code>).</li>
 <li><strong>Taxa marginal</strong> — derivada do total (ex.: custo
 marginal = <code>C'</code>).</li>
-<li><strong>Ponto crítico</strong> — onde <code>f' = 0</code>. Suspeito
-de máx/mín.</li>
+<li><strong>Ponto crítico</strong> — ponto do domínio onde
+<code>f′=0</code> ou <code>f′</code> não existe; ainda precisa ser
+classificado.</li>
 <li><strong>Otimização</strong> — achar máx/mín com ou sem
 restrição.</li>
 <li><strong>Antiderivada</strong> — função que, derivada, devolve a
@@ -3540,8 +3555,8 @@ escolhe a curva certa (acha o C).</li>
 <li><strong>EDO separável</strong> — equação com derivada que se resolve
 separando variáveis (ex.: <code>dy/dx = ky</code>).</li>
 <li><strong>Meia-vida</strong> — tempo para cair à metade:
-<code>ln2/k</code>. Diferente de <code>1/k</code> (constante de
-tempo).</li>
+<code>ln2/|k|</code>. É diferente de <code>1/|k|</code>, que é o tempo
+característico.</li>
 </ol>
 <hr/>
 <h2 id="10-onde-pedir-ajuda">10. Onde pedir ajuda</h2>
@@ -3786,11 +3801,12 @@ antes.</li>
 <h3 id="r10-sinal-e-teste-u3132">R10. Sinal e teste (U3.1–3.2)</h3>
 <ol type="1">
 <li>Derive.</li>
-<li>Zere <code>f' = 0</code> no intervalo útil.</li>
-<li>Tabela de sinais (esquerda/direita).</li>
-<li>Teste: <code>f''&gt;0</code> mín, <code>f''&lt;0</code> máx (ou +→−
+<li>Liste no intervalo útil onde <code>f′=0</code> e onde
+<code>f′</code> não existe; considere também as bordas.</li>
+<li>Monte a tabela de sinais.</li>
+<li>Teste: <code>f″&gt;0</code> mín, <code>f″&lt;0</code> máx (ou +→−
 máx, −→+ mín).</li>
-<li>Avalie suspeitos + bordas. Responda com unidade.</li>
+<li>Avalie candidatos e bordas. Responda com unidade.</li>
 </ol>
 <h3 id="r11-otimização-com-restrição-u33">R11. Otimização com restrição
 (U3.3)</h3>
@@ -3805,7 +3821,8 @@ máx, −→+ mín).</li>
 (U4.1)</h3>
 <ol type="1">
 <li>Reescreva em potências.</li>
-<li><code>xⁿ⁺¹/(n+1)</code> termo a termo.</li>
+<li>Para <code>n≠−1</code>, aplique <code>xⁿ⁺¹/(n+1)</code> termo a
+termo; para <code>n=−1</code>, use <code>ln|x|</code>.</li>
 <li>Constante multiplica.</li>
 <li>Some <code>+ C</code> sempre.</li>
 <li>Confira derivando de volta.</li>
@@ -3834,8 +3851,9 @@ máx, −→+ mín).</li>
 <li>Integre: <code>ln|y| = kx + α</code>.</li>
 <li>Exponencie: <code>y = A·e^{kx}</code>; CI dá
 <code>A = y₀</code>.</li>
-<li>Meia-vida (se decair): <code>ln2/k</code>. Cresceu com k negativo?
-Volte ao passo 1.</li>
+<li>Meia-vida (se decair): <code>ln2/|k|</code>. Na convenção
+<code>S′=−kS</code>, escreva <code>k&gt;0</code> e use
+<code>ln2/k</code>.</li>
 </ol>
 <blockquote>
 <p> <strong>Rafa diz:</strong> "Receita não substitui entender — mas
@@ -4256,8 +4274,8 @@ continua m³/ano.</p>
 <p><strong>Erro comum:</strong> procurar apenas <code>P' = 0</code> e
 esquecer as bordas, especialmente quando o intervalo é limitado.</p>
 <p><strong>Limite do modelo:</strong> as peças lineares impõem taxas
-constantes; não descrevem a desaceleração biológica de um povoamento
-real.</p>
+constantes e não incluem outras variações que um modelo de manejo
+pudesse representar.</p>
 <h3 id="145-exercícios-de-integrais-e-volume">14.5 Exercícios de
 integrais e volume</h3>
 <h4 id="v5-e10-tabelamodelo-volume-em-escala-logarítmica">V5-E10 —
@@ -4380,9 +4398,9 @@ de uma meia-vida, aproximadamente 60 t permanecem.</p>
 exige.</p>
 <p><strong>Erro comum:</strong> trocar <code>−0,06</code> por
 <code>+0,06</code> e chamar o crescimento de decomposição.</p>
-<p><strong>Limite do modelo:</strong> decomposição real pode depender de
-temperatura, umidade e grupos de material; a proporcionalidade constante
-é apenas uma idealização.</p>
+<p><strong>Limite do modelo:</strong> a EDO não separa fatores
+ambientais nem tipos de material; ela impõe apenas uma taxa proporcional
+constante.</p>
 <h4 id="v5-e14-aplicação-produção-em-curva-por-partes">V5-E14 —
 Aplicação: produção em curva por partes</h4>
 <p><strong>Contexto fictício.</strong> A produção anual de um talhão

@@ -21,7 +21,7 @@
         <p class="subtitle">Cálculo aplicado ao processamento do leite, com exemplos numéricos claramente didáticos.</p>
         <div class="apostila-meta"><span>Ciência e Tecnologia de Laticínios</span><span>Dona Cida, do laticínio fictício</span><span>resfriamento, fermentação, rendimento e energia</span></div>
         <div class="apostila-hero-links"><a href="../../index.html">Voltar ao site</a><a class="secondary" href="../../index.html#jogo">Abrir o jogo</a></div>
-        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a class="apostila-module-link" href="#capítulo-0-kit-de-fundo-os-4-remendos-que-resolvem-80-dos-travamentos" aria-label="Ir para Pré-Cálculo: Cap 0 — Kit de fundo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a class="apostila-module-link" href="#unidade-1-limites-o-que-acontece-perto-de-um-ponto-e-para-sempre" aria-label="Ir para Limites: Unidade 1 — Limites"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a class="apostila-module-link" href="#unidade-2-derivadas-a-taxa-instantânea-quão-rápido-agora" aria-label="Ir para Derivadas: Unidade 2 — Derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a class="apostila-module-link" href="#unidade-3-aplicações-da-derivada-crescer-diminuir-melhorar" aria-label="Ir para Aplicações: Unidade 3 — Aplicações da derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a class="apostila-module-link" href="#unidade-4-integrais-somar-fatias-de-taxa-a-total" aria-label="Ir para Integrais: Unidade 4 — Integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
+        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a href="#capítulo-0-kit-de-fundo-os-4-remendos-que-resolvem-80-dos-travamentos"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a href="#unidade-1-limites-o-que-acontece-perto-de-um-ponto-e-para-sempre"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a href="#unidade-2-derivadas-a-taxa-instantânea-quão-rápido-agora"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a href="#unidade-3-aplicações-da-derivada-crescer-diminuir-melhorar"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a href="#unidade-4-integrais-somar-fatias-de-taxa-a-total"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
       </div>
       <div class="apostila-hero-art">
         <img class="apostila-cover-image" src="../../assets/capas/capa_ciencia-tecnologia-laticinios.png" alt="Capa da apostila de Ciência e Tecnologia de Laticínios">
@@ -461,17 +461,21 @@ vão aparecer (dicionário rápido)</h3>
 </tr>
 <tr class="odd">
 <td>∫ f(x) dx</td>
-<td>"integral de f" (área/acumulado)</td>
+<td>"integral indefinida de f": família de antiderivadas</td>
 </tr>
 <tr class="even">
+<td>∫_a^b f(x) dx</td>
+<td>"integral definida de a até b": acumulado líquido</td>
+</tr>
+<tr class="odd">
 <td>e^(−0,15t)</td>
 <td>"e elevado a menos 0,15t" (exponencial decrescente)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>ln x</td>
 <td>logaritmo natural de x</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>pH ≈ −log₁₀([H⁺]/(1 mol/L))</td>
 <td>"menos o log de base 10 da concentração de H⁺ normalizada"</td>
 </tr>
@@ -837,16 +841,17 @@ distância vertical encolhe. <em>Armadilha:</em> achar que "perto" é
 "igual". Perto é tendência; igual é valor. A figura mostra
 tendência.</p>
 <h3 id="tópico-11-o-que-é-limite">Tópico 1.1 — O que é limite</h3>
-<p><strong>(1) Do que se trata.</strong> Limite responde: <em>"quando a
-variável se aproxima de um valor (ou vai para o infinito), para onde a
-função se aproxima?"</em> Não é onde ela <strong>chega</strong> — é para
-onde a <strong>tendência</strong> aponta. Notação: lim (x→a) f(x) =
-L.</p>
+<p><strong>(1) Do que se trata.</strong> Limite responde: quando a
+variável se aproxima de um valor — ou cresce sem limite — para qual
+valor a função se aproxima? Um limite descreve uma
+<strong>tendência</strong>, não um instante do processo. O valor no
+ponto, quando existe, é <code>f(a)</code> e deve ser analisado
+separadamente. Notação: <code>lim (x→a) f(x) = L</code>.</p>
 <p><strong>(2) Por que importa no seu curso.</strong> Processos se
-aproximam de um estado final: leite resfriando tende à temperatura da
-câmara; contagem residual tende a zero; pH tende a um teto. Saber ler
-"tendência" evita o erro clássico de dizer que "a temperatura chega a 22
-°C em tempo finito".</p>
+aproximam de estados finais: o leite resfriando tende à temperatura da
+câmara e a contagem residual tende a zero. Ler essa
+<strong>tendência</strong> evita dizer que a temperatura chega a 22 °C
+em um instante finito do modelo.</p>
 <p><strong>(3) Receita passo a passo.</strong></p>
 <ol type="1">
 <li>Monte uma tabela: valores <strong>cada vez mais próximos</strong> do
@@ -1243,7 +1248,7 @@ encostar."</em></p>
 <li><label><input type="checkbox"/>Conferi o t do passo 11 com a
 checagem do passo 12.</label></li>
 </ul>
-<details><summary> Gabarito do guia U1</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 2:</strong> 60 °C. <strong>Passo 7:</strong> 18.
 <strong>Passo 9:</strong> não atinge (tender sem atingir). <strong>Passo
@@ -1684,7 +1689,7 @@ menos dá mais).</label></li>
 <li><label><input type="checkbox"/>Resposta com °C/min e
 frase.</label></li>
 </ul>
-<details><summary> Gabarito do guia U2</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 3:</strong> u' = −0,5. <strong>Passo 4:</strong> H'(t)
 = 27,5·e^(−0,5t). <strong>Passo 5:</strong> 27,5 °C/min. <strong>Passo
@@ -1820,8 +1825,10 @@ superfícies: economia de material com a mesma capacidade.</p>
 com <strong>40 m de fita</strong> (perímetro). Maximizar área. 2(x+y) =
 40 → y = 20 − x → <strong>A(x) = 20x − x²</strong>, 0 &lt; x &lt; 20. A'
 = 20 − 2x = 0 → <strong>x = 10 m</strong> (y = 10 —
-<strong>quadrado</strong>). A'' = −2 &lt; 0 → máximo. Área = <strong>100
-m²</strong>. Conferência: 5 → 75; 10 → 100; 15 → 75 .</p>
+<strong>quadrado</strong>). Como <code>A''(x) = −2 &lt; 0</code>, o
+gráfico é côncavo para baixo; junto com <code>A'(10) = 0</code>, o teste
+confirma um máximo. Área = <strong>100 m²</strong>. Conferência: 5 → 75;
+10 → 100; 15 → 75 .</p>
 <blockquote>
 <p>ERRO CLÁSSICO — <strong>ERRO CLÁSSICO:</strong> responder só <code>x = 10</code>
 quando pediram área. Passo 5 existe para isso: volte ao enunciado e
@@ -1935,8 +1942,9 @@ U3 — 7 degraus N0→N3 (números de exemplo, rendimento fictício)</h3>
 <p><img alt="Cerca e área máxima" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig11_concavidade.png"/></p>
 <p><strong>Figura fig11 — Cerca e área máxima.</strong> <em>Leitura:
 retângulos com mesmo perímetro e áreas diferentes; o quadrado marca o
-pico da curva A(x); tangente horizontal = derivada zero classificada
-como máximo.</em></p>
+pico da curva A(x). No ponto crítico, <code>A''&lt;0</code> indica
+concavidade para baixo e ajuda a classificar o ponto como
+máximo.</em></p>
 <blockquote>
 <p>Dona Cida: "Mesma cerca, maior canteiro. Mesma chapa, maior
 tanque."</p>
@@ -2044,7 +2052,7 @@ A''.</label></li>
 x).</label></li>
 <li><label><input type="checkbox"/>m² na resposta final.</label></li>
 </ul>
-<details><summary> Gabarito do guia U3</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 2:</strong> y = 24 − x. <strong>Passo 4:</strong> 2x.
 <strong>Passo 5:</strong> x = 12 m. <strong>Passo 7:</strong> máximo.
@@ -2100,8 +2108,8 @@ Cida.</p>
 </tr>
 <tr class="even">
 <td>Quanto no total?</td>
-<td>Definida F(b) − F(a)</td>
-<td>"Soma das fatias = área"</td>
+<td>Definida <code>F(b) − F(a)</code></td>
+<td>"Acumulado líquido; área quando a taxa é ≥ 0"</td>
 </tr>
 </tbody>
 </table>
@@ -2125,12 +2133,15 @@ retângulo grosseiro já é a resposta — ele é estimativa; a integral é o
 limite das fatias finas (TFC).</p>
 <h3 id="tópico-41-u41-integral-indefinida-voltar-da-taxa-para-a-função">Tópico
 4.1 (U4.1) — Integral indefinida: voltar da taxa para a função</h3>
-<p><strong>(1) Do que se trata.</strong> Antiderivada: F tal que F' = f.
-∫ f(x) dx = F(x) + C. O <strong>+ C</strong> existe porque muitas
-funções derivam igual.</p>
-<p><strong>(2) Por que importa.</strong> Se você sabe <em>quão
-rápido</em> muda (kW, g/h), a integral devolve <em>quanto mudou</em> —
-energia, acidez, massa.</p>
+<p><strong>(1) Do que se trata.</strong> Antiderivada: uma função
+<code>F</code> tal que <code>F' = f</code>. A integral indefinida
+<code>∫ f(x) dx = F(x) + C</code> devolve uma <strong>família de
+funções</strong>, não um único total. O <code>+ C</code> existe porque
+várias funções têm a mesma derivada.</p>
+<p><strong>(2) Por que importa.</strong> Uma taxa de kW integrada no
+tempo dá energia em kWh; uma taxa em g/h integrada no tempo dá massa em
+g. A integral indefinida recupera a função; a definida fornece o total
+entre dois instantes.</p>
 <p><strong>(3) Receita (potência).</strong> 1. ∫ xⁿ dx, para n≠−1. 2.
 <strong>Sobe</strong> expoente: xⁿ⁺¹. 3. <strong>Divide</strong> por
 (n+1). 4. <strong>+ C</strong>. 5. Confira derivando. Para n=−1, usa-se
@@ -2385,7 +2396,7 @@ pontas).</label></li>
 <li><label><input type="checkbox"/>Resposta em kWh com
 frase.</label></li>
 </ul>
-<details><summary> Gabarito do guia U4</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 2:</strong> F(t) = 2t + 0,2t² (+ C). <strong>Passo
 3:</strong> 15. <strong>Passo 5:</strong> 15 kWh. <strong>Passo
@@ -2472,8 +2483,10 @@ dias". No modelo, não zera: tende a zero. Em uma medição real, um limite
 de detecção pode separar "não detectado" de zero exato.</p>
 <h3 id="tópico-51-u51-área-sob-a-curva-do-retângulo-à-integral">Tópico
 5.1 (U5.1) — Área sob a curva: do retângulo à integral</h3>
-<p><strong>(1) Do que se trata.</strong> Taxa → total somando fatias:
-retângulos finos → integral definida = área.</p>
+<p><strong>(1) Do que se trata.</strong> A integral definida soma fatias
+e devolve o acumulado entre dois instantes. Quando a taxa é não
+negativa, o acumulado coincide com a área sob a curva; se a taxa ficar
+negativa, o resultado é o saldo líquido.</p>
 <p><strong>(2) Por que importa.</strong> Área sob consumo = energia; sob
 taxa de crescimento = total acumulado. Leitura visual da U4.</p>
 <p><strong>(3) Receita.</strong> 1. Taxa f e [a, b]. 2. Estime com
@@ -2638,8 +2651,10 @@ y(t)? y(5)?</li>
 M(0) = 1000 U, com t em min e t≥0. M(t)? Meia-vida? (ln2≈0,693).</li>
 <li><strong>U5-T5 (N2):</strong> Resfriamento fictício T(t) = 22 +
 48·e^(−0,15t). a) lim? b) T' sinal? c) ∫[0→6] T' representa o quê?</li>
-<li><strong>U5-T6 (N2):</strong> Fermentação fictícia N' = 0,5N, N(0) =
-200. Quando N = 1600? (dica: quantas dobras?).</li>
+<li><strong>U5-T6 (N2):</strong> Fermentação fictícia
+<code>N' = (0,5 h⁻¹)N</code>, com <code>N(0) = 200</code> UFC/mL,
+<code>t</code> em h e <code>t ≥ 0</code>. Quando <code>N = 1600</code>
+UFC/mL? (Dica: quantas dobras?)</li>
 <li><strong>U5-T7 (N3):</strong> Triagem: "tende a ___", "quão rápido
 agora ___", "total acumulado ___", "curva a partir da taxa ___" —
 complete com limite/derivada/integral/EDO e dê 1 exemplo do Bela Serra
@@ -2650,9 +2665,10 @@ para cada.</li>
 <strong>100·e^(0,3t)</strong>; y(5)≈<strong>448</strong>. T4:
 <strong>1000·e^(−0,4t) U</strong>; T≈<strong>1,73 min</strong>. T5: a)
 <strong>22 °C</strong>; b) <strong>negativa</strong>; c)
-<strong>T(6)−T(0), variação total</strong>. T6: 8=2³ → <strong>3
-dobras</strong>; t=3·ln2/0,5≈<strong>4,16</strong>. T7: <strong>limite,
-derivada, integral, EDO</strong>; confira frase + unidade.</p>
+<strong>T(6)−T(0), variação total</strong>. T6:
+<code>1600/200 = 8 = 2³</code> → <strong>3 dobras</strong>;
+<code>t = 3·ln2/0,5 ≈ 4,16 h</code>. T7: <strong>limite, derivada,
+integral, EDO</strong>; confira frase + unidade.</p>
 <h3 id="exemplo-novo-da-dona-cida-u5-o-fermento-que-dobra">Exemplo novo
 da Dona Cida (U5) — o fermento que dobra</h3>
 <blockquote>
@@ -2737,7 +2753,7 @@ volta.</label></li>
 <li><label><input type="checkbox"/>Dobra contada em potência de 2 (16 =
 2⁴).</label></li>
 </ul>
-<details><summary> Gabarito do guia U5</summary>
+<details><summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li><strong>Passo 1:</strong> k = 0,25. <strong>Passo 2:</strong> 0,25.
 <strong>Passo 4:</strong> A = 800. <strong>Passo 6:</strong> ≈ 2,77 h.
@@ -2977,11 +2993,13 @@ tabela contém <code>A(0,6)=A(1,8)=1,08</code> m² e
 eliminada.</li>
 <li><strong>Passos:</strong> <code>A(x)=2,4x−x²</code>;
 <code>A'(x)=2,4−2x</code>; <code>A'(x)=0</code> fornece
-<code>x=1,2</code> m. Como <code>A''(x)=−2&lt;0</code> m, esse ponto é
+<code>x=1,2</code> m. Como <code>A''(x)=−2&lt;0</code>, a curva é
+côncava para baixo; junto de <code>A'(1,2)=0</code>, o teste confirma um
 máximo. A largura é 1,2 m e <code>A(1,2)=1,44</code> m².</li>
 <li><strong>Interpretação:</strong> a área máxima ocorre quando altura e
-largura são iguais, 1,2 m por 1,2 m, coerente com os dois valores
-menores da tabela.</li>
+largura são iguais, 1,2 m por 1,2 m. O valor central da tabela,
+<code>1,44 m²</code>, é maior que os dois valores simétricos de
+<code>1,08 m²</code>.</li>
 <li><strong>Plausibilidade:</strong> valores simétricos <code>0,6</code>
 e <code>1,8</code> m dão a mesma área, como esperado.</li>
 <li><strong>Erro comum:</strong> responder apenas <code>x=1,2 m</code>
@@ -3127,8 +3145,8 @@ modelo, não continuação da mesma taxa.</li>
 modelo e tabela</h4>
 <p><strong>Enunciado.</strong> A atividade residual de enzima fictícia
 segue <code>R(t)=400e^(−0,05t)</code> U/mL, com <code>t≥0</code> em min.
-A tabela mostra <code>R(0)=400</code>, <code>R(20)≈133,1</code> e
-<code>R(40)≈44,3</code> U/mL. Estime a meia-vida e explique a
+A tabela mostra <code>R(0)=400</code>, <code>R(20)≈147,2</code> e
+<code>R(40)≈54,1</code> U/mL. Estime a meia-vida e explique a
 leitura.</p>
 <p><strong>Solução.</strong></p>
 <ul>
@@ -3139,9 +3157,9 @@ U/(mL·min).</li>
 meia-vida.</li>
 <li><strong>Passos:</strong> <code>R(t)=R(0)e^(−0,05t)</code>, isto é,
 <code>R(t)/R(0)=e^(−0,05t)</code>. Para meia-vida,
-<code>e^(−0,05T)=1/2</code>; <code>T=ln2/0,05≈13,9</code> min. Em 20 min
-a razão é <code>e^(−1)≈0,368</code>, compatível com 133,1/400; em 40 min
-é <code>e^(−2)≈0,135</code>, compatível com 44,3/400.</li>
+<code>e^(−0,05T)=1/2</code>; <code>T=ln2/0,05≈13,9</code> min. Em 20
+min, <code>R(20)=400e^(−1)≈147,2</code> U/mL. Em 40 min,
+<code>R(40)=400e^(−2)≈54,1</code> U/mL.</li>
 <li><strong>Interpretação:</strong> a atividade cai à metade a cada 13,9
 min no modelo.</li>
 <li><strong>Plausibilidade:</strong> os dois pontos intermediários
@@ -3303,8 +3321,7 @@ mol/L, e o pH é adimensional.</li>
 composição exponencial.</li>
 <li><strong>Passos:</strong>
 <code>pH(t)=−log10(10^(−3−0,1t))=3+0,1t</code>; <code>pH(20)=5,0</code>;
-<code>d(pH)/dt=0,1</code> unidade por minuto (descrito didaticamente
-como 0,10 unidade de pH por minuto).</li>
+<code>d(pH)/dt=0,10</code> unidade de pH por minuto.</li>
 <li><strong>Interpretação:</strong> a concentração de hidrogênio
 diminui, enquanto o pH aumenta 0,10 por min.</li>
 <li><strong>Plausibilidade:</strong> em 20 min,
@@ -3484,14 +3501,15 @@ um modelo linear de queda e use as diferenças sucessivas.</p>
 <li><strong>Variáveis, unidades e domínio:</strong> <code>t</code> em h,
 <code>0≤t≤4,6</code>; pH adimensional; a tabela é apresentada com
 precisão de 0,01.</li>
-<li><strong>Ferramenta:</strong> diferenças finitas e teste de
-coerência.</li>
+<li><strong>Ferramenta:</strong> diferenças finitas e ajuste linear
+pelos mínimos quadrados.</li>
 <li><strong>Passos:</strong> as diferenças por hora são
 <code>−0,05</code>, <code>−0,10</code>, <code>−0,15</code> e
-<code>−0,20</code>; elas não são constantes. Um modelo linear
-<code>pH=6,50−0,125t</code> explica a queda média, mas em
-<code>t=2,6</code> prevê 6,175, enquanto o valor da tabela é 6,35, com
-erro de aproximadamente −0,175 unidade de pH.</li>
+<code>−0,20</code>; elas não são constantes. O ajuste linear pelos
+mínimos quadrados é <code>pH(t)≈6,625−(0,125 h⁻¹)t</code>, com
+<code>t</code> em horas. Em <code>t = 2,6</code> h, o ajuste prevê
+<code>6,30</code>; o valor observado é <code>6,35</code>, então o
+resíduo observado − previsto é <code>+0,05</code> unidade de pH.</li>
 <li><strong>Interpretação:</strong> a queda acelera; linearidade só é
 aproximação, não identidade.</li>
 <li><strong>Plausibilidade:</strong> diferenças negativas crescentes em
