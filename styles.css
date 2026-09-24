@@ -1696,7 +1696,7 @@ html[data-theme="dark"] .mascot-wrap img {
 .game-header {
   min-height: 76px;
   display: grid;
-  grid-template-columns: 48px 1fr 48px;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
   padding: 12px 20px;
@@ -1729,6 +1729,24 @@ html[data-theme="dark"] .mascot-wrap img {
   font-size: 1.15rem;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.game-header-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.game-sound {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+
+.game-sound[aria-pressed="false"] {
+  color: var(--ink-soft);
+  opacity: 0.72;
 }
 
 .game-stat {
@@ -2301,6 +2319,20 @@ html[data-theme="dark"] .coach-mascot-wrap img {
   background: color-mix(in srgb, var(--accent) 13%, var(--surface));
 }
 
+.feedback-card.is-heart-loss {
+  align-items: center;
+  border-color: color-mix(in srgb, var(--brand-deep) 48%, var(--line));
+  background: var(--brand-pale);
+}
+
+.feedback-retry-button {
+  min-height: 44px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding-inline: 18px;
+  font-size: 0.82rem;
+}
+
 .feedback-icon {
   width: 30px;
   height: 30px;
@@ -2795,8 +2827,31 @@ html[data-theme="dark"] .coach-mascot-wrap img {
 
   .game-header {
     min-height: 68px;
-    grid-template-columns: 44px minmax(0, 1fr) 40px;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
     padding: 10px 12px;
+  }
+
+  .game-header-tools {
+    gap: 4px;
+  }
+
+  .game-sound {
+    width: 36px;
+    height: 36px;
+  }
+
+  .feedback-card.is-heart-loss {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .feedback-card.is-heart-loss > div {
+    flex: 1 1 220px;
+  }
+
+  .feedback-retry-button {
+    width: 100%;
+    margin-left: 0;
   }
 
   .game-kicker {

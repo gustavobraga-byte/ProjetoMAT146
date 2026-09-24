@@ -233,6 +233,9 @@ test("as onze apostilas limpas navegam para os cinco tópicos", () => {
     const expectedAnchors = data.topicAnchors[course.slug];
     assert.ok(expectedAnchors, `${course.slug}: âncoras do jogo ausentes`);
     for (const anchor of Object.values(expectedAnchors)) assert.ok(ids.has(anchor), `${course.slug}: âncora do jogo ausente ${anchor}`);
+    const guideLabels = [...html.matchAll(/<summary>\s*Gabarito do guia \(abrir depois de tentar\)\s*<\/summary>/g)];
+    assert.equal(guideLabels.length, 5, `${course.slug}: gabaritos do guia não foram padronizados`);
+    assert.doesNotMatch(html, /<details[^>]*\bopen\b/i, `${course.slug}: gabarito abre automaticamente`);
     totalLinks += links.length;
   }
   assert.equal(totalLinks, 55);
@@ -250,14 +253,27 @@ test("o jogo abre o tópico da apostila e possui liga local funcional", () => {
   assert.ok(app.includes("currentWeekKey"));
 });
 
-test("zerar os corações reinicia a lição com mensagem motivacional", () => {
+test("zerar os corações aguarda a tentativa e mantém a atividade atual", () => {
   const app = fs.readFileSync(path.join(SITE, "app.js"), "utf8");
   assert.ok(app.includes("function restartActivityWithEncouragement"));
+  assert.ok(app.includes("function retryCurrentActivity"));
   assert.ok(app.includes("Você perdeu os três corações"));
+  assert.ok(app.includes("Tentar novamente"));
   assert.ok(app.includes("lesson.restartPending"));
   assert.ok(app.includes("lesson.attemptSeed = createAttemptSeed()"));
-  assert.ok(app.includes("lesson.hearts = 3"));
-  assert.ok(app.includes("lesson.step = 0"));
+  assert.ok(app.includes("const currentStep = lesson.step"));
+  assert.ok(!app.includes("lesson.step = 0"), "não deve voltar ao início da lição após_zero corações");
+});
+
+test("o jogo tem som discreto, botão de mute e preferência local", () => {
+  const app = fs.readFileSync(path.join(SITE, "app.js"), "utf8");
+  const html = fs.readFileSync(path.join(SITE, "index.html"), "utf8");
+  assert.ok(app.includes("function playGameSound"));
+  assert.ok(app.includes("function renderSound"));
+  assert.ok(app.includes("capycalculus-sound-v1"));
+  assert.ok(app.includes("aria-pressed"));
+  assert.ok(html.includes("id=\"soundToggle\""));
+  assert.ok(html.includes("Silenciar sons do jogo"));
 });
 
 test("o app consome a trilha completa e mantém fallback contextual", () => {
@@ -340,7 +356,7 @@ test("o cache do service worker aponta para recursos existentes", () => {
   const sw = fs.readFileSync(path.join(SITE, "sw.js"), "utf8");
   const resources = [...sw.matchAll(/"\.\/([^"?]+)"/g)].map((match) => match[1]).filter(Boolean);
   for (const resource of resources) assertFile(resource, 20);
-  assert.ok(sw.includes("capycalculus-v7"));
+  assert.ok(sw.includes("capycalculus-v8"));
   assert.ok(sw.includes("assets/mascote/capi-happy.png"));
   assert.ok(sw.includes("assets/scenarios/module-05.png"));
   assert.ok(sw.includes("assets/badges/badge-12.png"));

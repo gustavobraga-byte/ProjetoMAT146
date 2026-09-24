@@ -6,6 +6,7 @@
   const resolveCourseActivities = window.resolveCourseActivities;
   const storageKey = "capycalculus-progress-v1";
   const themeKey = "capycalculus-theme-v1";
+  const soundKey = "capycalculus-sound-v1";
   const leagueTiers = Object.freeze([
     { id: "cauchy", name: "Liga de Cauchy", minXp: 0, badge: "assets/badges/badge-09.png" },
     { id: "leibniz", name: "Liga de Leibniz", minXp: 200, badge: "assets/badges/badge-07.png" },
@@ -27,7 +28,8 @@
 
   let state = loadState();
   let lesson = null;
-  let restartTimer = null;
+  let audioContext = null;
+  let soundEnabled = loadSoundPreference();
   let lastFocus = null;
 
   const elements = {
@@ -69,6 +71,7 @@
     leagueRemaining: document.getElementById("leagueRemaining"),
     leagueLadder: document.getElementById("leagueLadder"),
     themeToggle: document.getElementById("themeToggle"),
+    soundToggle: document.getElementById("soundToggle"),
     resetProgress: document.getElementById("resetProgress"),
     gameOverlay: document.getElementById("gameOverlay"),
     closeGame: document.getElementById("closeGame"),
@@ -129,6 +132,15 @@
       };
     } catch (_error) {
       return { ...defaultState, league: normalizeLeague(defaultState.league) };
+    }
+  }
+
+  function loadSoundPreference() {
+    try {
+      const stored = localStorage.getItem(soundKey);
+      return stored === null ? true : stored !== "muted";
+    } catch (_error) {
+      return true;
     }
   }
 
@@ -336,6 +348,60 @@
       </figure>`).join("");
   }
 
+  function playGameSound(kind) {
+    if (!soundEnabled) return;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+
+    try {
+      if (!audioContext) audioContext = new AudioContextClass();
+      const emit = () => {
+        const patterns = {
+          start: [[392, 0]],
+          correct: [[523.25, 0], [659.25, 0.09]],
+          error: [[246.94, 0], [207.65, 0.08]],
+          heartLoss: [[220, 0], [174.61, 0.12], [146.83, 0.24]]
+        };
+        const pattern = patterns[kind] || patterns.start;
+        const startAt = audioContext.currentTime;
+        pattern.forEach(([frequency, offset]) => {
+          const oscillator = audioContext.createOscillator();
+          const gain = audioContext.createGain();
+          const noteStart = startAt + offset;
+          const noteEnd = noteStart + 0.16;
+          oscillator.type = kind === "heartLoss" ? "sine" : "triangle";
+          oscillator.frequency.setValueAtTime(frequency, noteStart);
+          gain.gain.setValueAtTime(0.0001, noteStart);
+          gain.gain.exponentialRampToValueAtTime(kind === "heartLoss" ? 0.035 : 0.025, noteStart + 0.015);
+          gain.gain.exponentialRampToValueAtTime(0.0001, noteEnd);
+          oscillator.connect(gain);
+          gain.connect(audioContext.destination);
+          oscillator.start(noteStart);
+          oscillator.stop(noteEnd + 0.02);
+        });
+      };
+
+      if (audioContext.state === "suspended") {
+        audioContext.resume().then(emit).catch(() => {});
+      } else {
+        emit();
+      }
+    } catch (_error) {
+      // O jogo continua funcionando quando o navegador não oferece áudio.
+    }
+  }
+
+  function renderSound() {
+    if (!elements.soundToggle) return;
+    const label = soundEnabled ? "Silenciar sons do jogo" : "Ativar sons do jogo";
+    elements.soundToggle.setAttribute("aria-label", label);
+    elements.soundToggle.setAttribute("aria-pressed", String(soundEnabled));
+    elements.soundToggle.title = label;
+    elements.soundToggle.innerHTML = soundEnabled
+      ? '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M11 5 6.5 9H3v6h3.5L11 19Z"/><path d="M15 9.5a4 4 0 0 1 0 5M17.5 7a7 7 0 0 1 0 10"/></svg>'
+      : '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M11 5 6.5 9H3v6h3.5L11 19Z"/><path d="m16 9 5 5M21 9l-5 5"/></svg>';
+  }
+
   function renderTheme() {
     const storedTheme = localStorage.getItem(themeKey) || state.theme || "light";
     document.documentElement.dataset.theme = storedTheme;
@@ -473,10 +539,6 @@
   }
 
   function startGame(lessonId = "m3-3") {
-    if (restartTimer) {
-      window.clearTimeout(restartTimer);
-      restartTimer = null;
-    }
     const course = getSelectedCourse();
     if (!course) {
       showToast("Escolha um curso para contextualizar os exercícios.");
@@ -522,6 +584,7 @@
     elements.gameOverlay.setAttribute("aria-hidden", "false");
     document.body.classList.add("game-open");
     renderLesson();
+    playGameSound("start");
     window.setTimeout(() => elements.closeGame.focus(), 0);
   }
 
@@ -533,10 +596,6 @@
   }
 
   function closeGame() {
-    if (restartTimer) {
-      window.clearTimeout(restartTimer);
-      restartTimer = null;
-    }
     if (!elements.gameOverlay.hidden) {
       elements.gameOverlay.hidden = true;
       elements.gameOverlay.setAttribute("aria-hidden", "true");
@@ -564,6 +623,13 @@
     elements.checkAnswer.hidden = !check;
     elements.nextButton.hidden = !next;
     if (nextLabel) elements.nextButton.textContent = nextLabel;
+  }
+
+  function setQuestionControlsDisabled(disabled) {
+    elements.questionCard.querySelectorAll("input, select, button").forEach((control) => {
+      control.disabled = disabled;
+    });
+    elements.questionCard.setAttribute("aria-busy", String(disabled));
   }
 
   function hideFeedback() {
@@ -728,6 +794,7 @@
 
     if (step === 0) renderGenericExplanation();
     else renderGenericActivity(lesson.activities[step - 1]);
+    setQuestionControlsDisabled(false);
 
     elements.checkAnswer.onclick = checkCurrentAnswer;
     elements.nextButton.onclick = goForward;
@@ -898,6 +965,25 @@
     return { answered: false, correct: false, message: "" };
   }
 
+  function retryCurrentActivity() {
+    if (!lesson || !lesson.restartPending || lesson.completed) return;
+    const currentStep = lesson.step;
+    state.hearts = 3;
+    saveState();
+    renderStats();
+    elements.gameHearts.textContent = "3";
+    lesson.attemptSeed = createAttemptSeed();
+    lesson.activities = buildLessonActivities(lesson.definition, lesson.course, lesson.attemptSeed);
+    lesson.step = currentStep;
+    lesson.hearts = 3;
+    lesson.solved = false;
+    lesson.restartPending = false;
+    lesson.orderSelection = [];
+    renderLesson();
+    playGameSound("start");
+    window.requestAnimationFrame(() => elements.checkAnswer.focus());
+  }
+
   function restartActivityWithEncouragement() {
     if (!lesson || lesson.restartPending) return;
     lesson.restartPending = true;
@@ -905,29 +991,21 @@
     saveState();
     renderStats();
     elements.gameHearts.textContent = "0";
-    showFeedback(false, "Você perdeu os três corações, mas seu caminho não termina aqui. A Capi believe in you: vamos reiniciar esta atividade — a lição — com uma nova sequência de valores.");
-    restartTimer = window.setTimeout(() => {
-      restartTimer = null;
-      if (!lesson || lesson.completed) return;
-      state.hearts = 3;
-      saveState();
-      renderStats();
-      elements.gameHearts.textContent = "3";
-      lesson.attemptSeed = createAttemptSeed();
-      lesson.activities = buildLessonActivities(lesson.definition, lesson.course, lesson.attemptSeed);
-      lesson.step = 0;
-      lesson.startedAt = Date.now();
-      lesson.firstTry = Array(lesson.activities.length + 1).fill(null);
-      lesson.errors = 0;
-      lesson.hints = 0;
-      lesson.hearts = 3;
-      lesson.solved = false;
-      lesson.completed = false;
-      lesson.restartPending = false;
-      lesson.orderSelection = [];
-      renderLesson();
-      elements.closeGame.focus();
-    }, 1800);
+    setCoach("Você pode tentar novamente. Um erro mostra o caminho, não o fim.", "encourage", lesson.course.context);
+    setActions({ hint: false, check: false, next: false });
+    setQuestionControlsDisabled(true);
+    elements.feedbackCard.hidden = false;
+    elements.feedbackCard.className = "feedback-card is-retry is-heart-loss";
+    elements.feedbackCard.innerHTML = `
+      <span class="feedback-icon" aria-hidden="true">↻</span>
+      <div>
+        <strong>Você perdeu os três corações, mas seu caminho não termina aqui.</strong>
+        <p>Seu progresso foi mantido. Clique no botão para tentar esta atividade novamente com novos valores.</p>
+      </div>
+      <button class="button button-primary feedback-retry-button" id="retryActivityButton" type="button">Tentar novamente</button>`;
+    document.getElementById("retryActivityButton").addEventListener("click", retryCurrentActivity, { once: true });
+    playGameSound("heartLoss");
+    window.requestAnimationFrame(() => document.getElementById("retryActivityButton").focus());
   }
 
   function checkCurrentAnswer() {
@@ -943,12 +1021,14 @@
 
     if (answer.correct) {
       lesson.solved = true;
+      playGameSound("correct");
       showFeedback(true, answer.message);
       setCoach(data.feedback.correct[lesson.step % data.feedback.correct.length], "celebrate", lesson.course.context);
       setActions({ hint: false, check: false, next: true, nextLabel: lesson.step === lesson.activities.length ? "Concluir fase" : "Próxima tela" });
     } else {
       lesson.errors += 1;
       lesson.hearts = Math.max(0, lesson.hearts - 1);
+      playGameSound("error");
       state.hearts = lesson.hearts;
       saveState();
       elements.gameHearts.textContent = String(lesson.hearts);
@@ -1088,6 +1168,17 @@
       renderTheme();
     });
 
+    elements.soundToggle.addEventListener("click", () => {
+      soundEnabled = !soundEnabled;
+      try {
+        localStorage.setItem(soundKey, soundEnabled ? "on" : "muted");
+      } catch (_error) {
+        // A preferência dura apenas esta aba quando o armazenamento está bloqueado.
+      }
+      renderSound();
+      if (soundEnabled) playGameSound("start");
+    });
+
     elements.resetProgress.addEventListener("click", () => {
       if (!window.confirm("Apagar o curso selecionado e o progresso salvo neste navegador?")) return;
       localStorage.removeItem(storageKey);
@@ -1102,6 +1193,7 @@
 
   function renderAll() {
     renderTheme();
+    renderSound();
     renderCourses();
     renderWorkspace();
     renderStats();

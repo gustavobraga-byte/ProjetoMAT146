@@ -1,4 +1,4 @@
-const CACHE_NAME = "capycalculus-v7";
+const CACHE_NAME = "capycalculus-v8";
 const APP_SHELL = [
   "./",
   "./index.html",
