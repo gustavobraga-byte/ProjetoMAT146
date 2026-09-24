@@ -21,7 +21,7 @@
         <p class="subtitle">Da função como máquina ao cálculo que ajuda a decidir no campo.</p>
         <div class="apostila-meta"><span>Agronomia</span><span>Zé, o agrônomo</span><span>dose, dossel, produtividade e irrigação</span></div>
         <div class="apostila-hero-links"><a href="../../index.html">Voltar ao site</a><a class="secondary" href="../../index.html#jogo">Abrir o jogo</a></div>
-        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a class="apostila-module-link" href="#cap-0-kit-de-fundo-o-básico-que-a-escola-deixou-passar" aria-label="Ir para Pré-Cálculo: Cap 0 — Kit de fundo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a class="apostila-module-link" href="#unidade-1-limites-o-que-acontece-perto-de-um-ponto" aria-label="Ir para Limites: Unidade 1 — Limites"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a class="apostila-module-link" href="#unidade-2-derivadas-a-taxa-instantânea" aria-label="Ir para Derivadas: Unidade 2 — Derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a class="apostila-module-link" href="#unidade-3-aplicações-da-derivada-crescer-diminuir-e-otimizar" aria-label="Ir para Aplicações: Unidade 3 — Aplicações da derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a class="apostila-module-link" href="#unidade-4-integrais-somar-fatias-e-somar-totais" aria-label="Ir para Integrais: Unidade 4 — Integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
+        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a href="#cap-0-kit-de-fundo-o-básico-que-a-escola-deixou-passar"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a href="#unidade-1-limites-o-que-acontece-perto-de-um-ponto"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a href="#unidade-2-derivadas-a-taxa-instantânea"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a href="#unidade-3-aplicações-da-derivada-crescer-diminuir-e-otimizar"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a href="#unidade-4-integrais-somar-fatias-e-somar-totais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
       </div>
       <div class="apostila-hero-art">
         <img class="apostila-cover-image" src="../../assets/capas/capa_agronomia.png" alt="Capa da apostila de Agronomia">
@@ -835,7 +835,7 @@ qual número?</p>
 <tr class="odd">
 <td>E se x crescer sem parar?</td>
 <td>Graus do numerador e denominador</td>
-<td>Teto de 90% de cobertura</td>
+<td>Limite de 90% de cobertura no modelo</td>
 </tr>
 <tr class="even">
 <td>Tem buraco ou pulo?</td>
@@ -848,7 +848,7 @@ qual número?</p>
 <pre class="text"><code>PERTO de a?
   ├── substitui direto → deu número? PRONTO (contínua ali)
   ├── deu 0/0? → FATORE → cancele → substitua de novo
-  ├── x → infinito? → compare GRAUS → teto (assíntota)
+  ├── x → infinito? → compare GRAUS → limite/assíntota horizontal
   └── limite ≠ valor? → BURACO (descontínua)</code></pre>
 <p><strong>Zé diz:</strong> <em>"Guarde o diagrama. Ele é o GPS da
 Unidade 1."</em></p>
@@ -957,13 +957,13 @@ resposta.</p>
 <p>O que olhar nesta figura.</p>
 <p>Linha 1: veja os valores de x na tabela chegando cada vez mais perto
 do ponto a, por cima e por baixo. Linha 2: acompanhe a coluna de y: para
-qual número os dois lados estão convergindo? Antes de fatorar, essa
-tabela já denuncia a resposta.</p>
+qual número os dois lados estão convergindo? A tabela sugere a resposta,
+mas não a prova; a álgebra confirma o limite.</p>
 <p><strong>2. Por que importa em Agronomia?</strong></p>
 <p>Modelos de dose-resposta aparecem como frações que <strong>zeram
 juntas</strong> no ponto de interesse.</p>
-<p>Sem fatorar, você não acha o limite — e erra a leitura do ponto de
-operação.</p>
+<p>Sem fatorar, você não confirma o limite — e pode errar a leitura do
+ponto de operação.</p>
 <blockquote>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ</strong></p>
 <p><code>0/0</code> significa: (a) resposta zero (b) ainda não sei,
@@ -985,7 +985,7 @@ sulcos.</p>
 <blockquote>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO</strong></p>
 <p>Dose que zera numerador e denominador juntas esconde o ponto ótimo.
-Fatorar revela a resposta que a tabela não mostra.</p>
+Fatorar confirma a resposta que a tabela apenas sugere.</p>
 </blockquote>
 <p><strong>3. Receita passo a passo</strong></p>
 <ol type="1">
@@ -1049,8 +1049,9 @@ então fechei.</li>
 oficial.</li>
 </ol>
 <hr/>
-<h4 id="tópico-13-limite-no-infinito-e-assíntota-o-teto-do-modelo">Tópico
-1.3 — Limite no infinito e assíntota (o "teto" do modelo)</h4>
+<h4 id="tópico-13-limite-no-infinito-e-assíntota-o-limite-de-longo-prazo-do-modelo">Tópico
+1.3 — Limite no infinito e assíntota (o limite de longo prazo do
+modelo)</h4>
 <p><strong>1. Do que se trata?</strong></p>
 <p>O que acontece quando x cresce <strong>sem parar</strong>
 (<code>x → ∞</code>)?</p>
@@ -1064,11 +1065,13 @@ numerador</strong> e o <strong>grau do denominador</strong>.</p>
 <li>Cima maior? Vai para infinito (em módulo).</li>
 </ol>
 <p><strong>2. Por que importa em Agronomia?</strong></p>
-<p>Muitos modelos têm <strong>assíntota</strong>: valor que a curva se
-aproxima, mas talvez nunca ultrapasse.</p>
+<p>Muitos modelos têm <strong>assíntota horizontal</strong>: a curva se
+aproxima de <code>y=L</code> quando <code>x→∞</code>. A curva pode
+cruzar essa reta; só a fórmula e o domínio dizem se permanece de um
+lado.</p>
 <p>É a pergunta <em>"quanto mais insumo eu boto, até onde isso
-rende?"</em> — e a resposta costuma ser <strong>"até um
-teto"</strong>.</p>
+rende?"</em> — e a resposta pode ser um limite de longo prazo, não
+necessariamente um teto físico.</p>
 <blockquote>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ</strong></p>
 <p>Graus iguais 1 e 1, coeficientes 90 e 1. Limite = _____. Denominador
@@ -1077,19 +1080,20 @@ com grau maior. Limite = _____. Complete antes de ler a receita.</p>
 <blockquote>
 <p>ERRO CLÁSSICO — <strong>ERRO CLÁSSICO</strong></p>
 <p>Responder "infinito" para tudo que vai para infinito no x. O x vai
-para infinito. A função pode ir para um teto finito. Olhe os graus, não
-só o x.</p>
+para infinito. A função pode ir para um limite horizontal finito. Olhe
+os graus, não só o x.</p>
 </blockquote>
 <blockquote>
 <p>CURIOSIDADE — <strong>CURIOSIDADE</strong></p>
 <p>Assíntota é como horizonte na estrada de terra. Você anda, anda, e
-ele anda junto. Chega perto, mas não encosta. Modelo com teto é
+ele anda junto. Chega perto, mas não encosta. Modelo com saturação é
 assim.</p>
 </blockquote>
 <blockquote>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO</strong></p>
-<p>Cobertura com teto de 90%: não adianta dobrar pressão para sempre.
-Limite no infinito prova o teto. Economia decide se vale pagar.</p>
+<p>Cobertura com limite de 90%: não adianta dobrar pressão para sempre.
+Limite no infinito confirma a assíntota do modelo; não decide sozinho se
+o limite é fisicamente plausível nem se vale pagar.</p>
 </blockquote>
 <p><strong>3. Receita passo a passo</strong></p>
 <ol type="1">
@@ -1113,10 +1117,11 @@ comportamento de longuíssimo prazo do modelo.</li>
 </ol>
 <p><strong>Método B — coeficientes principais:</strong> graus iguais (1
 e 1) → <code>90/1 = 90</code>. Mesma resposta.</p>
-<p><strong>Interpretação agronômica:</strong> teto de
-<strong>90%</strong> de cobertura no modelo. Dobrar pressão
-indefinidamente não leva a 100%. Existe limite de retorno — "vale a pena
-pagar mais pressão?" é assunto da Unidade 3.</p>
+<p><strong>Interpretação agronômica:</strong> o limite de longo prazo do
+modelo é <strong>90%</strong>. Para <code>p&gt;0</code>,
+<code>C(p)=90−1350/(p+15)&lt;90</code>, então este modelo específico
+permanece abaixo de 90%; a assíntota, sozinha, não impede cruzamentos em
+outros modelos. Dobrar pressão indefinidamente não leva a 100%.</p>
 <p><strong>5. Você faz — Exercício 3</strong></p>
 <p><code>E(x) = (5x² + 2x)/(2x² + 1)</code> (eficiência de aplicação
 fictícia). Ache <code>lim x→∞ E(x)</code>. <em>(número de
@@ -1146,8 +1151,10 @@ onde <code>t</code> é o valor numérico do tempo em horas e
 <ul>
 <li><code>lim t→2− q(t) = −∞</code>: um ramo desce à esquerda.</li>
 <li><code>lim t→2+ q(t) = +∞</code>: o outro sobe à direita.</li>
-<li>A curva vertical <code>t = 2</code> é a assíntota; a curva nunca
-cruza essa linha.</li>
+<li>A reta <code>t=2</code> é a assíntota vertical; <code>t=2</code>
+está fora do domínio, então o gráfico não tem ponto nessa linha. Não se
+confunda essa restrição de domínio com uma regra geral sobre cruzamento
+de assíntotas.</li>
 <li>Em um sketch, marque a reta tracejada <code>t = 2</code>, duas
 curvas separadas e a aproximação <code>q(t) → 0</code> quando
 <code>|t|</code> cresce.</li>
@@ -1172,12 +1179,15 @@ a função está definida, e os dois <strong>coincidem</strong>.</p>
 <ol type="1">
 <li>Calcule o limite.</li>
 <li>Olhe o valor definido <code>f(a)</code>.</li>
-<li>Compare. Iguais? Contínua. Diferentes? Buraco.</li>
+<li>Compare. Iguais? Contínua. Diferentes? Descontínua; se o ponto não
+existe, há um buraco; se existe com outro valor, é um ponto definido
+incompatível com o limite.</li>
 <li>Limite não existe? Pulo ou parede vertical.</li>
 </ol>
 <p><strong>2. Por que importa em Agronomia?</strong></p>
 <p>Modelo com buraco significa: <em>"em x = 3 o modelo não diz
-nada"</em>.</p>
+nada"</em>. Um ponto definido com valor diferente do limite é outra
+forma de descontinuidade, não um buraco de domínio.</p>
 <p>Trocar um número no buraco sem avisar faz a simulação mentir.</p>
 <p>Continuidade é checagem de sanidade do modelo.</p>
 <blockquote>
@@ -1194,7 +1204,8 @@ denominador zera.</p>
 <blockquote>
 <p>CURIOSIDADE — <strong>CURIOSIDADE</strong></p>
 <p>Contínua = desenhar sem tirar a caneta do papel. Buraco = você tirou
-a caneta e fez um ponto ao lado. Pulo = você pulou de um andar para
+a caneta e deixou o ponto sem definição. Se definiu um valor separado, é
+um ponto incompatível com o limite. Pulo = você pulou de um andar para
 outro.</p>
 </blockquote>
 <blockquote>
@@ -1207,9 +1218,10 @@ Continuidade garante manejo fino.</p>
 <ol type="1">
 <li>Calcule o limite em <code>x = a</code> (geralmente fatorando).</li>
 <li>Veja o valor <strong>definido</strong> <code>f(a)</code>.</li>
-<li>Coincidem? <strong>Contínua.</strong> Diferem? <strong>Descontínua
-(buraco).</strong> Limite não existe? <strong>Pulo ou parede (assíntota
-vertical).</strong></li>
+<li>Coincidem? <strong>Contínua.</strong> Diferem?
+<strong>Descontínua</strong>; se o ponto não existe, há um buraco; se
+existe com outro valor, é um ponto incompatível. Limite não existe?
+<strong>Pulo ou parede (assíntota vertical).</strong></li>
 <li>Fração de polinômios: contínua onde o <strong>denominador ≠
 0</strong>.</li>
 </ol>
@@ -1219,13 +1231,15 @@ definido à mão. Contínua em x = 3?</p>
 <ol type="1">
 <li>Limite (tópico 1.2): <code>lim x→3 f(x) = 6</code>.</li>
 <li>Valor definido: <code>f(3) = 0</code>.</li>
-<li><code>6 ≠ 0</code> → <strong>descontínua</strong>: buraco em (3, 6)
-e o ponto isolado caiu em (3, 0).</li>
+<li><code>6 ≠ 0</code> → <strong>descontínua</strong>: o limite é 6, mas
+o valor definido é 0; há um ponto definido incompatível com o
+limite.</li>
 <li><strong>Conserto:</strong> definir <code>f(3) = 6</code> →
 contínua.</li>
 </ol>
 <p>Em campo: o modelo diz "a resposta tende a 6 quando a dose tende a
-3", mas no ponto exato alguém gravou 0. Quem está certo? O limite.</p>
+3", mas no ponto exato alguém definiu 0. O limite descreve a vizinhança;
+o valor 0 é uma atribuição do modelo e precisa ser justificada.</p>
 <p><strong>5. Você faz — Exercício 4</strong></p>
 <p>Com <code>C(p) = 90p/(p+15)</code> (cobertura fictícia):</p>
 <p>(a) Onde ela é contínua? (b) Explique em uma frase por que isso
@@ -1260,11 +1274,11 @@ Unidade 1 — você faz</h4>
 <tbody>
 <tr class="odd">
 <td>P(x)</td>
-<td>5,98</td>
-<td>5,998</td>
+<td>5,99</td>
+<td>5,999</td>
 <td><strong>0</strong></td>
-<td>6,002</td>
-<td>6,02</td>
+<td>6,001</td>
+<td>6,01</td>
 </tr>
 </tbody>
 </table>
@@ -1280,17 +1294,18 @@ cobertura, usando o limite do tópico 1.3.</p>
 <p><strong>Exercício 5</strong></p>
 <p>(a) De ambos os lados os valores se aproximam de <strong>6</strong> →
 <code>lim x→3 P(x) = 6</code>.</p>
-<p>(b) <strong>Não contínua</strong>: limite (6) ≠ valor definido P(3) =
-0. Há um buraco.</p>
+<p>(b) <strong>Não contínua</strong>: limite (6) ≠ valor definido
+P(3)=0; o ponto definido é incompatível com o limite.</p>
 <p><strong>Lição:</strong> o limite olha o <strong>vizinho</strong>; o
 valor definido olha o <strong>ponto</strong>.</p>
 <p><strong>Exercício 6</strong></p>
 <p>(a) <code>C(15) = 1350/30 = 45</code>%.
 <code>C(30) = 2700/45 = 60</code>% (números de exemplo).</p>
-<p>(b) Pressão dobrou (15→30), mas cobertura foi de 45% para 60% —
-cresceu só um terço. O limite em ∞ é 90: cada acréscimo de pressão rende
-menos. É o "teto" do modelo e o convite para a Unidade 3 (quanto
-investir vale a pena?).</p>
+<p>(b) Pressão dobrou (15→30), mas a cobertura foi de 45% para 60% —
+cresceu só um terço. O limite em ∞ é 90: neste modelo,
+<code>C(p)=90−1350/(p+15)&lt;90</code> para <code>p&gt;0</code>, e cada
+acréscimo de pressão rende menos. É o limite do modelo, não uma
+afirmação geral sobre todas as curvas.</p>
 <p><strong>Erro comum:</strong> achar que toda racional é proporcional.
 Proporcional exigiria denominador sem termo fixo.</p>
 </details>
@@ -1303,7 +1318,8 @@ Ache <code>lim x→4 D(x)</code>. <em>(número de exemplo)</em></p>
 <p>Resolução guiada:</p>
 <ol type="1">
 <li>Substitua: <code>(16−16)/(4−4) = 0/0</code>. Indeterminação.</li>
-<li>Fatore: <code>(x−4)(x+4)/(x−4) = x+4</code>.</li>
+<li>Fatore: <code>(x−4)(x+4)/(x−4)=x+4</code> para
+<code>x≠4</code>.</li>
 <li>Limite: <code>4+4 = 8</code> (número de exemplo).</li>
 <li>Frase de campo: perto da dose 4, a resposta fica perto de 8.</li>
 </ol>
@@ -1320,12 +1336,12 @@ e diga se há assíntota horizontal. Se sim, qual?</p>
 <details>
 <summary><b>Gabarito — Exercícios novos U1 (U1-N1 e U1-N2)</b></summary>
 <p><strong>U1-N1:</strong> <code>0/0</code> →
-<code>(x−5)(x+5)/(x−5) = x+5</code> → limite <code>10</code> (número de
-exemplo). Buraco em (5,10).</p>
-<p><strong>U1-N2:</strong> Grau 1 em cima e embaixo →
-<code>3/1 = 3</code> (número de exemplo). Assíntota horizontal
-<code>y = 3</code>. Teto do modelo: por mais que x cresça, G fica perto
-de 3.</p>
+<code>(x−5)(x+5)/(x−5)=x+5</code> para <code>x≠5</code> → limite
+<code>10</code> (número de exemplo). Buraco em (5,10).</p>
+<p><strong>U1-N2:</strong> grau 1 em cima e embaixo → <code>3/1=3</code>
+(número de exemplo). A assíntota horizontal é <code>y=3</code>; para
+<code>x&gt;0</code>, este modelo fica abaixo de 3, mas o limite,
+sozinho, não impede cruzamento em outra função.</p>
 </details>
 <h4 id="trilha-de-exercícios-n0-n3-da-unidade-1-7-questões-novas">Trilha de
 exercícios N0 → N3 da Unidade 1 (7 questões novas)</h4>
@@ -1398,25 +1414,26 @@ para 50 rende menos por kg que sair de 0 para 20. <em>(número de
 exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — U1-T6</b></summary>
-<p>Graus iguais → <code>90/1 = 90</code> (número de exemplo). Teto de
-90.</p>
+<p>Graus iguais → <code>90/1 = 90</code> (número de exemplo). Limite de
+longo prazo de 90%.</p>
 <p><code>C(20) = 1800/35 ≈ 51,4</code>.
 <code>C(50) = 4500/65 ≈ 69,2</code>. De 0 a 20 ganhou ~51 pontos. De 20
 a 50 (30 kg a mais) ganhou só ~18 pontos.</p>
-<p>Frase: teto prova retorno decrescente. Cada dose extra rende menos
-perto do teto.</p>
+<p>Frase: a assíntota de 90% e os valores calculados mostram retorno
+decrescente neste modelo. O limite não é, sozinho, uma prova de um
+“teto” físico.</p>
 </details>
 <p><strong>U1-T7 (N3 — topo, desafio MAT146)</strong> Modelo fictício
-com buraco: <code>f(x) = (x² − 49)/(x − 7)</code> para x ≠ 7, com
-<code>f(7) = 10</code> definido à mão. (a) Ache o limite em x = 7. (b) É
-contínua em 7? (c) Que valor de <code>f(7)</code> deixaria contínua?
-<em>(número de exemplo)</em></p>
+com ponto definido incompatível: <code>f(x) = (x² − 49)/(x − 7)</code>
+para x ≠ 7, com <code>f(7) = 10</code> definido à mão. (a) Ache o limite
+em x = 7. (b) É contínua em 7? (c) Que valor de <code>f(7)</code>
+deixaria contínua? <em>(número de exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — U1-T7</b></summary>
-<p>(a) <code>0/0</code> → <code>(x − 7)(x + 7)/(x − 7) = x + 7</code> →
-limite <code>14</code> (número de exemplo).</p>
-<p>(b) Não contínua. Limite 14 ≠ valor 10. Buraco em (7,14) e ponto
-isolado em (7,10).</p>
+<p>(a) <code>0/0</code> → <code>(x−7)(x+7)/(x−7)=x+7</code> para
+<code>x≠7</code> → limite <code>14</code> (número de exemplo).</p>
+<p>(b) Não contínua. Limite 14 ≠ valor definido 10; há um ponto definido
+incompatível com o limite.</p>
 <p>(c) Definir <code>f(7) = 14</code> conserta. Lição N3: limite olha
 vizinho, valor olha ponto. Só batem se você alinhar.</p>
 </details>
@@ -1432,10 +1449,11 @@ tem um teto de 90% no modelo.</li>
 <details>
 <summary><b>Gabarito do mini-quiz U1</b></summary>
 <ol type="1">
-<li><strong>F</strong> — só vale se a função for contínua em a. Com
-buraco, limite ≠ valor.</li>
-<li><strong>V</strong> — graus iguais, razão 90/1. Teto de 90 (número de
-exemplo).</li>
+<li><strong>F</strong> — o valor definido e o limite precisam coincidir
+para continuidade; um buraco é um caso em que o ponto não está
+definido.</li>
+<li><strong>V</strong> — graus iguais, razão 90/1. Limite de 90% (número
+de exemplo).</li>
 <li><strong>F</strong> — <code>0/0</code> é indeterminação. É o sinal
 para fatorar e tentar de novo.</li>
 </ol>
@@ -1487,7 +1505,7 @@ resposta na vizinhança.</p>
 passo no papel [ ] conferi o sentido da resposta [ ] só olhei o gabarito
 no final</p>
 <details>
-<summary><b>Gabarito do guia passo a passo — U1 (lacunas preenchidas)</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 2: <strong>(b) ainda não sei, simplifique</strong> —
 <code>0/0</code> nunca é resposta final.</li>
@@ -1707,16 +1725,16 @@ kg a mais custa <code>C'(x)</code>. Potência decide orçamento.</p>
 fictício:</p>
 <p><code>C(x) = 5x² + 40x + 100</code>.</p>
 <ol type="1">
-<li>Termo a termo: <code>(5x²)' = 5 · 2x = 10x</code>;
-<code>(40x)' = 40</code>; <code>(100)' = 0</code>.</li>
-<li><code>C'(x) = 10x + 40</code>.</li>
-<li><code>C'(10) = 10·10 + 40 = 140</code> (unidade fictícia: R$/ha por
-cada kg/ha a mais).</li>
-<li><strong>Interpretação:</strong> perto da dose 10 kg/ha, acrescentar
-mais 1 kg/ha sobe o custo do hectare em torno de 140 (unidade de
-exemplo). É custo <strong>marginal</strong> — assunto da Unidade 3.</li>
+<li><p>Termo a termo: <code>(5x²)' = 5 · 2x = 10x</code>;
+<code>(40x)' = 40</code>; <code>(100)' = 0</code>.</p></li>
+<li><p><code>C'(x) = 10x + 40</code>.</p></li>
+<li><p><code>C'(10)=140</code> R$/ha por kg/ha a mais (taxa
+local).</p></li>
+<li><p><strong>Interpretação:</strong> perto da dose 10 kg/ha, um
+pequeno aumento eleva o custo localmente. Para acrescentar exatamente 1
+kg/ha, use <code>C(11)−C(10)=145</code> (unidades de exemplo), não 140
+exatos. <strong>Regras extras que você vai usar:</strong></p></li>
 </ol>
-<p><strong>Regras extras que você vai usar:</strong></p>
 <ul>
 <li><code>√x = x^(1/2)</code> → derivada =
 <code>(1/2)x^(−1/2) = 1/(2√x)</code>.</li>
@@ -2189,8 +2207,9 @@ e diga o custo marginal ali. <em>(número de exemplo)</em></p>
 <summary><b>Gabarito comentado — U2-T6</b></summary>
 <p><code>C'(x) = 8x + 30</code>. <code>C'(20) = 160 + 30 = 190</code>
 (número de exemplo).</p>
-<p>Frase: perto de 20 ha, cada hectare a mais custa ~190. Marginal, não
-médio. Orçamento usa este número.</p>
+<p>Frase: perto de 20 ha, a taxa local é <code>C′(20)=190</code> R$/ha.
+Para 1 ha inteiro, <code>C(21)−C(20)=194</code>; não confunda taxa local
+com incremento exato.</p>
 </details>
 <p><strong>U2-T7 (N3 — topo, desafio MAT146)</strong> Modelo fictício:
 <code>R(x) = (x² + 100)/x</code>, x &gt; 0. (a) Ache <code>R'(x)</code>
@@ -2269,7 +2288,7 @@ velocímetro, não o hodômetro.</p>
 passo no papel [ ] conferi o sentido da resposta [ ] só olhei o gabarito
 no final</p>
 <details>
-<summary><b>Gabarito do guia passo a passo — U2 (lacunas preenchidas)</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 3: <code>0,5 × 2t = t</code>.</li>
 <li>Passo 6: <code>h'(12) = 12 + 2 = 14 cm/dia</code> (número de
@@ -2647,8 +2666,9 @@ lucro positivo é normal: está descendo, mas ainda no alto.</p>
 <blockquote>
 <p>CURIOSIDADE — <strong>CURIOSIDADE</strong></p>
 <p>Economista chama <code>L'</code> de marginal. Agrônomo chama de "vale
-a pena?". É a mesma conta: ganho da próxima unidade menos custo
-dela.</p>
+a pena?". É a mesma conta: a taxa local do ganho adicional menos a taxa
+local do custo. Para uma unidade inteira, compare as diferenças
+exatas.</p>
 </blockquote>
 <blockquote>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO</strong></p>
@@ -2718,10 +2738,10 @@ máxima; (c) calcule a área.</p>
 <p>(a) <code>C'(x) = x + 100</code>.</p>
 <p>(b) <code>C'(100) = 200</code>; <code>C'(200) = 300</code> (unidades
 de exemplo).</p>
-<p>(c) São <strong>custos marginais</strong>: perto de 100 ha, o próximo
-hectare custa ~200; perto de 200 ha, custa ~300. O custo marginal de
-cada hectare adicional <strong>acelera</strong> — escala ilimitada não é
-barata.</p>
+<p>(c) São <strong>taxas marginais locais</strong>: perto de 100 ha, a
+taxa é 200; perto de 200 ha, é 300 (R$/ha). Para um hectare inteiro,
+<code>C(101)−C(100)=200,50</code> e <code>C(201)−C(200)=200,50</code>. A
+taxa é local, não o custo médio nem uma unidade exata.</p>
 <p><strong>Erro comum:</strong> tratar <code>C'(x)</code> como custo
 médio. Médio é <code>C(x)/x</code>; marginal é <code>C'(x)</code>.</p>
 <p><strong>Exercício 20</strong></p>
@@ -2924,7 +2944,7 @@ dose ótima <strong>40 kg/ha</strong>, lucro máximo <strong>405</strong>
 passo no papel [ ] conferi o sentido da resposta [ ] só olhei o gabarito
 no final</p>
 <details>
-<summary><b>Gabarito do guia passo a passo — U3 (lacunas preenchidas)</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 4: <code>L'(30) = +6</code> → sobe antes do ótimo.</li>
 <li>Passo 5: <code>d = 24/0,6 = 40 kg/ha</code> (número de
@@ -2954,7 +2974,8 @@ finíssimas</strong>.</p>
 multiplicar "taxa × tempo" <strong>mente</strong>. Aí você soma — isso é
 integrar.</p>
 <p>Duas faces do mesmo objeto: <strong>indefinida</strong> (família de
-funções) e <strong>definida</strong> (número = área/total).</p>
+funções) e <strong>definida</strong> (número = área com sinal ou total
+líquido).</p>
 <h3 id="️-mapa-mental-da-unidade-3">MAPA MENTAL DA UNIDADE</h3>
 <table>
 <thead>
@@ -2983,7 +3004,8 @@ funções) e <strong>definida</strong> (número = área/total).</p>
 <tr class="even">
 <td>Total a partir do marginal?</td>
 <td>Integre o marginal</td>
-<td><code>Cm</code> → <code>C</code> com custo fixo</td>
+<td><code>Cm</code> → <code>C</code> com condição inicial (por exemplo,
+custo fixo)</td>
 </tr>
 </tbody>
 </table>
@@ -2996,8 +3018,9 @@ DERIVAR e INTEGRAR são caminhos opostos: h ↔ h'</code></pre>
 <p><img alt="Integral como soma de fatias" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig05_integral_fatias.png"/></p>
 <p>Olhe a figura com calma.</p>
 <p>Linha 1: veja as fatias finas embaixo da curva. Cada fatia é taxa ×
-pedacinho de tempo. Linha 2: some as fatias com os olhos: a área total é
-o total acumulado (mm, kg, R$).</p>
+pedacinho de tempo. Linha 2: some as fatias com os olhos: quando a taxa
+é não negativa, a área é o total acumulado; se a taxa cruzar zero, a
+integral é um total líquido com sinal.</p>
 <hr/>
 <h4 id="tópico-41-antiderivada-a-potência-ao-contrário">Tópico 4.1 —
 Antiderivada: a potência ao contrário</h4>
@@ -3101,8 +3124,10 @@ curva.</p>
 <li>Subtraia. Escreva unidade de total.</li>
 </ol>
 <p><strong>2. Por que importa em Agronomia?</strong></p>
-<p>Irrigação com taxa variável, chuva acumulada, produção total a partir
-de uma taxa — tudo é "área sob a curva de taxa" = total.</p>
+<p>Irrigação com taxa variável, chuva acumulada e produção total a
+partir de uma taxa usam a <strong>área com sinal</strong> sob a curva.
+Quando a taxa é não negativa, essa área coincide com o total; quando ela
+cruza zero, a integral é o saldo líquido.</p>
 <blockquote>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ</strong></p>
 <p><code>∫₀⁴ (2t+3) dt = F(4) − F(_____)</code>. Complete: _____. F(4) =
@@ -3195,7 +3220,12 @@ taxa sobe até 13, 21 faz sentido ser maior.</li>
 <p>Se me dão a <strong>taxa</strong> <code>P'(t)</code> e ainda dizem
 <strong><code>P(t₀) = valor</code></strong>, o C deixa de ser livre: é
 determinado.</p>
-<p>Daí sai a única função que interessa.</p>
+<p>Daí sai a única função que interessa. Quando a antiderivativa base é
+escolhida com <code>F(0)=0</code>, a letra <code>C</code> coincide com o
+valor inicial da função; em geral, a condição inicial é que determina
+<code>C</code>. Ela não é automaticamente um custo fixo. Se
+<code>C(0)=0</code>, não há custo inicial; se <code>C(0)=5000</code>, há
+5000 no instante inicial.</p>
 <p>Micro-passos:</p>
 <ol type="1">
 <li>Integre → <code>F + C</code>.</li>
@@ -3352,12 +3382,10 @@ o tempo todo, daria 50. Como ela <strong>cai</strong> ao longo do dia,
 </details>
 <h4 id="complemento-45-integração-por-partes">Complemento 4.5 —
 Integração por partes</h4>
-<p>A integração por partes vem do produto: se <code>u = v'</code>, então
-<code>(uv)' = u'v + uv'</code>. Rearranje e integre para obter
-<code>∫u\,dv = uv − ∫v\,du</code>. Ela é adequada quando o produto
-contém um fator que pode ser integrado facilmente e o outro que pode ser
-derivado sem dificuldade; escolher <code>u</code> e <code>dv</code> é a
-decisão matemática central.</p>
+<p>A integração por parts vem do produto: <code>(uv)'=u'v+uv'</code>.
+Rearranjando e integrando, obtemos <code>∫u\,dv=uv−∫v\,du</code>. Não é
+necessário que <code>u=v'</code>; basta escolher uma parte que
+simplifique a derivação e outra cuja antiderivada seja fácil.</p>
 <p>No modelo fictício <code>a(t) = (1 kg/dia²)·t e^{t/(1 dia)}</code>,
 com <code>t</code> representado pelo valor numérico do tempo em dias e
 <code>a</code> em <code>kg/dia</code>, calcule <code>∫₀² a(t)dt</code>.
@@ -3399,7 +3427,8 @@ sem dividir por 2 — a divisão pelo novo expoente é obrigatória.</p>
 <p><strong>Geometria:</strong> é um <strong>retângulo</strong> de altura
 3 e base (5 − 2) = 3 → área 9 .</p>
 <p><strong>Lição:</strong> integral de função constante = constante ×
-comprimento do intervalo. Isso confirma que integral é área/total.</p>
+comprimento do intervalo. Isso confirma o cálculo da área; a leitura
+como total pressupõe taxa não negativa.</p>
 </details>
 <h4 id="exemplo-novo-da-unidade-4-com-o-zé">Exemplo novo da Unidade 4 —
 com o Zé</h4>
@@ -3573,7 +3602,7 @@ rega.</p>
 passo no papel [ ] conferi o sentido da resposta [ ] só olhei o gabarito
 no final</p>
 <details>
-<summary><b>Gabarito do guia passo a passo — U4 (lacunas preenchidas)</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 4: <code>2 × t²/2 = t²</code>.</li>
 <li>Passo 7: <code>F(5) = 25 + 20 = 45</code>.</li>
@@ -3590,19 +3619,20 @@ pontas × base) confirma. Vale o programa oficial do MAT 146.</p>
 <p><img alt="Banner da Unidade 5: equações diferenciais e crescimento." class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/banner_u5_edo.png"/></p>
 <h3 id="história-de-abertura-praga-e-resíduo">História de abertura:
 praga e resíduo</h3>
-<p><strong>Zé diz:</strong> <em>"Minha praga dobrou em 5 dias. Meu
-resíduo caiu pela metade em 14. Os dois são a mesma conta, com sinal
-trocado."</em></p>
-<p>O Zé tinha 500 insetos. Com taxa proporcional contínua de
-<code>k=0,2 por dia</code> sobre o que já existe, virou 1359 em 5
+<p><strong>Zé diz:</strong> <em>"Minha praga mais que dobrou em 5 dias.
+Meu resíduo caiu pela metade em cerca de 14 dias. Os dois usam a mesma
+conta, com sinal trocado."</em></p>
+<p>O Zé tinha 500 insetos. Com taxa proporcional contínua
+<code>k=0,2 dia⁻¹</code> sobre o que já existe, o modelo dá 1359 em 5
 dias.</p>
-<p>No outro talhão, 40 mg/kg de resíduo com k = 0,05 caíram para 14,7 em
-20 dias.</p>
+<p>No outro talhão, 40 mg/kg de resíduo com <code>k=0,05 dia⁻¹</code>
+caíram para 14,7 em 20 dias.</p>
 <p>Crescer e decair com taxa proporcional é EDO
 <code>dy/dx = ky</code>.</p>
-<p>Aqui a integral <strong>vira decisão</strong>: total acumulado (área
-sob a curva) + modelos que dizem <em>"a taxa é proporcional ao que
-existe"</em> (<code>dy/dx = ky</code>).</p>
+<p>Aqui a integral <strong>vira decisão</strong>: total acumulado quando
+a taxa é não negativa (ou saldo líquido quando há sinal), junto com
+modelos que dizem <em>"a taxa é proporcional ao que existe"</em>
+(<code>dy/dx=ky</code>).</p>
 <p><code>k &gt; 0</code> em <code>dy/dx = ky</code> →
 <strong>cresce</strong> (praga, demanda). Em <code>dC/dt = −kC</code>,
 com <code>k &gt; 0</code> → <strong>decai</strong> (resíduo,
@@ -3629,7 +3659,8 @@ degradação).</p>
 </tr>
 <tr class="odd">
 <td>Está caindo? Meia-vida?</td>
-<td><code>C₀e^{−kt}</code>, <code>T½=ln2/k</code></td>
+<td><code>C₀e^{−kt}</code>, <code>T½=ln2/k</code> (k em
+<code>dia⁻¹</code>)</td>
 <td>Resíduo 40 → 14,7; T½ 13,9 dias</td>
 </tr>
 </tbody>
@@ -3648,12 +3679,15 @@ amortecendo (o equivalente a <code>k&lt;0</code> nessa forma, ou
 cada uma dobra ou cai pela metade. Esse tempo tem nome: duplicação ou
 meia-vida.</p>
 <hr/>
-<h4 id="tópico-51-área-sob-a-curva-total-acumulado-a-integral-em-campo">Tópico
-5.1 — Área sob a curva = total acumulado (a integral em campo)</h4>
+<h4 id="tópico-51-área-sob-a-curva-total-acumulado-ou-saldo-líquido-a-integral-em-campo">Tópico
+5.1 — Área sob a curva = total acumulado ou saldo líquido (a integral em
+campo)</h4>
 <p><strong>1. Do que se trata?</strong></p>
 <p>Se tenho uma curva de <strong>taxa</strong> em função do tempo, o
-<strong>total</strong> no período é a <strong>área sob essa
-curva</strong> = integral definida.</p>
+<strong>total</strong> no período é a <strong>área com sinal</strong>
+sob essa curva. Para taxa não negativa, é a área geométrica; para taxa
+que muda de sinal, é o total líquido. A área geométrica exige
+<code>∫|f|dx</code> e quebrar o intervalo nos cruzamentos.</p>
 <p>Mesma ferramenta da U4, agora com olhar de interpretação.</p>
 <p>Micro-passos:</p>
 <ol type="1">
@@ -3736,7 +3770,9 @@ taxa <strong>no fim</strong>, não o total.</p>
 <p>Equação diferencial (EDO) é uma equação que tem <strong>derivada
 dentro</strong>. A mais importante do MAT 146:</p>
 <p><strong>"A taxa de variação de y é proporcional a y mesmo" →
-<code>dy/dx = k·y</code>.</strong></p>
+<code>dy/dx = k·y</code>.</strong> Se <code>x</code> é tempo,
+<code>k</code> tem unidade inversa de tempo e <code>kx</code> é
+adimensional.</p>
 <p>Método <strong>separação de variáveis</strong>: joga todo y de um
 lado, todo x do outro, e integra.</p>
 <p>Micro-passos:</p>
@@ -3778,9 +3814,10 @@ Proporcional é a regra da natureza. EDO é a tradução.</p>
 <p><strong>3. Receita passo a passo (separação de
 variáveis)</strong></p>
 <ol type="1">
-<li>Escreva a EDO: <code>dy/dx = k y</code> (com o <strong>sinal
-certo</strong>: decaimento leva <code>k &lt; 0</code> ou escreva
-<code>−ky</code>).</li>
+<li>Escreva a EDO <code>dy/dx=k y</code> (com o <strong>sinal
+certo</strong>: decaimento leva <code>k&lt;0</code> ou escreva
+<code>−ky</code>). A unidade de <code>k</code> deve ser a inversa da
+unidade de <code>x</code>.</li>
 <li>Separe: <code>dy / y = k dx</code> (divida ambos por y; multiplique
 por dx).</li>
 <li>Integre os dois lados: <code>ln|y| = kx + α</code> (α é a constante
@@ -3793,10 +3830,10 @@ do lado direito).</li>
 <code>A = y₀</code>.</li>
 <li>Resposta: <strong><code>y(x) = y₀ e^{kx}</code></strong>.</li>
 </ol>
-<p><strong>Atalho para decorar (o que todo mundo usa):</strong>
-começando em <code>y₀</code> com taxa proporcional, a solução
-<strong>sempre</strong> é <code>y = y₀ · e^{kx}</code>. O e é a
-assinatura da proporcionalidade.</p>
+<p><strong>Atalho para decorar:</strong> começando em <code>y₀</code>
+com taxa proporcional constante, a solução é <code>y=y₀e^{kx}</code>. O
+e é a assinatura dessa proporcionalidade; <code>k</code> deve ter
+unidade inversa de <code>x</code>.</p>
 <p><img alt="Linear × exponencial" class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/fig20_linear_vs_exponencial.png"/></p>
 <p>O que olhar nesta figura.</p>
 <p>Linha 1: veja as duas curvas partindo do mesmo ponto: a reta cresce
@@ -3842,9 +3879,10 @@ da integral com dy: <code>∫ dy/y</code>.</p>
 Decaimento, meia-vida e o sinal do k</h4>
 <p><strong>1. Do que se trata?</strong></p>
 <p>Decaimento é a mesma EDO com <strong>sinal negativo</strong>:
-<code>dC/dt = −k C</code> (k &gt; 0). Solução:
-<code>C(t) = C₀ e^{−kt}</code>. A <strong>meia-vida</strong> (tempo para
-cair pela metade) é:</p>
+<code>dC/dt=−kC</code> (<code>k&gt;0</code>, em <code>dia⁻¹</code>
+quando <code>t</code> está em dias). Solução:
+<code>C(t)=C₀e^{−kt}</code>. A <strong>meia-vida</strong> (tempo para
+restar a metade) é:</p>
 <p><strong><code>T½ = ln 2 / k</code></strong> (ln 2 ≈ 0,693).</p>
 <p>Micro-passos:</p>
 <ol type="1">
@@ -3879,7 +3917,8 @@ quantidade.</p>
 <blockquote>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO</strong></p>
 <p>Intervalo de reentrada, carência, armazenamento de sementes. Tudo usa
-meia-vida. Siga sempre bula e norma real. Aqui o número é exemplo.</p>
+meia-vida. Siga sempre a bula e a norma real. Aqui o número é
+exemplo.</p>
 </blockquote>
 <p><strong>3. Receita passo a passo</strong></p>
 <ol type="1">
@@ -3906,10 +3945,10 @@ mg/kg (fictício).</p>
 exemplo).</li>
 <li>Meia-vida: <code>T½ = ln2 / 0,05 ≈ 0,6931 / 0,05 ≈ 13,9</code>
 dias.</li>
-<li><strong>Leitura de manejo:</strong> ~14 dias para metade sumir; em
-20 dias sobra pouco mais de 1/3 do original. Intervalo de reentrada? É
-decisão agronômica com esse número em mãos (fictício — siga sempre a
-bula/norma real).</li>
+<li><strong>Leitura de manejo:</strong> em cerca de 14 dias resta metade
+da concentração inicial; em 20 dias sobra pouco mais de 1/3. Intervalo
+de reentrada? É decisão agronômica com esse número em mãos (fictício —
+siga sempre a bula e a norma real).</li>
 </ol>
 <p><strong>5. Você faz — Exercício 29</strong></p>
 <p>Resíduo com <code>C(0) = 100</code> (unidade fictícia) e
@@ -3938,9 +3977,10 @@ Unidade 5 — você faz</h4>
 <p>Um produto decai com <code>k = 0,02</code> por dia. Qual a meia-vida?
 Interprete em uma frase.</p>
 <p><strong>Exercício 31</strong> <em>(número de exemplo)</em></p>
-<p>Crescimento proporcional com <code>y(0) = 1000</code> e
-<code>k = 0,03</code>:</p>
-<p>(a) escreva a EDO; (b) resolva; (c) calcule o valor em x = 20.</p>
+<p>Crescimento proporcional com <code>y(0)=1000</code> e
+<code>k=0,03 dia⁻¹</code>, com <code>t</code> em dias:</p>
+<p>(a) escreva a EDO; (b) resolva; (c) calcule o valor em
+<code>t=20</code> dias.</p>
 <details>
 <summary><b>Gabarito comentado — Exercícios 30 e 31</b></summary>
 <p><strong>Exercício 30</strong></p>
@@ -3951,34 +3991,32 @@ metade. Em 70 dias (duas meias-vidas) sobra 1/4; em 105, 1/8.</p>
 <p><strong>Erro comum:</strong> multiplicar <code>k</code> por algo.
 Meia-vida só depende do k.</p>
 <p><strong>Exercício 31</strong></p>
-<p>(a) <code>dy/dx = 0,03 y</code> (taxa proporcional, crescendo → k
+<p>(a) <code>dy/dt=0,03y</code> (taxa proporcional, crescendo → k
 positivo).</p>
-<p>(b) Separação: <code>dy/y = 0,03 dx</code> →
-<code>y = A e^{0,03x}</code>; CI → <code>A = 1000</code> →
-<code>y = 1000 e^{0,03x}</code>.</p>
-<p>(c) <code>y(20) = 1000 e^{0,6} ≈ 1000 × 1,8221 ≈ 1822</code> (número
-de exemplo).</p>
+<p>(b) Separação: <code>dy/y=0,03dt</code> → <code>y=Ae^{0,03t}</code>;
+CI → <code>A=1000</code> → <code>y=1000e^{0,03t}</code>.</p>
+<p>(c) <code>y(20)=1000e^{0,6}≈1000×1,8221≈1822</code> (número de
+exemplo).</p>
 <p><strong>Sentido:</strong> em 20 unidades de x cresceu ~82%, não
 <code>0,03 × 20 = 60%</code> — porque o crescimento é
 <strong>composto</strong> (juros sobre juros da natureza).</p>
 </details>
 <p><strong> O Zé comenta cada passo:</strong> <em>(Exercício 31 —
-<code>y(0) = 1000</code>, <code>k = 0,03</code>, <code>y(20)</code>,
+<code>y(0)=1000</code>, <code>k=0,03 dia⁻¹</code>, <code>y(20)</code>,
 número de exemplo)</em></p>
 <ol type="1">
-<li>No passo 1 eu escrevi <code>dy/dx = 0,03 y</code> e quase integrei
-como constante <code>0,03 yx</code>, ainda bem que lembrei de separar
+<li>No passo 1 eu escrevi <code>dy/dt=0,03y</code> e quase integrei como
+constante <code>0,03yt</code>, ainda bem que lembrei de separar
 primeiro.</li>
-<li>No passo 2 eu separei <code>dy/y = 0,03 dx</code> e hesitei no
+<li>No passo 2 eu separei <code>dy/y=0,03dt</code> e hesitei no
 <code>ln|y|</code>, mas conferi a receita da separação.</li>
-<li>No passo 3 eu achei <code>y = A e^{0,03x}</code> e usei
-<code>y(0) = 1000</code> para fixar <code>A = 1000</code>.</li>
-<li>No passo 4 eu quase fiz linear
-<code>1000 + 0,03 × 20 × 1000 = 1600</code>, e parei porque proporcional
-compõe.</li>
+<li>No passo 3 eu achei <code>y=Ae^{0,03t}</code> e usei
+<code>y(0)=1000</code> para fixar <code>A=1000</code>.</li>
+<li>No passo 4 eu quase fiz linear <code>1000+0,03×20×1000=1600</code>,
+e parei porque proporcional compõe.</li>
 
 <li>No passo 6 eu anotei para você: crescimento sobre o que existe usa
-<code>e^{kx}</code>; decaimento troca para <code>−k</code>; vale o
+<code>e^{kt}</code>; decaimento troca para <code>−k</code>; vale o
 programa oficial.</li>
 </ol>
 <h4 id="exemplo-novo-da-unidade-5-com-o-zé">Exemplo novo da Unidade 5 —
@@ -3998,8 +4036,9 @@ Exponencial dá mais.</li>
 <h4 id="exercícios-novos-da-unidade-5-você-faz">Exercícios novos da
 Unidade 5 — você faz</h4>
 <p><strong>Exercício U5-N1</strong> <em>(número de exemplo)</em></p>
-<p><code>C(0)=80</code>, <code>k=0,04</code> de decaimento. Escreva
-<code>C(t)</code>, calcule <code>C(25)</code> e a meia-vida.</p>
+<p><code>C(0)=80</code>, <code>k=0,04 dia⁻¹</code> de decaimento, com
+<code>t</code> em dias. Escreva <code>C(t)</code>, calcule
+<code>C(25)</code> e a meia-vida.</p>
 <p><strong>Exercício U5-N2</strong> <em>(número de exemplo)</em></p>
 <p>Taxa <code>r(t)=8−0,5t</code> (unidade fictícia/dia) de t=0 a t=8.
 Calcule o total acumulado.</p>
@@ -4044,9 +4083,9 @@ de exemplo)</em></p>
 <p>Separa primeiro. Integra depois. Ordem manda.</p>
 </details>
 <p><strong>U5-T4 (N1 — base guiada)</strong> Complete: decaimento com
-<code>C(0) = 60</code> e <code>k = 0,05</code>.
-<code>C(t) = 60 e^_____</code>.
-<code>C(20) = 60 e^_____ ≈ 60 × 0,3679 ≈ _____</code>. <em>(número de
+<code>C(0)=60</code> e <code>k=0,05 dia⁻¹</code>, com <code>t</code> em
+dias. <code>C(t)=60e^_____</code>.
+<code>C(20)=60e^_____≈60×0,3679≈_____</code>. <em>(número de
 exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — U5-T4</b></summary>
@@ -4104,8 +4143,8 @@ PERTO, TAXA, TOTAL, PROPORCIONAL: você escolheu certo?</p>
 EDO.</li>
 <li>( ) Meia-vida de decaimento depende da quantidade inicial
 <code>C₀</code>.</li>
-<li>( ) Área sob a curva de taxa entre a e b é o total acumulado no
-período.</li>
+<li>( ) Se a taxa for não negativa, a área sob a curva entre a e b é o
+total acumulado no período.</li>
 </ol>
 <details>
 <summary><b>Gabarito do mini-quiz U5</b></summary>
@@ -4114,8 +4153,9 @@ período.</li>
 crescer ou decair.</li>
 <li><strong>F</strong> — <code>T½ = ln2/k</code>. Independe de
 <code>C₀</code>.</li>
-<li><strong>V</strong> — integral definida da taxa = total. É a U4 e U5
-juntas.</li>
+<li><strong>V</strong>, sob a hipótese de taxa não negativa. Se a taxa
+mudar de sinal, a integral é o total líquido; a área geométrica exige
+módulo.</li>
 </ol>
 </details>
 <blockquote>
@@ -4155,13 +4195,14 @@ insetos. Passo 10. Compare com o linear:
 linear: crescimento é <strong>composto</strong>, não fixo. Passo 11.
 Tempo para dobrar (mesma matemática da meia-vida, com sinal trocado):
 <code>ln2/0,1 ≈ 0,693/0,1 ≈ _____</code> dias. Passo 12. Frase de
-manejo: em 6 dias a praga quase dobrou (250 → ~456); o talhão dobra de
-infestação a cada ~7 dias — monitore esta semana, não na próxima.</p>
+manejo: em 6 dias a praga quase dobrou (250 → ~456); o modelo prevê
+dobrar em cerca de 7 dias. Isso é uma leitura do modelo fictício, não
+uma regra de monitoramento agronômico.</p>
 <p> CHECKLIST: [ ] li o enunciado 2× [ ] copiei a receita [ ] fiz cada
 passo no papel [ ] conferi o sentido da resposta [ ] só olhei o gabarito
 no final</p>
 <details>
-<summary><b>Gabarito do guia passo a passo — U5 (lacunas preenchidas)</b></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 3: <code>dN/N = 0,1 dt</code> (o y vai junto do dy).</li>
 <li>Passo 7: <code>0,1 × 6 = 0,6</code>.</li>
@@ -4171,8 +4212,11 @@ no final</p>
 </ul>
 <p><strong>Lição:</strong> taxa proporcional → separe
 <code>dy/y = k dx</code> → integre → exponencie → aplique a condição
-inicial. Sinal de k positivo cresce; negativo decai com meia-vida
-<code>ln2/k</code>. Vale o programa oficial do MAT 146.</p>
+inicial. Na forma <code>dy/dt=ky</code>, <code>k&gt;0</code> cresce e
+<code>k&lt;0</code> decai; para a meia-vida usa-se
+<code>ln(2)/|k|</code>. Na convenção de decaimento
+<code>dC/dt=−kC</code> com <code>k&gt;0</code>, a mesma fórmula aparece
+como <code>ln(2)/k</code>. Vale o programa oficial do MAT 146.</p>
 </details>
 <hr/>
 <h2 id="fichas-de-bolso">Fichas de bolso</h2>
@@ -4267,8 +4311,9 @@ derivada do <strong>miolo</strong></td>
 </tr>
 <tr class="odd">
 <td>Área sob curva</td>
-<td>A área sob a taxa <strong>é</strong> o total</td>
-<td><code>total = ∫ taxa dt</code></td>
+<td>Área com sinal; total se a taxa for não negativa, saldo líquido se
+mudar de sinal</td>
+<td><code>total líquido = ∫ taxa dt</code></td>
 </tr>
 <tr class="even">
 <td>Proporcionalidade</td>
@@ -4276,7 +4321,8 @@ derivada do <strong>miolo</strong></td>
 <td><code>dy/dx = ky → y = y₀ e^{kx}</code></td>
 </tr>
 <tr class="odd">
-<td>Decaimento</td>
+<td>Decaimento na convenção <code>dC/dt=−kC</code> com
+<code>k&gt;0</code></td>
 <td>Expoente <strong>negativo</strong>; meia-vida = ln2 ÷ k</td>
 <td><code>C = C₀ e^{−kt}</code>; <code>T½ = ln2/k</code></td>
 </tr>
@@ -4344,7 +4390,8 @@ Fatora.</li>
 <code>F(b)−F(a)</code>.</li>
 <li>Proporcional ao que existe? <strong>EDO.</strong>
 <code>y₀e^{kx}</code>. Caindo? <code>−k</code>.</li>
-<li>Teto? <strong>Graus iguais</strong> → razão dos coeficientes.</li>
+<li>Limite no infinito? <strong>Graus iguais</strong> → razão dos
+coeficientes.</li>
 <li>Topo? <strong><code>f'=0</code> + teste.</strong>
 <code>f''&lt;0</code> é máximo.</li>
 <li>Cerca/dinheiro fixo? <strong>Restrição → 1 variável →
@@ -4469,7 +4516,7 @@ a" sem olhar. (S/M/N: ___)</label></li>
 <li><label><input type="checkbox"/>Resolvo <code>0/0</code> fatorando e
 cancelando. (S/M/N: ___)</label></li>
 <li><label><input type="checkbox"/>Acho limite no infinito por graus e
-explico o teto. (S/M/N: ___)</label></li>
+explico o modelo. (S/M/N: ___)</label></li>
 <li><label><input type="checkbox"/>Digo se é contínua comparando limite
 e valor. (S/M/N: ___)</label></li>
 </ul>
@@ -4500,7 +4547,8 @@ passos. (S/M/N: ___,)</label></li>
 <li><label><input type="checkbox"/>Uso condição inicial para achar C.
 (S/M/N: ___)</label></li>
 <li><label><input type="checkbox"/>Resolvo <code>dy/dx=ky</code> e acho
-meia-vida <code>ln2/k</code>. (S/M/N: ___)</label></li>
+meia-vida <code>ln2/|k|</code>; ou, na convenção <code>dC/dt=−kC</code>
+com <code>k&gt;0</code>, <code>ln2/k</code>. (S/M/N: ___)</label></li>
 </ul>
 <p><strong>Como ler seu resultado:</strong></p>
 <ul>
@@ -4524,8 +4572,8 @@ dose.</li>
 a.</li>
 <li><strong>Indeterminação 0/0</strong> — aviso para simplificar, não
 resposta.</li>
-<li><strong>Assíntota horizontal</strong> — teto que a curva persegue
-sem passar (ex.: 90%).</li>
+<li><strong>Assíntota horizontal</strong> — reta que a curva se aproxima
+no infinito; o cruzamento depende da função e do domínio.</li>
 <li><strong>Continuidade</strong> — limite = valor. Desenho sem tirar a
 caneta.</li>
 <li><strong>Buraco</strong> — limite existe, mas valor é outro (ou não
@@ -4552,20 +4600,24 @@ máx/mín.</li>
 +.</li>
 <li><strong>Otimização</strong> — melhor valor com restrição. 5
 passos.</li>
-<li><strong>Custo marginal</strong> — <code>C'(x)</code>. Custo da
-próxima unidade.</li>
+<li><strong>Custo marginal</strong> — <code>C'(x)</code>, taxa local
+aproximada. Para uma unidade inteira, calcule
+<code>C(x+1)−C(x)</code>.</li>
 <li><strong>Antiderivada</strong> — função que tinha aquela taxa.
 Inversa da derivada.</li>
 <li><strong>Integral indefinida</strong> — família <code>F+C</code>.
 Taxa → funções.</li>
 <li><strong>Integral definida</strong> — número <code>F(b)−F(a)</code>.
-Área/total.</li>
+É área com sinal e total líquido; a área geométrica usa módulo quando
+necessário.</li>
 <li><strong>Teorema Fundamental (TFC)</strong> —
 <code>∫ₐᵇ f(x)dx = F(b)−F(a)</code>. Liga taxa e área líquida.</li>
 <li><strong>EDO separável</strong> — equação com derivada. Separa y e x,
 integra.</li>
-<li><strong>Meia-vida (<code>ln2/k</code>)</strong> — tempo para cair
-pela metade. Independe de <code>C₀</code>.</li>
+<li><strong>Meia-vida</strong> — na forma <code>dy/dt=ky</code>,
+<code>ln(2)/|k|</code>; na convenção <code>dC/dt=−kC</code> com
+<code>k&gt;0</code>, <code>ln(2)/k</code>. É o tempo para cair pela
+metade e independe de <code>C₀</code>.</li>
 </ol>
 <p><strong>Zé diz:</strong> <em>"Se travar numa palavra, volte aqui.
 Definição curta salva questão longa."</em></p>
@@ -4604,7 +4656,7 @@ catálogo vigente em <a href="https://www3.dti.ufv.br/dti/catalogo/programa-anal
 <blockquote>
 <p>ERRO CLÁSSICO — <strong>Números fictícios:</strong> todos os valores numéricos
 desta apostila são <em>números de exemplo</em> (fictícios). Estude o
-método. Na lavoura real, siga bula, norma e fonte oficial.</p>
+método. Na lavoura real, siga a bula, a norma e a fonte oficial.</p>
 </blockquote>
 <blockquote>
 <p><strong>Nota de transparência:</strong> este material didático foi organizado com apoio de IA e requer revisão humana final antes da publicação no AVA.</p>
@@ -4635,9 +4687,11 @@ T07 (<code>45 kg/ha</code>) e T09 (<code>50 kg/ha</code>). <em>(número
 de exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — B2</b></summary>
-<p>Teto <code>90</code>. <code>C(45) = 4050/60 = 67,5</code>.
-<code>C(50) ≈ 69,2</code>. Diferença de 5 kg rende só ~1,7 ponto. Perto
-do teto, dose extra quase não rende. (Números de exemplo.)</p>
+<p>Limite de longo prazo <code>90</code>. <code>C(45)=67,5</code>;
+<code>C(50)≈69,2</code>. Neste modelo,
+<code>C(d)=90−1350/(d+15)&lt;90</code> para <code>d&gt;0</code>; a
+aproximação ao limite e o retorno decrescente vêm da fórmula, não de uma
+regra geral de “teto”.</p>
 </details>
 <p><strong>B3 (U2 — taxa)</strong> Altura fictícia
 <code>h(t) = 0,4t² + 3t</code> (cm). Calcule <code>h'(12)</code> e diga
@@ -4654,9 +4708,9 @@ no dia 12, cresce 12,6 cm por dia. Taxa instantânea, não média.</p>
 exemplo)</em></p>
 <details>
 <summary><b>Gabarito comentado — B4</b></summary>
-<p><code>C'(x) = 6x + 25</code>. <code>C'(15) = 90 + 25 = 115</code>
-(número de exemplo). Cada ha a mais perto de 15 custa ~115.
-Marginal.</p>
+<p><code>C'(x)=6x+25</code>; <code>C'(15)=115</code> R$/ha (taxa local).
+Para 1 ha inteiro, <code>C(16)−C(15)=118</code> reais; a derivada não é
+o incremento exato.</p>
 </details>
 <p><strong>B5 (U3 — máximo)</strong> Lucro fictício
 <code>L(d) = −0,5d² + 40d − 300</code>. (a) Dose ótima e lucro máximo.
@@ -5078,7 +5132,7 @@ pela segunda derivada, porque a decisão pede um mínimo do estoque.</li>
 <li><strong>Cálculo:</strong> <code>Q'(t)=60e^{0,15t}−120</code>;
 <code>Q'(t)=0</code> dá <code>e^{0,15t}=2</code> e
 <code>t=ln2/0,15≈4,62 dias</code>. <code>Q''(t)=9e^{0,15t}&gt;0</code>,
-logo é mínimo. <code>Q(4,62)≈400·2−120·4,62≈245,6 kg</code>.</li>
+logo é mínimo. <code>Q(4,62)≈400·2−120·4,62≈245,5 kg</code>.</li>
 <li><strong>Interpretação:</strong> a intervenção simulada deve ser
 programada perto do dia 4,6, quando o estoque líquido está mais baixo;
 depois, o crescimento passa a dominar.</li>
@@ -5332,9 +5386,10 @@ novas fontes de resíduo, variabilidade ou mudanças no solo.</li>
 <h4 id="v5-e14-u5-decisão-aplicada-carryover-de-uma-aplicação">V5-E14
 — U5 / decisão aplicada — carryover de uma aplicação</h4>
 <p>Após uma aplicação fictícia, a concentração residual começa em
-<code>C(0)=120 mg/kg</code> e decai por <code>C(t)=120e^{−0,05t}</code>.
-A decisão simulada exige concentração menor ou igual a
-<code>30 mg/kg</code>. Qual é o primeiro tempo inteiro de espera?</p>
+<code>C(0)=120 mg/kg</code> e decai por
+<code>C(t)=120e^{−(0,05 dia⁻¹)t}</code>. A decisão simulada exige
+concentração menor ou igual a <code>30 mg/kg</code>. Qual é o primeiro
+tempo inteiro de espera?</p>
 <details>
 <summary><b>Solução contextual completa</b></summary>
 <ul>
@@ -5364,10 +5419,11 @@ processos.</li>
 <h4 id="v5-e15-u5-crítica-de-modelo-crescimento-e-degradação-com-aplicação-sucessória">V5-E15
 — U5 / crítica de modelo — crescimento e degradação com aplicação
 sucessória</h4>
-<p>O resíduo antigo fictício segue <code>C_ant(t)=80e^{−0,06t}</code>.
-No dia 20, uma nova aplicação acrescenta <code>60 mg/kg</code>, que
-decai com a mesma constante. Compare o valor correto no dia 20 com a
-previsão que ignora a nova aplicação.</p>
+<p>O resíduo antigo fictício segue
+<code>C_ant(t)=80e^{−(0,06 dia⁻¹)t}</code>. No dia 20, uma nova
+aplicação acrescenta <code>60 mg/kg</code>, que decai com a mesma
+constante. Compare o valor correto no dia 20 com a previsão que ignora a
+nova aplicação.</p>
 <details>
 <summary><b>Solução contextual completa</b></summary>
 <ul>
@@ -5443,9 +5499,11 @@ em kg; a integral resulta em sc.</li>
 positivo.</li>
 <li><strong>Método escolhido:</strong> reescrever
 <code>d/(d+20)=1−20/(d+20)</code> e integrar, pois a integral direta de
-<code>M</code> não é uma potência simples.</li>
+<code>M</code> não é uma potência simples. Na conta, <code>d</code> é o
+valor numérico da dose em kg; o argumento do logaritmo deve ser
+adimensional.</li>
 <li><strong>Cálculo:</strong>
-<code>∫₀⁴⁰M(d)dd=[100d−2000ln(d+20)]₀⁴⁰=4000−2000ln3≈1.802,8 sc</code>.</li>
+<code>∫₀⁴⁰M(d)dd=[100d−2000ln((d+20)/(20 kg))]₀⁴⁰=4000−2000ln3≈1.802,8 sc</code>.</li>
 <li><strong>Interpretação:</strong> o índice acumulado de resposta do
 modelo é <code>1.802,8 sc</code>; não é a resposta final em uma
 dose.</li>
@@ -5525,9 +5583,10 @@ infiltração saturada ou mudança de capacidade de armazenamento.</li>
 <h4 id="v5-e20-integração-5-crescimento-e-degradação">V5-E20 —
 integração 5 — crescimento e degradação</h4>
 <p>Uma perda de biomassa proporcional segue
-<code>g(t)=80e^{−0,1t}</code> kg/dia, para <code>0 ≤ t ≤ 15</code> dias.
-Calcule a quantidade total perdida e compare com o total que apareceria
-se a taxa inicial constante fosse mantida.</p>
+<code>g(t)=80e^{−(0,1 dia⁻¹)t}</code> kg/dia, para
+<code>0 ≤ t ≤ 15</code> dias. Calcule a quantidade total perdida e
+compare com o total que apareceria se a taxa inicial constante fosse
+mantida.</p>
 <details>
 <summary><b>Solução contextual completa</b></summary>
 <ul>
@@ -5537,7 +5596,8 @@ se a taxa inicial constante fosse mantida.</p>
 kg/dia; a integral em kg.</li>
 <li><strong>Domínio:</strong> <code>0 ≤ t ≤ 15</code>.</li>
 <li><strong>Método escolhido:</strong> integral da exponencial, porque a
-perda diminui proporcionalmente ao estoque.</li>
+taxa de perda diminui com o tempo. O enunciado não fornece o estoque
+restante, portanto não prova que a perda seja proporcional a ele.</li>
 <li><strong>Cálculo:</strong>
 <code>∫₀¹⁵80e^{−0,1t}dt=800(1−e^{−1,5})≈632,9 kg</code>.</li>
 <li><strong>Interpretação:</strong> a degradação acumulada simulada é
@@ -5556,12 +5616,14 @@ nem independe do estoque; o exemplo só integra a taxa dada.</li>
 <h4 id="v5-e21-integração-6-resíduo-e-transferência">V5-E21 —
 integração 6 — resíduo e transferência</h4>
 <p>A concentração do resíduo antigo fictício é
-<code>C_ant(t)=100e^{−0,05t}</code> mg/kg em <code>0 ≤ t ≤ 40</code>. No
-dia 20, uma nova aplicação de <code>50 mg/kg</code> ocorre e decai por
-<code>C_novo(t)=50e^{−0,05(t−20)}</code> em <code>20 ≤ t ≤ 40</code>.
-Assim, <code>C(t)=C_ant(t)</code> em <code>0 ≤ t &lt; 20</code> e
-<code>C(t)=C_ant(t)+C_novo(t)</code> em <code>20 ≤ t ≤ 40</code>;
-calcule a exposição total <code>∫₀⁴⁰C(t)dt</code>.</p>
+<code>C_ant(t)=100e^{−(0,05 dia⁻¹)t}</code> mg/kg em
+<code>0 ≤ t ≤ 40</code>. No dia 20, uma nova aplicação de
+<code>50 mg/kg</code> ocorre e decai por
+<code>C_novo(t)=50e^{−(0,05 dia⁻¹)(t−20)}</code> em
+<code>20 ≤ t ≤ 40</code>. Assim, <code>C(t)=C_ant(t)</code> em
+<code>0 ≤ t &lt; 20</code> e <code>C(t)=C_ant(t)+C_novo(t)</code> em
+<code>20 ≤ t ≤ 40</code>; calcule a exposição total
+<code>∫₀⁴⁰C(t)dt</code>.</p>
 <details>
 <summary><b>Solução contextual completa</b></summary>
 <ul>
@@ -5773,21 +5835,23 @@ Calcule a assíntota horizontal, <code>C(40)</code> e a taxa marginal
 <li><strong>Domínio:</strong> <code>d ≥ 0</code>, onde o denominador é
 positivo.</li>
 <li><strong>Método escolhido:</strong> limite no infinito, substituição
-e derivada, para separar valor, teto e taxa marginal.</li>
+e derivada, para separar assíntota, valor e taxa marginal.</li>
 <li><strong>Cálculo:</strong> <code>lim d→∞C(d)=180%</code>;
 <code>C(40)=7200/80=90%</code>; <code>C'(d)=7200/(d+40)²</code>, logo
 <code>C'(40)=7200/6400=1,125</code> ponto por kg/ha.</li>
 <li><strong>Interpretação:</strong> em <code>40 kg/ha</code>, a resposta
-do modelo é <code>90%</code>, metade do teto matemático de
-<code>180%</code>; a taxa marginal é positiva, mas diminui com a dose. O
-modelo não indica retorno crescente sem limite.</li>
+do modelo é <code>90%</code>, metade do limite matemático de
+<code>180%</code>; a taxa marginal é positiva, mas diminui com a dose.
+Neste modelo, <code>C(d)=180−7200/(d+40)&lt;180</code> para
+<code>d≥0</code>; isso vem da fórmula, não de uma regra geral para
+assíntotas.</li>
 <li><strong>Plausibilidade:</strong> matematicamente, a resposta é
-positiva e não ultrapassa o teto de <code>180%</code>; se <code>C</code>
-representa cobertura física em <code>%</code>, o teto acima de
-<code>100%</code> é implausível e limita o uso do modelo.</li>
+positiva e não ultrapassa 180% neste domínio. Se <code>C</code>
+representa cobertura física em %, o limite acima de 100% é implausível e
+limita o uso do modelo.</li>
 <li><strong>Erro comum:</strong> interpretar a saturação como 100%
 obrigatória ou derivar para dizer que a dose ótima é 40.</li>
-<li><strong>Limitação:</strong> o teto, coeficientes e unidades são
+<li><strong>Limitação:</strong> o limite, coeficientes e unidades são
 fictícios; a curva não descreve toxicidade, limitação biológica ou
 resposta fora do ajuste.</li>
 </ul>
@@ -5864,10 +5928,10 @@ transpiração.</li>
 </details>
 <h4 id="v5-e30-validade-5-resíduo-e-carryover-com-nova-aplicação">V5-E30 —
 validade 5 — resíduo e carryover com nova aplicação</h4>
-<p>O resíduo antigo fictício é <code>R(t)=100e^{−0,08t}</code> mg/kg. No
-dia 20, uma nova aplicação de <code>60 mg/kg</code> decai como
-<code>60e^{−0,08(t−20)}</code>. Modele o total antes e depois do dia 20
-e verifique a mudança instantânea.</p>
+<p>O resíduo antigo fictício é <code>R(t)=100e^{−(0,08 dia⁻¹)t}</code>
+mg/kg. No dia 20, uma nova aplicação de <code>60 mg/kg</code> decai como
+<code>60e^{−(0,08 dia⁻¹)(t−20)}</code>. Modele o total antes e depois do
+dia 20 e verifique a mudança instantânea.</p>
 <details>
 <summary><b>Solução contextual completa</b></summary>
 <ul>

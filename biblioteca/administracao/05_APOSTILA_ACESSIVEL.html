@@ -21,7 +21,7 @@
         <p class="subtitle">Do custo marginal à taxa de variação, com um olhar de margem que fala a língua do negócio.</p>
         <div class="apostila-meta"><span>Administração</span><span>Marina, a gerente</span><span>vendas, custos e decisões de margem</span></div>
         <div class="apostila-hero-links"><a href="../../index.html">Voltar ao site</a><a class="secondary" href="../../index.html#jogo">Abrir o jogo</a></div>
-        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a class="apostila-module-link" href="#3-cap-0-kit-de-fundo-expandido" aria-label="Ir para Pré-Cálculo: Cap 0 — Kit de fundo"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a class="apostila-module-link" href="#4-unidade-1-limites-e-continuidade" aria-label="Ir para Limites: Unidade 1 — Limites"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a class="apostila-module-link" href="#5-unidade-2-derivadas" aria-label="Ir para Derivadas: Unidade 2 — Derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a class="apostila-module-link" href="#6-unidade-3-aplicações-da-derivada" aria-label="Ir para Aplicações: Unidade 3 — Aplicações da derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a class="apostila-module-link" href="#7-unidade-4-integrais" aria-label="Ir para Integrais: Unidade 4 — Integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
+        <div class="apostila-module-strip" aria-label="Trilha de Cálculo I"><a href="#3-cap-0-kit-de-fundo-expandido"><figure><img src="../../assets/scenarios/module-01.png" alt="Cenário de Pré-Cálculo."><figcaption>Pré-Cálculo</figcaption></figure></a><a href="#4-unidade-1-limites-e-continuidade"><figure><img src="../../assets/scenarios/module-02.png" alt="Cenário de Limites."><figcaption>Limites</figcaption></figure></a><a href="#5-unidade-2-derivadas"><figure><img src="../../assets/scenarios/module-03.png" alt="Cenário de Derivadas."><figcaption>Derivadas</figcaption></figure></a><a href="#6-unidade-3-aplicações-da-derivada"><figure><img src="../../assets/scenarios/module-04.png" alt="Cenário de Aplicações."><figcaption>Aplicações</figcaption></figure></a><a href="#7-unidade-4-integrais"><figure><img src="../../assets/scenarios/module-05.png" alt="Cenário de Integrais."><figcaption>Integrais</figcaption></figure></a></div>
       </div>
       <div class="apostila-hero-art">
         <img class="apostila-cover-image" src="../../assets/capas/capa_administracao.png" alt="Capa da apostila de Administração">
@@ -116,7 +116,7 @@ dias.</li>
 </ol>
 <p>Depois descanse 5 minutos. Levante. Beba água. Volte para outro ciclo
 se quiser.</p>
-<p>Um ciclo por dia já é vitória. Dois ciclos por dia é ritmo de
+<p>Um ciclo por dia já é vitória. Dois ciclos por dia são ritmo de
 aprovação.</p>
 <h3 id="13-a-regra-do-erro">1.3 A regra do erro</h3>
 <p>Aqui errar é parte do método. Não é slogan. É procedimento.</p>
@@ -253,8 +253,8 @@ infinito"</td>
 <td><strong>2</strong></td>
 <td>Derivadas</td>
 <td><strong>Taxa instantânea</strong>: quanto varia AGORA</td>
-<td>Qual o <strong>custo marginal</strong> (a próxima unidade)? Quanto
-as vendas mudaram <strong>neste mês</strong>?</td>
+<td>Qual é a taxa marginal local? Quanto as vendas mudaram <strong>neste
+mês</strong>?</td>
 </tr>
 <tr class="odd">
 <td><strong>3</strong></td>
@@ -525,15 +525,16 @@ da curva antecipa o formato da derivada.</li>
 <li><strong>Custo/receita/lucro total</strong> = o que a função devolve
 (total já acumulado no período).</li>
 <li><strong>Custo marginal / taxa de vendas</strong> = a
-<strong>derivada</strong> (quanto muda <strong>agora</strong>, na
-próxima unidade).</li>
+<strong>derivada</strong>: uma estimativa local de quanto o total varia
+em uma pequena mudança da quantidade.</li>
 <li><strong>Média do período</strong> = (total no fim − total no início)
 ÷ período — <strong>não</strong> é a derivada (cuidado!).</li>
 </ul>
 <blockquote>
 <p>NADA É ÓBVIO — <strong>NADA É ÓBVIO — total x marginal x média.</strong> Total é
-o acumulado. Marginal é a próxima unidade. Média é o total dividido pelo
-período. Três ideias diferentes. Três contas diferentes.</p>
+o acumulado. Marginal é a taxa local. Para uma unidade inteira, a
+mudança exata é <code>f(x+1)−f(x)</code>. Média é a variação total
+dividida pelo período. São três contas diferentes.</p>
 </blockquote>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <p>Se C(x) = 50 + 10x (número de exemplo):</p>
@@ -564,8 +565,8 @@ página &gt; cálculo na cabeça.</li>
 <li><strong>Calcular devagar.</strong> Uma linha por passo. Sinal e
 parênteses separados.</li>
 <li><strong>Responder com frase.</strong> Número solto não é resposta:
-"o custo marginal é R$ 290 por unidade (número de exemplo) na 10ª
-unidade".</li>
+"a taxa marginal local em <code>x=10</code> é R$ 290 por unidade (número
+de exemplo)".</li>
 </ol>
 <p><strong>Quando travar:</strong> faça o passo 1 em voz alta. Se não
 souber a ferramenta, volte ao mapa do §2.</p>
@@ -580,8 +581,9 @@ qualquer conta:</p>
 <li><strong>Qual é a unidade?</strong> R$ (dinheiro), unidades
 (quantidade), % (fração de 100), meses (tempo).</li>
 <li><strong>É total, marginal ou média?</strong> Total = acumulado.
-Marginal = estimativa local da próxima unidade (derivada). Média = total
-÷ período.</li>
+Marginal = estimativa local de uma pequena mudança (derivada). Para uma
+unidade inteira, calcule a diferença exata. Média = total ÷
+período.</li>
 <li><strong>O gráfico sobe, desce ou estabiliza?</strong> Subir = taxa
 positiva. Descer = taxa negativa. Achatar = inclinação próxima de zero;
 isso pode sugerir meta/teto quando o modelo sustenta essa leitura.</li>
@@ -889,10 +891,12 @@ de um mês para o outro, no modelo).</p>
 <li>O limite existe no ponto?</li>
 <li>Os dois são iguais?</li>
 </ol>
-<p><strong>Limite no infinito</strong> = o que acontece quando t cresce
-<strong>sem parar</strong>. Várias curvas de vendas <strong>estabilizam
-num teto</strong> (isso se chama <strong>assíntota</strong> — a
-<strong>meta de vendas</strong> que se "beira" sem passar).</p>
+<p><strong>Limite no infinito</strong> = o que acontece quando
+<code>t</code> cresce <strong>sem parar</strong>. Se a saída tende a um
+valor finito <code>L</code>, a reta <code>y = L</code> é uma
+<strong>assíntota horizontal</strong>. A curva pode se aproximar dela
+por um lado, pelo outro ou cruzá-la; o limite, sozinho, não impede
+cruzamento.</p>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <p>Complete com suas palavras:</p>
 <ul>
@@ -926,8 +930,9 @@ equilíbrio</td>
 </tr>
 <tr class="even">
 <td>"Estabiliza num teto"</td>
-<td><strong>Meta de vendas</strong> / teto de crescimento de um canal (a
-curva se aproxima, mas não ultrapassa)</td>
+<td><strong>Meta de vendas</strong> / limite de longo prazo. A curva se
+aproxima; apenas a análise do modelo diz se permanece de um lado da
+assíntota.</td>
 </tr>
 <tr class="odd">
 <td>"Sem pulo" (continuidade)</td>
@@ -1033,12 +1038,12 @@ exemplo)</em></h4>
 <tbody>
 <tr class="odd">
 <td>5,9</td>
-<td>104,905</td>
-<td>40 + 47,2 + 17,705</td>
+<td>104,605</td>
+<td>40 + 47,2 + 17,405</td>
 </tr>
 <tr class="even">
 <td>5,99</td>
-<td>105,89005</td>
+<td>105,86005</td>
 <td>(calculadora)</td>
 </tr>
 <tr class="odd">
@@ -1048,12 +1053,12 @@ exemplo)</em></h4>
 </tr>
 <tr class="even">
 <td>6,01</td>
-<td>106,11005</td>
+<td>106,14005</td>
 <td>(calculadora)</td>
 </tr>
 <tr class="odd">
 <td>6,1</td>
-<td>107,105</td>
+<td>107,405</td>
 <td>40 + 48,8 + 18,605</td>
 </tr>
 </tbody>
@@ -1069,8 +1074,9 @@ aproximação):</strong></p>
 <ul>
 <li>Veja as entradas chegando perto do ponto pelos dois lados e as
 saídas se encolhendo para um mesmo valor.</li>
-<li>A tabela é a prova visual do limite: os dois lados concordam perto
-da beirada — igual ao Passo 1 deste exemplo.</li>
+<li>A tabela oferece evidência visual: os dois lados se aproximam do
+mesmo valor. Ela ajuda a intuir, mas uma tabela finita, sozinha, não
+prova o limite.</li>
 </ul>
 <h4 id="exemplo-2-taxa-média-que-encolhe-o-germe-da-taxa-de-vendas-00-número-de-exemplo">Exemplo
 2 — Taxa média que encolhe: o "germe" da taxa de vendas (0/0)
@@ -1087,9 +1093,9 @@ h(h + 10)/h = h + 10 (h ≠ 0). <strong>Passo 4 — substituir:</strong> 0 +
 (número de exemplo). Tradução: <strong>logo no começo</strong>, a taxa
 média de receita se aproxima de 10 mil R$/mês — perto da taxa
 instantânea (derivada da U2).</p>
-<h4 id="exemplo-3-meta-de-vendas-teto-que-se-beira-limite-no-infinito-número-de-exemplo">Exemplo
-3 — Meta de vendas: teto que se "beira" (limite no infinito) <em>(número
-de exemplo)</em></h4>
+<h4 id="exemplo-3-meta-de-vendas-aproximação-de-uma-assíntota-limite-no-infinito-número-de-exemplo">Exemplo
+3 — Meta de vendas: aproximação de uma assíntota (limite no infinito)
+<em>(número de exemplo)</em></h4>
 <p>Vendas mensais de um canal (mil R$): <strong>S(t) = 600t / (t +
 30)</strong>, t em meses.</p>
 <p><strong>Passo 1 — tabela:</strong></p>
@@ -1105,9 +1111,11 @@ unidade de tempo: de <code>t=30</code> a <code>t=90</code>, sobe 150 em
 <p><strong>Passo 3 — limite (razão de polinômios):</strong> dividindo
 tudo por t: 600/(1 + 30/t) → <strong>600/1 = 600</strong>.</p>
 <p><strong>Resposta:</strong> S(t) <strong>tende a 600</strong> (mil R$,
-número de exemplo) quando t → ∞. "Tende a" ≠ "chega exatamente" — é o
-conceito de <strong>assíntota / meta teórica</strong> que as vendas se
-aproximam sem estourar.</p>
+número de exemplo) quando <code>t → ∞</code>. "Tende a" ≠ "chega
+exatamente". Neste modelo específico,
+<code>S(t)=600−18000/(t+30)&lt;600</code> para <code>t≥0</code>, então
+os valores ficam abaixo de 600; essa conclusão vem da fórmula e do
+domínio, não apenas do limite.</p>
 <h4 id="exemplo-4-lucro-contínuo-o-pulo-que-não-pode-existir-número-de-exemplo">Exemplo
 4 — Lucro contínuo: o "pulo" que não pode existir <em>(número de
 exemplo)</em></h4>
@@ -1148,9 +1156,10 @@ conferência:</strong></p>
 <li>t = 290: 261000/300 = 870.</li>
 </ul>
 <p><strong>Resposta:</strong> E(t) tende a <strong>900</strong> (número
-de exemplo). O estoque estabiliza num teto. A Marina lê assim: "não
-preciso de galpão infinito; preciso de galpão para cerca de 900 unidades
-equivalentes no modelo".</p>
+de exemplo). O estoque se aproxima de um limite de longo prazo. Neste
+modelo, <code>E(t)=900−9000/(t+10)&lt;900</code> para <code>t≥0</code>;
+a Marina lê assim: " preciso dimensionar o galpão para perto de 900
+unidades, sabendo que a aproximação depende do tempo e do modelo".</p>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <p>No Exemplo 6, por que 900 é teto e não valor que será atingido?
 Resposta em uma frase: _____</p>
@@ -1190,10 +1199,10 @@ ser contínua em x = 5.</p>
 <summary><strong>Clique para ver o gabarito comentado da Unidade 1</strong></summary>
 <p><strong>Ex1 → 7.</strong> Substituição direta: 5·2 − 3 = 10 − 3 =
 <strong>7</strong>.</p>
-<p><strong>Ex2 → 14.</strong> x² − 49 = (x − 7)(x + 7). Cancele (x − 7):
-sobra x + 7. Substitua: 7 + 7 = <strong>14</strong>. <em>Erro
-clássico:</em> 0/0 na calculadora. <strong>0/0 pede álgebra, não
-botão.</strong></p>
+<p><strong>Ex2 → 14.</strong> x² − 49 = (x − 7)(x + 7). Para
+<code>x ≠ 7</code>, cancele <code>(x − 7)</code>: sobra x + 7.
+Substitua: 7 + 7 = <strong>14</strong>. <em>Erro clássico:</em> 0/0 na
+calculadora. <strong>0/0 pede álgebra, não botão.</strong></p>
 <p><strong>Ex3 → 4/3 (≈ 1,333…).</strong> Mesmo expoente (2) → razão dos
 coeficientes maiores: 4/3.</p>
 <p><strong>Ex4 → 1/6.</strong> Conjugado: [(√(t+9) − 3)(√(t+9) + 3)] /
@@ -1208,8 +1217,9 @@ Esquerda: 3·1 + 2 = <strong>5</strong>. Direita: 1² + 5 =
 vendas com salto em x = 1 (números de exemplo) quebraria a ideia de
 progressão contínua — reveja o modelo naquele ponto.</p>
 <p><strong>Ex7 → 800 (número de exemplo).</strong> Maior expoente 1 dos
-dois lados → 800/1 = 800. Leitura: meta/teto de 800. As vendas se
-aproximam sem ultrapassar no modelo.</p>
+dois lados → 800/1 = 800. Leitura: limite de longo prazo de 800. Neste
+modelo, <code>S(t)=800−16000/(t+20)&lt;800</code> para <code>t≥0</code>;
+a aproximação não prova uma regra geral contra cruzamentos.</p>
 <p><strong>Ex8 → a = 3.</strong> Esquerda: 2·5 + 10 = 20. Direita: 5a +
 5. Igualar: 5a + 5 = 20 → 5a = 15 → a = 3. Conferência: 3·5 + 5 = 20
 .</p>
@@ -1269,8 +1279,9 @@ que a empresa fictícia prefere curva sem pulo neste ponto.</p>
 Substituição direta (polinômio).</p>
 <p><strong>T2 → 5/7.</strong> Mesmo expoente (1): razão dos coeficientes
 5/7 ≈ 0,714. Leitura: estabiliza em 5/7 (número de exemplo).</p>
-<p><strong>T3 → 8.</strong> (a) Em x = 4: (16−16)/(0) = 0/0. (b)
-(x−4)(x+4)/(x−4) = x + 4. (c) 4 + 4 = <strong>8</strong>.</p>
+<p><strong>T3 → 8.</strong> (a) Em x = 4: (16−16)/(0) = 0/0. (b) Para
+<code>x≠4</code>, (x−4)(x+4)/(x−4) = x + 4. (c) 4 + 4 =
+<strong>8</strong>.</p>
 <p><strong>T4 → m = 2.</strong> (a) Esquerda: 3² + 1 =
 <strong>10</strong>. (b) Direita: 3m + 4. (c) 3m + 4 = 10 → 3m = 6 →
 <strong>m = 2</strong>. Conferência: 2·3 + 4 = 10 .</p>
@@ -1279,12 +1290,13 @@ exemplo).</strong> Frase: "as vendas médias subiram cerca de 5,75 mil R$
 por mês entre o mês 2 e o mês 6 (números de exemplo)". Diz o ritmo médio
 do período. NÃO diz o limite "perto do mês 6" nem a taxa instantânea —
 média ≠ limite pontual.</p>
-<p><strong>T6 → Sim, pista de teto (números de exemplo).</strong> Mês
-1→6: 71 − 42 = <strong>29</strong>. Mês 6→12: 84 − 71 =
-<strong>13</strong>. Cresceu menos da metade no 2º intervalo, com vendas
-achatando perto de 83–84. Leitura: comporta-se como curva que tende a
-uma meta/teto (limite no infinito conceitual). Não prova meta real — só
-leitura do modelo fictício.</p>
+<p><strong>T6 → Os dados mostram desaceleração, mas não determinam um
+teto (números de exemplo).</strong> Mês 1→6: 71 − 42 =
+<strong>29</strong>. Mês 6→12: 84 − 71 = <strong>13</strong>. O segundo
+intervalo teve aumento menor, o que é compatível com saturação. Porém,
+12 observações não estabelecem um limite nem impedem que outro modelo
+produza um valor muito maior depois. Para chamar 84 de teto, seria
+preciso definir uma regra de continuação e verificá-la.</p>
 <p><strong>T7 → (a) a = 2/3 ≈ 0,667; (b) sem pulo, sem susto.</strong>
 (a) Esquerda: 3·6 + 8 = <strong>26</strong>. Direita: a·36 + 2. Igualar:
 36a + 2 = 26 → 36a = 24 → <strong>a = 24/36 = 2/3</strong>. (b) Frase
@@ -1337,12 +1349,14 @@ maior expoente é _____ em cima e embaixo.</li>
 <li><strong>Aplicar a Receita C:</strong> expoentes iguais → limite =
 razão dos coeficientes = 900/1 = <strong>900</strong> (mil R$, número de
 exemplo).</li>
-<li><strong>Conferir com tabela:</strong> t = 30: S = 27000/60 = _____;
-t = 90: S = 81000/120 = 675. Os valores sobem na direção do teto 900 sem
-passar por ele.</li>
-<li><strong>Ler como gerente:</strong> o cupom beira R$ 20/dia de lucro
-e o canal beira a meta de 900 mil R$ — "beira" não é "chega": é
-assíntota (número de exemplo).</li>
+<li><strong>Conferir com tabela:</strong> <code>t=30</code>:
+<code>S=27000/60=_____</code>; <code>t=90</code>:
+<code>S=81000/120=675</code>. Os valores se aproximam do limite 900;
+neste modelo, <code>S(t)=900−27000/(t+30)&lt;900</code> para
+<code>t≥0</code>.</li>
+<li><strong>Ler como gerente:</strong> o cupom e o canal têm limites de
+longo prazo no modelo. "Aproximar" não significa "chegar"; a assíntota,
+por si só, não impede cruzamentos em outras funções.</li>
 </ol>
 <p><strong>Checklist final:</strong></p>
 <ul class="task-list">
@@ -1356,7 +1370,7 @@ expoente antes de responder. </label></li>
 mil R$). </label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia U1 (com as lacunas preenchidas)</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 3: x² − 100 = <strong>(x − 10)(x + 10)</strong>.</li>
 <li>Passo 5: sobra <strong>L(x) = x + 10</strong>.</li>
@@ -1372,14 +1386,15 @@ novo"), não resposta.</li>
 <hr/>
 <h2 id="5-unidade-2-derivadas">5. Unidade 2 — Derivadas</h2>
 <p><img alt="Banner da Unidade 2: derivadas e taxas." class="content-image" decoding="async" loading="lazy" src="../../assets/illustrations/banner_u2_derivadas.png"/></p>
-<h3 id="história-de-abertura-quanto-custa-a-próxima-unidade">História
-de abertura — quanto custa a próxima unidade?</h3>
-<p>A Marina precisa decidir se produz mais 1 unidade. O custo total ela
-já sabe. Mas a pergunta certa é outra:</p>
-<p>"Quanto custa <strong>a próxima</strong>?"</p>
-<p>O custo médio diz o passado. O custo marginal diz o agora. Se a
-próxima unidade custa menos do que o preço de venda, produzir compensa.
-Se custa mais, é melhor parar.</p>
+<h3 id="história-de-abertura-quanto-custa-aumentar-a-produção">História
+de abertura — quanto custa aumentar a produção?</h3>
+<p>A Marina precisa decidir se produz mais perto de determinada
+quantidade. O custo total ela já sabe. Mas a pergunta certa é outra:</p>
+<p>"Quanto o custo muda <strong>agora</strong>, para um pequeno
+aumento?"</p>
+<p>O custo médio resume um intervalo. A derivada dá a taxa local. Se a
+decisão for sobre uma unidade inteira, a mudança exata é
+<code>C(x+1)−C(x)</code>; a derivada é apenas uma aproximação local.</p>
 <p>Esta unidade ensina a calcular o "agora": a
 <strong>derivada</strong>, a taxa instantânea.</p>
 <blockquote>
@@ -1394,9 +1409,9 @@ Se custa mais, é melhor parar.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Quanto custa a próxima unidade?</td>
+<td>Quanto o custo varia agora?</td>
 <td>Regra da potência</td>
-<td>Custo marginal C′(10)</td>
+<td>Taxa marginal local C′(10)</td>
 </tr>
 <tr class="even">
 <td>Preço e quantidade mudam juntos?</td>
@@ -1462,9 +1477,10 @@ multiplica pela derivada do miolo.</li>
 <h3 id="1-do-que-se-trata-em-micro-passos-1">(1) Do que se trata — em
 micro-passos</h3>
 <p><strong>Derivada</strong> = <strong>taxa instantânea de
-variação</strong>. Tradução: <em>"se der mais um passinho na
-produção/vendas, quanto muda o custo/receita
-<strong>agora</strong>?"</em></p>
+variação</strong>. Tradução: <em>"para um pequeno aumento na produção ou
+nas vendas, quanto o custo ou a receita muda
+<strong>agora</strong>?"</em> Para uma unidade inteira, a diferença
+exata é <code>f(x+1)−f(x)</code>.</p>
 <p>Notação: <strong>f′(x)</strong> (lê-se "f linha de x") ou
 <strong>dy/dx</strong> ("de y com respeito a x").</p>
 <p>Entenda em 4 passos:</p>
@@ -1479,8 +1495,9 @@ tempo).</li>
 <ul>
 <li><strong>Média do período:</strong> (receita final − receita inicial)
 ÷ meses → receita <strong>média</strong>.</li>
-<li><strong>Instantânea</strong> (derivada): a receita <strong>daquele
-mês exato</strong> — como o velocímetro, não a média da viagem.</li>
+<li><strong>Instantânea</strong> (derivada): a taxa local naquele ponto,
+como o velocímetro — não a média da viagem nem necessariamente o valor
+de um mês inteiro.</li>
 </ul>
 <p><strong>Geometria:</strong> f′(a) é a <strong>inclinação da reta
 tangente</strong> (a reta que "encosta" na curva no ponto a). Inclinação
@@ -1492,8 +1509,8 @@ positiva → curva sobe; negativa → desce.</p>
 <li>Se a curva sobe, f′ é _____</li>
 </ul>
 <p>ERRO CLÁSSICO — <strong>ERRO CLÁSSICO — derivada.</strong> Confundir média com
-marginal. Média 130 não é marginal 290. Uma olha o período. Outra olha a
-próxima unidade.</p>
+marginal. Média 130 não é taxa local 290. Uma olha o período. Outra mede
+a variação instantânea.</p>
 <p>CURIOSIDADE — <strong>CURIOSIDADE.</strong> dy/dx parece fração, mas é limite de
 fração. É a taxa média com intervalo indo a zero. A Unidade 1 preparou a
 Unidade 2.</p>
@@ -1511,8 +1528,8 @@ estimativa local de quanto o custo aumenta ao produzir mais perto de
 quanto o acumulado cresce naquele instante.</li>
 <li><strong>Custo médio</strong> = custo total ÷ quantidade → para ver
 se melhora ou piora, precisa derivar (quociente).</li>
-<li><strong>Margem/receita com preço e quantidade juntos</strong> →
-produto.</li>
+<li><strong>Receita bruta com preço e quantidade juntos</strong> →
+produto; a margem líquida ainda precisa subtrair os custos.</li>
 <li><strong>2ª derivada</strong> → se a taxa <strong>acelera ou
 desacelera</strong> (custo entrando em zona de escalada).</li>
 </ul>
@@ -1650,13 +1667,14 @@ que o lucro está no máximo.</p>
 </ul>
 <p><strong>Passo 2 — juntar:</strong> <strong>C′(x) = 1,5x² + 12x +
 20</strong>.</p>
-<p><strong>Passo 3 — na 10ª unidade:</strong> C′(10) = 1,5·100 + 120 +
-20 = 150 + 140 = <strong>290</strong>.</p>
-<p><strong>Resposta:</strong> o <strong>custo marginal</strong> na 10ª
-unidade é <strong>R$ 290</strong> (número de exemplo) —
-<strong>não</strong> o custo médio. Custo médio de 0 a 10: [C(10) −
-C(0)]/10 = (500 + 600 + 200)/10 = 1300/10 = 130. <strong>Média 130 ≠
-marginal 290</strong> — essa é a diferença central da unidade.</p>
+<p><strong>Passo 3 — no ponto 10:</strong> C′(10) = 1,5·100 + 120 + 20 =
+150 + 140 = <strong>290</strong>.</p>
+<p><strong>Resposta:</strong> a <strong>taxa marginal local</strong> em
+<code>x=10</code> é <strong>R$ 290 por unidade</strong> (número de
+exemplo). Ela não é o custo exato da 11ª unidade. Para a mudança exata
+de 10 para 11, calcule <code>C(11)−C(10)=311,50</code>. Custo médio de 0
+a 10: <code>[C(10)−C(0)]/10=130</code>. <strong>Média 130, taxa local
+290 e incremento exato 311,50</strong> são grandezas diferentes.</p>
 <h4 id="exemplo-2-receita-preço-quantidade-regra-do-produto-número-de-exemplo">Exemplo
 2 — Receita = preço × quantidade (regra do produto) <em>(número de
 exemplo)</em></h4>
@@ -1669,9 +1687,11 @@ exemplo)</em></h4>
 x·(−0,5) = 50 − 0,5x − 0,5x = <strong>50 − x</strong>.</p>
 <p><strong>Passo 3 — ponto:</strong> R′(20) = 50 − 20 =
 <strong>30</strong>.</p>
-<p><strong>Resposta:</strong> R′(x) = 50 − x. <em>Leitura:</em> na 21ª
-unidade, a receita ainda sobe, mas <strong>menos</strong> que antes
-(números de exemplo) — o preço desconta puxa a taxa para baixo.</p>
+<p><strong>Resposta:</strong> R′(x) = 50 − x. <em>Leitura:</em> em
+<code>x=20</code>, a taxa local da receita ainda é positiva, mas menor
+que antes. Para uma 21ª unidade inteira, a mudança exata é
+<code>R(21)−R(20)=29,50</code> reais; a derivada é <code>15</code> reais
+por unidade.</p>
 <h4 id="exemplo-3-custo-médio-regra-do-quociente-número-de-exemplo">Exemplo
 3 — Custo médio (regra do quociente) <em>(número de exemplo)</em></h4>
 <p>Custo médio: <strong>CM(x) = (x² + 100)/x</strong> (R$ por unidade —
@@ -1722,9 +1742,10 @@ a receita marginal em x = 5.</p>
 <strong>20 − 4x</strong>. <strong>Passo 4 — ponto:</strong> R′(5) = 20 −
 20 = <strong>0</strong>.</p>
 <p><strong>Resposta:</strong> R′(5) = <strong>0</strong> (número de
-exemplo). A Marina lê assim: "em x = 5 estou no topo da receita desse
-modelo; vender mais uma unidade não aumenta a receita". A U3 vai
-confirmar se é máximo.</p>
+exemplo). Isso indica uma taxa local nula naquele ponto, não uma mudança
+nula ao vender exatamente uma unidade. De fato,
+<code>R(6)−R(5)=38</code> reais neste modelo. A U3 vai confirmar se
+<code>x=5</code> é o máximo.</p>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <p>No Exemplo 6, expanda (40 − 2x)(x + 10) e derive termo a termo. Você
 acha o mesmo 20 − 4x? _____ Isso mostra que produto e expansão
@@ -1868,14 +1889,14 @@ u′v + uv′; (c) simplifique e calcule R′(10).</p>
 (u′v − uv′)/v²; (c) avalie em x = 7.</p>
 <p><strong>N2 — Administração (2 da área).</strong></p>
 <p><strong>T5 (N2).</strong> Custo marginal fictício: C(x) = 0,4x³ + 5x²
-+ 15x + 100 (R$, número de exemplo). Calcule C′(x) e C′(8). Responda:
-"produzir a 9ª unidade custa cerca de R$ ___ (número de exemplo)". Diga
-se compensa se o preço de venda da próxima unidade for R$ 300
++ 15x + 100 (R$, número de exemplo). Calcule C′(x) e C′(8). Interprete
+como taxa local. Para decidir sobre a 9ª unidade inteira, calcule também
+<code>C(9)−C(8)</code> e compare com o preço de venda de R$ 300
 (fictício).</p>
-<p><strong>T6 (N2).</strong> Receita marginal fictícia com a lógica da
-tabela §3.8: suponha R(x) = 27x − 0,3x² (mil R$, número de exemplo,
-preço que cai com quantidade). Ache R′(x) e R′(20). A receita ainda sobe
-na 21ª unidade? Explique em uma frase.</p>
+<p><strong>T6 (N2).</strong> Receita marginal fictícia: suponha R(x) =
+27x − 0,3x² (mil R$, número de exemplo, preço que cai com quantidade).
+Ache R′(x) e R′(20). A taxa local ainda é positiva? Para uma 21ª unidade
+inteira, compare <code>R(21)−R(20)</code>.</p>
 <p><strong>N3 — Desafio (1 desafio).</strong></p>
 <p><strong>T7 (N3 — desafio).</strong> Compare média × marginal (números
 de exemplo): C(x) = 0,5x³ + 6x² + 20x (igual ao Exemplo 1 da U2). (a)
@@ -1894,21 +1915,21 @@ R′ = 1·(60−2x) + x·(−2) = 60 − 4x. Em 10: 60 − 40 = <strong>20</stro
 <p><strong>T4 → CM′(x) = (x² − 49)/x²; em x = 7 vale 0.</strong> (2x·x −
 (x²+49))/x² = (x²−49)/x². Em 7: (49−49)/49 = <strong>0</strong> → ponto
 onde o custo médio para de cair/subir (número de exemplo).</p>
-<p><strong>T5 → C′(x) = 1,2x² + 10x + 15; C′(8) = 171,8 ≈ 172.</strong>
-C′(8) = 1,2·64 + 80 + 15 = 76,8 + 95 = <strong>171,8</strong> (R$,
-número de exemplo). Frase: "a 9ª unidade custa cerca de R$ 172 (número
-de exemplo)". Como 172 &lt; 300, <strong>compensa</strong> produzir a
-próxima no modelo.</p>
-<p><strong>T6 → R′(x) = 27 − 0,6x; R′(20) = 15 &gt; 0.</strong> 27 − 12
-= <strong>15</strong> (mil R$/un., número de exemplo). Sim, ainda sobe
-na 21ª unidade, mas menos que no começo — o desconto puxa a taxa para
-baixo.</p>
-<p><strong>T7 → (a) média 130; (b) marginal 290; (c) decisão.</strong>
-(a) C(10) = 500 + 600 + 200 = 1300; média = 1300/10 =
-<strong>130</strong>. (b) C′(10) = <strong>290</strong> (ver Exemplo 1).
-(c) Modelo: "a média olha o passado (130); a marginal olha a próxima
-(290). Decidir pela média subestima o custo da próxima em 160 e pode dar
-prejuízo no modelo".</p>
+<p><strong>T5 → C′(x) = 1,2x² + 10x + 15; C′(8) = 171,8.</strong> A
+derivada é a taxa local perto de 8 unidades. O custo exato da 9ª unidade
+é <code>C(9)−C(8)=186,8</code> reais. Como <code>186,8 &lt; 300</code>,
+a 9ª unidade compensa no modelo; a derivada <code>171,8</code> é apenas
+a aproximação local.</p>
+<p><strong>T6 → R′(x) = 27 − 0,6x; R′(20) = 15 &gt; 0.</strong>
+<code>15 mil R\$/un.</code> é a taxa local. Para a 21ª unidade inteira,
+<code>R(21)−R(20)=14,7 mil R\$</code>, também positivo. O desconto faz o
+crescimento da receita desacelerar.</p>
+<p><strong>T7 → (a) média 130; (b) taxa local 290; (c) decisão.</strong>
+(a) C(10)=1300; média = <strong>130</strong>. (b)
+C′(10)=<strong>290</strong> (ver Exemplo 1). (c) A média resume o
+passado; a derivada estima a variação local. Para uma unidade inteira,
+use <code>C(x+1)−C(x)</code>: de 10 para 11, o incremento é
+<strong>311,50</strong>, não 290.</p>
 </details>
 <h3 id="mini-quiz-vf-unidade-2">Mini-quiz V/F — Unidade 2</h3>
 <p><strong>Q1.</strong> ( ) Custo marginal é a derivada do custo total.
@@ -1917,9 +1938,10 @@ v². <strong>Q3.</strong> ( ) Na regra da cadeia, basta derivar a casca e
 parar.</p>
 <details>
 <summary><strong>Gabarito do mini-quiz U2</strong></summary>
-<p>Q1 → <strong>V.</strong> É quanto custa a próxima unidade, não a
-média. Q2 → <strong>V.</strong> Fórmula: (u′v − uv′)/v². Q3 →
-<strong>F.</strong> Precisa multiplicar pela derivada do recheio.</p>
+<p>Q1 → <strong>V.</strong> É a taxa local; para uma unidade inteira, a
+diferença exata é <code>C(x+1)−C(x)</code>. Q2 → <strong>V.</strong>
+Fórmula: (u′v − uv′)/v². Q3 → <strong>F.</strong> Precisa multiplicar
+pela derivada do recheio.</p>
 </details>
 <h4 id="-guia-passo-a-passo-derivadas-custo-marginal-das-canecas-números-de-exemplo">
 GUIA PASSO A PASSO — Derivadas: custo marginal das canecas (números de
@@ -1930,9 +1952,10 @@ linha por passo.</p>
 </blockquote>
 <p><strong>O problema.</strong> A Marina passa a vender canecas
 personalizadas na loja fictícia. O custo total é <strong>C(x) = 0,2x² +
-15x + 400</strong> (R$, x = canecas, número de exemplo). Ela precisa do
-<strong>custo marginal na 100ª caneca</strong> para decidir se produz a
-101ª, que vende a R$ 60 (fictício).</p>
+15x + 400</strong> (R$, x = canecas, número de exemplo). Ela quer a
+<strong>taxa marginal local perto de 100 canecas</strong>. Para decidir
+sobre a 101ª caneca inteira, que vende a R$ 60, também deve comparar o
+incremento exato <code>C(101)−C(100)</code>.</p>
 <ol type="1">
 <li><strong>Marcar a pergunta:</strong> custo marginal = derivada C′(x)
 avaliada em x = 100.</li>
@@ -1949,16 +1972,17 @@ varia).</li>
 <li><strong>Conferir com a média:</strong> C(100) = 0,2 × 10000 + 15 ×
 100 + 400 = 2000 + 1500 + 400 = _____; média = custo total ÷ 100 =
 39.</li>
-<li><strong>Comparar:</strong> marginal 55 ≠ média 39 — a próxima caneca
-custa mais que a média do passado (números de exemplo).</li>
-<li><strong>Decidir:</strong> 55 &lt; 60 → produzir a 101ª caneca
-compensa no modelo: ela devolve R$ 60 e custa cerca de R$ 55.</li>
-<li><strong>Evitar o erro clássico:</strong> a média olha as 100
-primeiras canecas; a marginal olha só a 101ª. São contas
-diferentes.</li>
-<li><strong>Fechar em frase:</strong> "o custo marginal na 100ª caneca é
-R$ 55 (número de exemplo); como o preço é R$ 60, produzir mais
-compensa".</li>
+<li><strong>Comparar:</strong> a taxa local 55 é diferente da média 39.
+Para uma 101ª caneca inteira, <code>C(101)−C(100)=55,20</code>
+reais.</li>
+<li><strong>Decidir:</strong> <code>55,20 &lt; 60</code>; portanto,
+produzir a 101ª caneca compensa no modelo. A derivada <code>55</code> é
+a aproximação local, não o custo exato da unidade.</li>
+<li><strong>Evitar o erro clássico:</strong> média, taxa local e
+incremento exato respondem a perguntas diferentes.</li>
+<li><strong>Fechar em frase:</strong> "a taxa marginal local em 100
+canecas é R$ 55/caneca; o custo exato da 101ª é R$ 55,20 e o preço é R$
+60".</li>
 </ol>
 <p><strong>Checklist final:</strong></p>
 <ul class="task-list">
@@ -1972,15 +1996,16 @@ confundir. </label></li>
 caneca). </label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia U2 (com as lacunas preenchidas)</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 2: <strong>0,4x</strong>.</li>
 <li>Passo 6: 0,4 × 100 = <strong>40</strong>.</li>
 <li>Passo 8: C(100) = <strong>3900</strong>; média = 3900/100 =
 <strong>39</strong>.</li>
-<li>Resposta final: <strong>C′(x) = 0,4x + 15; C′(100) = 55</strong>
-(R$/caneca, número de exemplo). Decisão: produzir a 101ª (55 &lt;
-60).</li>
+<li>Resposta final: <strong>C′(x) = 0,4x + 15; C′(100)=55</strong>
+(R$/caneca, taxa local). <strong>C(101)−C(100)=55,20</strong>
+(R$/caneca, incremento exato). Decisão: produzir a 101ª, pois
+<code>55,20&lt;60</code>.</li>
 <li>A Marina lembra: marginal decide o agora; média conta o
 passado.</li>
 </ul>
@@ -2035,9 +2060,9 @@ equilíbrio é onde receita encontra custo.</p>
 <td>Ponto de equilíbrio</td>
 </tr>
 <tr class="odd">
-<td>Quanto muda a próxima unidade?</td>
+<td>Quanto o custo/receita varia agora?</td>
 <td>Taxa marginal f′(a)</td>
-<td>Custo marginal na 40ª unidade</td>
+<td>Estimativa local; use diferença exata para unidade inteira</td>
 </tr>
 </tbody>
 </table>
@@ -2078,8 +2103,8 @@ sinal</strong> (ponto crítico).</li>
 <li><strong>Otimização:</strong> <strong>lucro máximo</strong>,
 <strong>custo médio mínimo</strong>, <strong>ponto de
 equilíbrio</strong>, melhor nível de produção.</li>
-<li><strong>Taxa marginal:</strong> quanto muda o custo/receita
-<strong>na próxima unidade</strong>.</li>
+<li><strong>Taxa marginal:</strong> estimativa local de quanto o custo
+ou a receita muda para um pequeno aumento.</li>
 <li><strong>Ponto de equilíbrio:</strong> onde <strong>receita =
 custo</strong> (lucro zero — o "quanto vender para não perder").</li>
 </ol>
@@ -2148,7 +2173,7 @@ menor)</td>
 </tr>
 <tr class="odd">
 <td>Taxa marginal de custo</td>
-<td>Quanto a <strong>próxima unidade</strong> puxa de custo</td>
+<td>Estimativa local da variação do custo por unidade adicional</td>
 </tr>
 <tr class="even">
 <td>Ponto de equilíbrio</td>
@@ -2249,11 +2274,11 @@ exemplo)</em></h4>
 <p><strong>Passo 1:</strong> C′(x) = 0,15x² + 6x + 20. <strong>Passo
 2:</strong> C′(40) = 0,15·1600 + 240 + 20 = 240 + 240 + 20 =
 <strong>500</strong>.</p>
-<p><strong>Resposta:</strong> da <strong>40ª para a 41ª
-unidade</strong>, o custo sobe cerca de <strong>R$ 500</strong> (número
-de exemplo) — a unidade marginal. <em>Decisão:</em> se o preço de venda
-da próxima unidade &gt; 500, produzir compensa (raciocínio marginal
-clássico).</p>
+<p><strong>Resposta:</strong> a taxa marginal local em <code>x=40</code>
+é <strong>R$ 500 por unidade</strong> (número de exemplo). O incremento
+exato de 40 para 41 é <code>C(41)−C(40)=509,05</code> reais.
+<em>Decisão:</em> para uma unidade inteira, compare esse valor exato com
+o preço de venda; a derivada é a aproximação local.</p>
 <h4 id="exemplo-5-ponto-de-equilíbrio-número-de-exemplo">Exemplo 5 —
 Ponto de equilíbrio <em>(número de exemplo)</em></h4>
 <p>Receita: <strong>R(x) = 200x</strong>. Custo: <strong>C(x) = 50x +
@@ -2507,7 +2532,7 @@ o x*. </label></li>
 "maximizar" (f′ = 0). </label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia U3 (com as lacunas preenchidas)</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 3: x* = <strong>20</strong>.</li>
 <li>Passo 4: L″(20) = <strong>−6</strong> (máximo ).</li>
@@ -2533,8 +2558,8 @@ o troféu.</li>
 <strong>integral</strong>. Cada dia é uma fatia fininha. A integral
 empilha as fatias.</p>
 <p>E o caminho inverso também importa: se ela conhece o custo marginal,
-como volta ao custo total? Integrando — e lembrando do custo fixo (+
-C).</p>
+como volta ao custo total? Integrando — e usando a condição inicial para
+fixar a constante <code>+ C</code>.</p>
 <blockquote>
 <p>MAPA MENTAL — <strong>MAPA MENTAL — Unidade 4.</strong></p>
 <table>
@@ -2554,7 +2579,7 @@ C).</p>
 <tr class="even">
 <td>Quanto acumulou no período?</td>
 <td>Integral definida F(b) − F(a)</td>
-<td>Receita total em 10 meses</td>
+<td>Total líquido; total físico se a taxa for não negativa</td>
 </tr>
 <tr class="odd">
 <td>A conta bate com a figura?</td>
@@ -2601,8 +2626,10 @@ curvas):</strong></p>
 <ul>
 <li>Veja a curva de cima (receita) e a de baixo (custo) sombreando o vão
 entre elas.</li>
-<li>Esse vão integrado de a até b é o lucro/prejuízo acumulado no
-período.</li>
+<li>A integral de <code>R−C</code> é o <strong>lucro líquido
+acumulado</strong> quando <code>R≥C</code> no intervalo. Se as curvas se
+cruzarem, quebre o intervalo: a área geométrica usa <code>|R−C|</code>,
+enquanto a integral preserva o sinal.</li>
 </ul>
 <h3 id="1-do-que-se-trata-em-micro-passos-3">(1) Do que se trata — em
 micro-passos</h3>
@@ -2628,9 +2655,13 @@ F(a) → <strong>número</strong> (área com sinal embaixo da curva).</li>
 <p>derivar e integrar se <strong>desfazem</strong>. Se F′ = f, então ∫
 de a até b de f = F(b) − F(a).</p>
 </blockquote>
-<p><strong>Por que + C?</strong> Derivada de constante é 0. Existem
-<strong>infinitas</strong> antiderivadas que diferem só por uma
-constante (o "custo inicial" que só o lançamento real revela).</p>
+<p><strong>Por que + C?</strong> A derivada de uma constante é zero,
+então existem infinitas antiderivadas que diferem por uma constante.
+Quando a antiderivativa base é escolhida com <code>F(0)=0</code>, o
+valor de <code>C</code> coincide com o valor inicial da função; em
+geral, a condição inicial é que determina <code>C</code>. Ele pode
+representar custo fixo inicial, estoque inicial ou outro valor de
+partida, mas não é automaticamente "custo fixo".</p>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <ul>
 <li>Integral indefinida devolve _____</li>
@@ -2646,8 +2677,10 @@ limites e número.</p>
 Integrar é subir o expoente. São operações inversas. Por isso uma desfaz
 a outra.</p>
 <p>CONEXÃO — <strong>CONEXÃO COM SEU CURSO.</strong> Taxa marginal → total:
-integral. Custo fixo → + C. Receita do trimestre → definida. Lucro
-acumulado → área entre curvas.</p>
+integral. Condição inicial → determina <code>+ C</code>; um custo fixo
+inicial é apenas uma possibilidade. Receita do trimestre → definida.
+Lucro acumulado → integral de <code>R−C</code>; para área geométrica,
+use <code>|R−C|</code> e quebre o intervalo nos cruzamentos.</p>
 <h3 id="2-por-que-importa-no-seu-curso-3">(2) Por que importa no seu
 curso</h3>
 <table>
@@ -2660,16 +2693,18 @@ curso</h3>
 <tbody>
 <tr class="odd">
 <td>Antiderivada do <strong>custo marginal</strong></td>
-<td>Custo <strong>total</strong> (+ C = custo fixo inicial)</td>
+<td>Família de funções de custo total; a condição inicial fixa
+<code>+ C</code></td>
 </tr>
 <tr class="even">
 <td>Antiderivada da <strong>taxa de vendas</strong></td>
-<td>Vendas <strong>acumuladas</strong> no período</td>
+<td>Vendas acumuladas no período quando a taxa é não negativa; caso
+contrário, saldo líquido</td>
 </tr>
 <tr class="odd">
 <td>∫ taxa diária/mensal de receita</td>
-<td><strong>Receita total</strong> do período (soma de "fatias" de cada
-mês)</td>
+<td><strong>Receita total</strong> do período se a taxa for não
+negativa; caso contrário, saldo líquido</td>
 </tr>
 <tr class="even">
 <td>∫ taxa de lucro</td>
@@ -2677,7 +2712,7 @@ mês)</td>
 </tr>
 <tr class="odd">
 <td>Área entre curvas (receita × custo)</td>
-<td><strong>Prejuízo/lucro acumulado</strong> no intervalo</td>
+<td><strong>Lucro líquido acumulado</strong>; use `</td>
 </tr>
 </tbody>
 </table>
@@ -2731,15 +2766,19 @@ unidade de R$, não de R$·mês; no fator exponencial, o produto
 <h4 id="exemplo-1-do-custo-marginal-de-volta-ao-custo-total-potência-número-de-exemplo">Exemplo
 1 — Do custo marginal de volta ao custo total (potência) <em>(número de
 exemplo)</em></h4>
-<p>O custo marginal é <strong>6x² + 8x</strong> (R$ por unidade). Qual o
-custo total (sem custo fixo)?</p>
+<p>O custo marginal é <strong>6x² + 8x</strong> (R$ por unidade). Qual é
+a família de funções de custo total? O enunciado não fornece o custo em
+<code>x=0</code>.</p>
 <p>∫ (6x² + 8x) dx</p>
 <p><strong>Passo 1 — 6x²:</strong> 3 → 2 → <strong>2x³</strong>.
 <strong>Passo 2 — 8x:</strong> 2 → 4 → <strong>4x²</strong>.
 <strong>Passo 3:</strong> = <strong>2x³ + 4x² + C</strong>.</p>
-<p><strong>Resposta:</strong> custo total = <strong>2x³ + 4x² +
-C</strong>. O + C é o <strong>custo fixo</strong>. <em>Conferência:</em>
-(2x³ + 4x²)′ = 6x² + 8x .</p>
+<p><strong>Resposta:</strong> <code>C(x)=2x³+4x²+C</code>. O valor de
+<code>C</code> é <code>C(0)</code>. Se o modelo realmente <strong>não
+tiver custo fixo inicial</strong>, então <code>C(0)=0</code> e a função
+correspondente é <code>2x³+4x²</code>; sem essa condição, não se pode
+escolher <code>C</code>. <em>Conferência:</em>
+<code>(2x³+4x²)′=6x²+8x</code> .</p>
 <h4 id="exemplo-2-polinômio-termo-a-termo-número-de-exemplo">Exemplo 2
 — Polinômio termo a termo <em>(número de exemplo)</em></h4>
 <p>∫ (12x² + 10x) dx</p>
@@ -2931,8 +2970,8 @@ Conferência: 3(x²+5)²·2x = 6x(x²+5)² .</p>
 10t + t². F(6) = 60 + 36 = <strong>96</strong>. Frase: "96 mil R$
 acumulados de t = 0 a t = 6 (número de exemplo)".</p>
 <p><strong>T5 → C(x) = 6x² + 30x + 500; C(20) = 3500 (números de
-exemplo, R$).</strong> ∫ (12x + 30) dx = 6x² + 30x + C; C = 500 (fixo).
-C(20) = 6·400 + 600 + 500 = 2400 + 600 + 500 =
+exemplo, R$).</strong> ∫ (12x + 30) dx = 6x² + 30x + C; com
+<code>C(0)=500</code>, a constante vale 500. C(20) = 6·400 + 600 + 500 =
 <strong>3500</strong>.</p>
 <p><strong>T6 → 97,5 mil R$ no modelo (número de exemplo) vs 145 mil R$
 na tabela.</strong> Antiderivada: 25t + 2,5t². F(3) = 75 + 22,5 =
@@ -2940,12 +2979,13 @@ na tabela.</strong> Antiderivada: 25t + 2,5t². F(3) = 75 + 22,5 =
 <strong>dois fictícios diferentes</strong>: a tabela registra meses da
 loja; m(t) é um modelo de treino. Modelos diferentes, totais diferentes
 — compare estrutura, não valor.</p>
-<p><strong>T7 → (a) x = 40; (b) 30000; (c) lucro de R$ 30000 (números de
-exemplo).</strong> (a) Equilíbrio 40 (ver U3). (b) R − C = 150x − 6000.
-Antiderivada: 75x² − 6000x. F(60) − F(40) = (270000 − 360000) − (120000
-− 240000) = (−90000) − (−120000) = <strong>30000</strong>. (c) Positivo
-→ <strong>lucro acumulado</strong> de R$ 30000 entre 40 e 60 no modelo
-(número de exemplo): área entre curvas acima do equilíbrio.</p>
+<p><strong>T7 → (a) x = 40; (b) 30000; (c) lucro líquido de R$ 30000
+(números de exemplo).</strong> (a) Equilíbrio 40 (ver U3). (b) R − C =
+150x − 6000. Antiderivada: 75x² − 6000x. F(60) − F(40) =
+<strong>30000</strong>. Como <code>R&gt;C</code> em 40&lt;x≤60, a
+integral com sinal coincide com a área geométrica e representa
+<strong>lucro acumulado</strong>; se as curvas se cruzassem, seria
+preciso distinguir integral de área absoluta.</p>
 </details>
 <h3 id="mini-quiz-vf-unidade-4">Mini-quiz V/F — Unidade 4</h3>
 <p><strong>Q1.</strong> ( ) A integral indefinida sempre leva + C.
@@ -3007,7 +3047,7 @@ expoente novo. </label></li>
 com unidade. </label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia U4 (com as lacunas preenchidas)</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 4: 6t²/2 = <strong>3t²</strong>.</li>
 <li>Passo 6: 240 + 108 = <strong>348</strong>.</li>
@@ -3037,7 +3077,9 @@ começo perde muito. Depois perde menos, porque vale menos.</li>
 &lt; 0, decai. A solução com a condição inicial <code>y(0) = y₀</code> é
 <strong>y = y₀·e^(kx)</strong>; quando <code>y₀ = 0</code>, a solução é
 <code>y ≡ 0</code>.</p>
-<p>E a área continua valendo: vendas totais são a área sob a taxa.</p>
+<p>E a área continua valendo: vendas totais são a área com sinal sob a
+taxa; quando a taxa é não negativa, essa área coincide com o total
+físico.</p>
 <blockquote>
 <p>MAPA MENTAL — <strong>MAPA MENTAL — Unidade 5.</strong></p>
 <table>
@@ -3051,7 +3093,7 @@ começo perde muito. Depois perde menos, porque vale menos.</li>
 <tbody>
 <tr class="odd">
 <td>Quanto vendeu no total?</td>
-<td>Área = definida</td>
+<td>Área com sinal = integral definida</td>
 <td>Taxa mensal → vendas do período</td>
 </tr>
 <tr class="even">
@@ -3072,7 +3114,7 @@ começo perde muito. Depois perde menos, porque vale menos.</li>
 </tbody>
 </table>
 <p>Diagrama textual:</p>
-<pre class="text"><code>ÁREA = soma (U4 de novo, agora lendo como total)
+<pre class="text"><code>ÁREA com sinal: taxa ──► integral definida ──► total líquido (ou área geométrica com módulo)
 dy/dt = k*y ---&gt; y = y0 * e^(k*t)
   k &gt; 0 cresce | k &lt; 0 decai
   metade? t = ln(2)/|k|</code></pre>
@@ -3089,11 +3131,12 @@ exponencial):</strong></p>
 </ul>
 <h3 id="1-do-que-se-trata-em-micro-passos-4">(1) Do que se trata — em
 micro-passos</h3>
-<p><strong>Parte A — Área sob curva:</strong> a integral
-<strong>definida</strong> é a área entre a curva y = f(x) e o eixo x, de
-a até b. Se a curva está <strong>em cima do eixo</strong>, área =
-integral. Se está <strong>embaixo</strong>, a integral dá sinal negativo
-(área "vale" positivo, mas a integral assina).</p>
+<p><strong>Parte A — Área sob curva:</strong> a integral definida é a
+área <strong>com sinal</strong> entre a curva <code>y=f(x)</code> e o
+eixo x, de <code>a</code> até <code>b</code>. Se <code>f(x)≥0</code>,
+ela coincide com a área geométrica. Se a curva cruza o eixo, a área
+geométrica é <code>∫ₐᵇ|f(x)|dx</code>, quebrada nos pontos de troca; a
+integral sem módulo conserva o saldo líquido.</p>
 <p>Leia em passos:</p>
 <ol type="1">
 <li>Identifique a taxa f(t).</li>
@@ -3105,8 +3148,10 @@ integral. Se está <strong>embaixo</strong>, a integral dá sinal negativo
 ordinária — equação em que a <strong>derivada</strong> aparece na
 frase): A mais famosa do Cálculo I:</p>
 <p>dy/dx = k·y</p>
-<p>Tradução: <strong>a taxa de variação é proporcional ao que existe
-agora.</strong></p>
+<p>Se <code>x</code> tem unidade de tempo, <code>k</code> deve ter
+unidade inversa de tempo; assim, <code>kx</code> é adimensional e pode
+aparecer no expoente. Tradução: <strong>a taxa de variação é
+proporcional ao que existe agora.</strong></p>
 <ul>
 <li>k &gt; 0 → <strong>crescimento</strong> (quanto mais tem, mais
 cresce — vendas, carteira…).</li>
@@ -3159,16 +3204,18 @@ curso</h3>
 <tbody>
 <tr class="odd">
 <td>Área sob taxa de vendas</td>
-<td><strong>Vendas totais</strong> acumuladas no período (soma de fatias
-de cada mês)</td>
+<td><strong>Vendas totais</strong> acumuladas no período, se a taxa for
+não negativa; caso contrário, saldo líquido</td>
 </tr>
 <tr class="even">
 <td>Área sob taxa de receita</td>
-<td><strong>Receita total</strong> no período</td>
+<td><strong>Receita total</strong> se a taxa for não negativa; caso
+contrário, valor líquido acumulado</td>
 </tr>
 <tr class="odd">
 <td>Área entre curvas (receita × custo)</td>
-<td><strong>Lucro/prejuízo acumulado</strong> no intervalo</td>
+<td><strong>Lucro líquido acumulado</strong>; quebre o intervalo e use
+módulo se for área geométrica</td>
 </tr>
 <tr class="even">
 <td>dy/dt = ky (crescer)</td>
@@ -3207,8 +3254,12 @@ de escolhida pelo valor inicial, é <strong>y₀</strong> → y = y₀ e^(kx).
 Para <code>y₀ = 0</code>, vale a solução separada
 <code>y ≡ 0</code>.</li>
 </ol>
-<p><strong>Dica de meia-vida conceitual:</strong> se y cai pela metade,
-e^(kt) = 1/2 → t = <strong>ln(2)/|k|</strong> (com ln 2 ≈ 0,693).</p>
+<p><strong>Dica de meia-vida conceitual:</strong> para
+<code>k&lt;0</code>, se <code>y(t½)=y₀/2</code>, então
+<code>e^(kt½)=1/2</code> e <code>t½=ln(2)/|k|</code> (com
+<code>ln 2≈0,693</code>). A unidade de <code>k</code> é a inversa da
+unidade de <code>t</code>, de modo que <code>kt</code> é
+adimensional.</p>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <p>Complete:</p>
 <ul>
@@ -3255,21 +3306,22 @@ vence — como aconteceu neste Exemplo 2.</li>
 <h4 id="exemplo-3-dydt-ky-valor-residual-que-decai-número-de-exemplo">Exemplo
 3 — dy/dt = −ky: valor residual que decai <em>(número de
 exemplo)</em></h4>
-<p>dR/dt = −0,05·R, com R(0) = 800 (valor residual — <strong>número de
-exemplo</strong>).</p>
+<p>dR/dt = −0,05·R, com <code>t</code> em meses,
+<code>k=−0,05 mês⁻¹</code> e <code>R(0)=800</code> (valor residual —
+<strong>número de exemplo</strong>).</p>
 <p><strong>Passo 1 — reconhecer:</strong> k = −0,05 (&lt; 0 → decai), R₀
 = 800.</p>
 <p><strong>Passo 2 — fórmula:</strong> <strong>R(t) = 800 ·
 e^(−0,05t)</strong>.</p>
 <p><strong>Passo 3 — pergunta típica:</strong> R(20) = 800 · e^(−1) ≈
 800 · 0,36788 ≈ <strong>294</strong>.</p>
-<p><strong>Passo 4 — meia-vida conceitual:</strong> t½ = ln(2)/0,05 ≈
-0,693/0,05 ≈ <strong>13,86</strong> períodos.</p>
-<p><strong>Resposta:</strong> em 20 períodos restam ≈
-<strong>294</strong> (número de exemplo); o valor cai à metade a cada ≈
-13,86 períodos (conceitual). <em>Nota:</em> valores reais de depreciação
-dependem da disciplina contábil/financeira — aqui só a matemática do
-decaimento proporcional.</p>
+<p><strong>Passo 4 — meia-vida conceitual:</strong>
+<code>t½=ln(2)/0,05≈13,86</code> meses.</p>
+<p><strong>Resposta:</strong> em 20 meses restam ≈ <strong>294</strong>
+(número de exemplo); o valor cai à metade a cada ≈ 13,86 meses no
+modelo. <em>Nota:</em> valores reais de depreciação dependem da
+disciplina contábil/financeira — aqui só a matemática do decaimento
+proporcional.</p>
 <h4 id="exemplo-4-separando-as-variáveis-passo-a-passo-número-de-exemplo">Exemplo
 4 — Separando as variáveis passo a passo <em>(número de
 exemplo)</em></h4>
@@ -3289,16 +3341,18 @@ variáveis <strong>reproduz</strong> a fórmula que você já vinha usando;
 a EDO.</p>
 <h4 id="exemplo-5-novo-base-de-clientes-que-decai-número-de-exemplo">Exemplo
 5 — NOVO: base de clientes que decai <em>(número de exemplo)</em></h4>
-<p>dN/dt = −0,03·N, com N(0) = 5000 (número de exemplo).</p>
+<p>dN/dt = −0,03·N, com <code>t</code> em meses,
+<code>k=−0,03 mês⁻¹</code> e <code>N(0)=5000</code> (número de
+exemplo).</p>
 <p><strong>Passo 1 — reconhecer:</strong> k = −0,03, N₀ = 5000.
 <strong>Passo 2 — fórmula:</strong> <strong>N(t) = 5000 ·
 e^(−0,03t)</strong>. <strong>Passo 3 — em t = 10:</strong> N(10) = 5000
 · e^(−0,3) ≈ 5000 · 0,74082 ≈ <strong>3704</strong>. <strong>Passo 4 —
-meia-vida:</strong> t½ = 0,693/0,03 ≈ <strong>23,1</strong>
-períodos.</p>
-<p><strong>Resposta:</strong> restam ≈ 3704 (número de exemplo) em t =
-10; metade a cada ≈ 23,1 períodos (conceitual). A Marina lê assim: "se
-nada mudar, perco quase um quarto da base em 10 períodos no modelo".</p>
+meia-vida:</strong> <code>t½=0,693/0,03≈23,1</code> meses.</p>
+<p><strong>Resposta:</strong> restam ≈ 3704 (número de exemplo) em
+<code>t=10</code> meses; metade a cada ≈ 23,1 meses (conceitual). A
+Marina lê assim: "se nada mudar, perco quase um quarto da base em 10
+meses no modelo".</p>
 <p>PAUSA PARA VOCÊ — <strong>PAUSA PARA VOCÊ.</strong></p>
 <p>No Exemplo 5, por que a queda é rápida no começo e lenta depois?
 Porque a taxa é proporcional ao que _____</p>
@@ -3321,13 +3375,18 @@ confira o sinal de k.</p>
 mensal, mil R$/mês)</p>
 <p><strong>Ex3.</strong> ∫ de 0 até 5 de 6t dt (6t em mil R$/mês, número
 de exemplo)</p>
-<p><strong>Ex4.</strong> EDO: dy/dt = 0,06y com y(0) = 1500. Escreva
-y(t) e ache y(25). (Use e^1,5 ≈ 4,48169.)</p>
-<p><strong>Ex5.</strong> EDO: dy/dt = −0,08y com y(0) = 900. Escreva
-y(t) e ache y(25). (Use e^(−2) ≈ 0,13534.)</p>
-<p><strong>Ex6. NOVO.</strong> EDO: dy/dt = 0,05y com y(0) = 1000
-(número de exemplo). Escreva y(t) e ache y(10). (Use e^0,5 ≈
-1,64872.)</p>
+<p><strong>Ex4.</strong> EDO: <code>dy/dt=0,06y</code>, com
+<code>t</code> em meses, <code>k=0,06 mês⁻¹</code> e
+<code>y(0)=1500</code>. Escreva y(t) e ache y(25). (Use e^1,5 ≈
+4,48169.)</p>
+<p><strong>Ex5.</strong> EDO: <code>dy/dt=−0,08y</code>, com
+<code>t</code> em meses, <code>k=−0,08 mês⁻¹</code> e
+<code>y(0)=900</code>. Escreva y(t) e ache y(25). (Use e^(−2) ≈
+0,13534.)</p>
+<p><strong>Ex6. NOVO.</strong> EDO: <code>dy/dt=0,05y</code>, com
+<code>t</code> em meses, <code>k=0,05 mês⁻¹</code> e
+<code>y(0)=1000</code> (número de exemplo). Escreva y(t) e ache y(10).
+(Use e^0,5 ≈ 1,64872.)</p>
 <p><strong>Ex7. NOVO.</strong> Área nova: ∫ de 0 até 4 de (20 + 5t) dt,
 com <code>(20 + 5t)</code> em mil R$/mês (número de exemplo). Interprete
 como vendas totais.</p>
@@ -3405,29 +3464,41 @@ indicados. Gabarito em bloco de gabarito.</p>
 <p><strong>T1 (N0).</strong> Calcule ∫ de 0 até 6 de (10 + 4t) dt, com
 <code>(10 + 4t)</code> em mil R$/mês (número de exemplo). Interprete
 como total.</p>
-<p><strong>T2 (N0).</strong> Escreva y(t) para dy/dt = 0,04y com y(0) =
-2000 (números de exemplo). É crescimento ou decaimento?</p>
+<p><strong>T2 (N0).</strong> Escreva y(t) para <code>dy/dt=0,04y</code>,
+com <code>t</code> em meses, <code>k=0,04 mês⁻¹</code> e
+<code>y(0)=2000</code> (números de exemplo). É crescimento ou
+decaimento?</p>
 <p><strong>N1 — Guiada (2 guiadas).</strong></p>
-<p><strong>T3 (N1).</strong> EDO guiada (números de exemplo): dy/dt =
-−0,06y, y(0) = 1200. Passo: (a) identifique k e y₀; (b) escreva y(t);
-(c) calcule y(10) com e^(−0,6) ≈ 0,54881.</p>
+<p><strong>T3 (N1).</strong> EDO guiada (números de exemplo):
+<code>dy/dt=−0,06y</code>, com <code>t</code> em meses,
+<code>k=−0,06 mês⁻¹</code> e <code>y(0)=1200</code>. Passo: (a)
+identifique k e y₀; (b) escreva y(t); (c) calcule y(10) com e^(−0,6) ≈
+0,54881.</p>
 <p><strong>T4 (N1).</strong> Separe de verdade (número de exemplo):
-dy/dx = 0,08y. Passo: (a) para <code>y ≠ 0</code>, dy/y = ?; (b) integre
-os dois lados; (c) chegue a y = y₀e^(0,08x) e registre
-<code>y ≡ 0</code> separadamente.</p>
+<code>dy/dx=0,08y</code>, com <code>x</code> em uma unidade de tempo e
+<code>k=0,08</code> na unidade inversa correspondente. Passo: (a) para
+<code>y ≠ 0</code>, dy/y = ?; (b) integre os dois lados; (c) chegue a y
+= y₀e^(0,08x) e registre <code>y ≡ 0</code> separadamente.</p>
 <p><strong>N2 — Administração (2 da área).</strong></p>
-<p><strong>T5 (N2).</strong> Clientes que crescem fictícios: dN/dt =
-0,04N, N(0) = 2000 (número de exemplo). Ache N(10) com e^0,4 ≈ 1,49182.
-Responda em frase: quantos clientes em t = 10 no modelo?</p>
-<p><strong>T6 (N2).</strong> Valor que decai fictício: dV/dt = −0,10V,
-V(0) = 1000 (número de exemplo). Ache V(10) com e^(−1) ≈ 0,36788 e a
-meia-vida t½ = ln(2)/0,10. Interprete para a gerente em uma frase.</p>
+<p><strong>T5 (N2).</strong> Clientes que crescem fictícios:
+<code>dN/dt=0,04N</code>, com <code>t</code> em meses,
+<code>k=0,04 mês⁻¹</code> e <code>N(0)=2000</code> (número de exemplo).
+Ache N(10) com e^0,4 ≈ 1,49182. Responda em frase: quantos clientes em t
+= 10 no modelo?</p>
+<p><strong>T6 (N2).</strong> Valor que decai fictício:
+<code>dV/dt=−0,10V</code>, com <code>t</code> em meses,
+<code>k=−0,10 mês⁻¹</code> e <code>V(0)=1000</code>. Ache
+<code>V(10)</code> com <code>e^(−1)≈0,36788</code> e
+<code>t½=ln(2)/0,10</code>; interprete para a gerente em uma frase.</p>
 <p><strong>N3 — Desafio (1 desafio).</strong></p>
-<p><strong>T7 (N3 — desafio).</strong> Compare dois fictícios: A(t) =
-1000e^(0,08t) e B(t) = 3000e^(−0,05t) (números de exemplo). (a) Calcule
-A(10) com e^0,8 ≈ 2,22554. (b) Calcule B(10) com e^(−0,5) ≈ 0,60653. (c)
-Em frase: qual cresce, qual decai, e o que a gerente fictícia decide se
-A são clientes novos e B é base antiga que evade?</p>
+<p><strong>T7 (N3 — desafio).</strong> Compare dois fictícios:
+<code>A(t)=1000e^(0,08t)</code> e <code>B(t)=3000e^(−0,05t)</code>, com
+<code>t</code> em meses; os coeficientes exponenciais são
+<code>0,08 mês⁻¹</code> e <code>−0,05 mês⁻¹</code>, de modo que os
+expoentes são adimensionais (números de exemplo). (a) Calcule A(10) com
+e^0,8 ≈ 2,22554. (b) Calcule B(10) com e^(−0,5) ≈ 0,60653. (c) Em frase:
+qual cresce, qual decai, e o que a gerente fictícia decide se A são
+clientes novos e B é base antiga que evade?</p>
 <details>
 <summary><strong>Clique para ver o gabarito da trilha U5 (T1–T7)</strong></summary>
 <p><strong>T1 → 132 mil R$ (número de exemplo).</strong> Antiderivada:
@@ -3445,11 +3516,10 @@ constante pelo valor inicial.</p>
 <p><strong>T5 → N(10) ≈ 2984 (número de exemplo).</strong> N(10) = 2000
 · 1,49182 ≈ <strong>2983,6 ≈ 2984</strong>. Frase: "a base chega a cerca
 de 2984 clientes em t = 10 no modelo (número de exemplo)".</p>
-<p><strong>T6 → V(10) ≈ 368; t½ ≈ 6,93 períodos (números de exemplo,
-conceitual).</strong> V(10) = 1000 · 0,36788 ≈ <strong>368</strong>. t½
-= 0,693/0,10 ≈ <strong>6,93</strong>. Frase: "em 10 períodos restam
-cerca de 368 (número de exemplo); a cada ~7 períodos o valor cai à
-metade no modelo".</p>
+<p><strong>T6 → V(10)≈368; t½≈6,93 meses (números de exemplo,
+conceitual).</strong> V(10)=1000·0,36788≈<strong>368</strong>.
+<code>t½=0,693/0,10≈6,93</code>. Frase: "em 10 meses restam cerca de
+368; a cada ~7 meses o valor cai à metade no modelo".</p>
 <p><strong>T7 → (a) ≈ 2226; (b) ≈ 1820; (c) A sobe, B desce.</strong>
 (a) A(10) = 1000 · 2,22554 ≈ <strong>2226</strong>. (b) B(10) = 3000 ·
 0,60653 ≈ <strong>1819,6 ≈ 1820</strong> (números de exemplo). (c)
@@ -3458,15 +3528,18 @@ prioriza aquisição em A ou retenção em B e acompanha as duas bases
 separadamente".</p>
 </details>
 <h3 id="mini-quiz-vf-unidade-5">Mini-quiz V/F — Unidade 5</h3>
-<p><strong>Q1.</strong> ( ) A área sob a taxa de vendas no período é o
-total vendido. <strong>Q2.</strong> ( ) Em dy/dt = ky, k &gt; 0 indica
-decaimento. <strong>Q3.</strong> ( ) A solução de dy/dx = ky com y(0) =
-y₀ é y = y₀e^(kx).</p>
+<p><strong>Q1.</strong> ( ) Se a taxa de vendas for não negativa no
+intervalo, a integral definida é o total vendido no modelo.
+<strong>Q2.</strong> ( ) Em dy/dt = ky, k &gt; 0 indica decaimento.
+<strong>Q3.</strong> ( ) A solução de dy/dx = ky com y(0) = y₀ é y =
+y₀e^(kx).</p>
 <details>
 <summary><strong>Gabarito do mini-quiz U5</strong></summary>
-<p>Q1 → <strong>V.</strong> Somar as fatias da taxa dá o acumulado. Q2 →
-<strong>F.</strong> k &gt; 0 é crescimento; k &lt; 0 é decaimento. Q3 →
-<strong>V.</strong> Exponencial com valor inicial y₀.</p>
+<p>Q1 → <strong>V</strong>, sob a hipótese de taxa não negativa. Se a
+taxa puder ser negativa, a integral é o total líquido com sinal, não a
+área geométrica. Q2 → <strong>F.</strong> k &gt; 0 é crescimento; k &lt;
+0 é decaimento. Q3 → <strong>V.</strong> Exponencial com valor inicial
+y₀.</p>
 </details>
 <h4 id="-guia-passo-a-passo-edo-separável-carteira-de-clientes-que-cresce-proporcional-números-de-exemplo">
 GUIA PASSO A PASSO — EDO separável: carteira de clientes que cresce
@@ -3498,8 +3571,8 @@ seria só 1,82212 — absurdo para número de clientes.</li>
 <li><strong>Comparar com a reta:</strong> se somasse 6% de 800 todo mês
 em linha reta: 800 + 48 × 10 = _____ — menos que o exponencial, porque
 linear soma e exponencial multiplica.</li>
-<li><strong>Tempo de dobrar (conceitual):</strong> t_dobro = ln(2)/k =
-0,693/0,06 ≈ 11,6 meses no modelo.</li>
+<li><strong>Tempo de dobrar (conceitual):</strong>
+<code>t_dobro=ln(2)/k=0,693/0,06≈11,6</code> meses no modelo.</li>
 <li><strong>Decidir como gerente:</strong> "a carteira cresce
 multiplicando, não somando — planejo a capacidade de atendimento do
 programa de fidelidade pelo exponencial no modelo".</li>
@@ -3519,7 +3592,7 @@ por y₀. </label></li>
 (clientes). </label></li>
 </ul>
 <details>
-<summary><strong>Gabarito do guia U5 (com as lacunas preenchidas)</strong></summary>
+<summary>Gabarito do guia (abrir depois de tentar)</summary>
 <ul>
 <li>Passo 4: ln|y| = <strong>0,06t + C</strong>.</li>
 <li>Passo 5: 0,06 × 10 = <strong>0,6</strong>.</li>
@@ -3598,7 +3671,8 @@ comum</h3>
 <tr class="odd">
 <td>Custo marginal</td>
 <td>C′(x)</td>
-<td>Estimativa local do custo da próxima unidade, não a média</td>
+<td>Estimativa local da variação do custo; não é o incremento exato de
+uma unidade inteira</td>
 </tr>
 <tr class="even">
 <td>Taxa de vendas</td>
@@ -3608,7 +3682,8 @@ comum</h3>
 <tr class="odd">
 <td>Meta de vendas (teto)</td>
 <td>lim (t→∞) V(t)</td>
-<td>Assíntota que se "beira"</td>
+<td>Limite de longo prazo; o cruzamento da assíntota depende do
+modelo</td>
 </tr>
 <tr class="even">
 <td>Custo médio</td>
@@ -3633,8 +3708,9 @@ briga; cadeia multiplica o recheio.</li>
 equilíbrio R = C.</li>
 <li>U4: integral soma fatias; indefinida + C; definida cima menos baixo;
 confira derivando.</li>
-<li>U5: área é total; dy/dt = ky → y(t) = y₀e^(kt); k &gt; 0 cresce; k
-&lt; 0 decai.</li>
+<li>U5: a integral é o total líquido/área com sinal; se a taxa é não
+negativa, coincide com a área; dy/dt = ky → y(t) = y₀e^(kt); k &gt; 0
+cresce; k &lt; 0 decai.</li>
 </ul>
 <h3 id="93-checklist-de-erros-marque-o-que-você-já-fez">9.3 Checklist de
 erros (marque o que você já fez)</h3>
@@ -3681,7 +3757,7 @@ sinal</strong> — leve para a missão/monitoria (§13).</li>
 <hr/>
 <h2 id="10-plano-de-estudo-15-dias-30-mindia">10. Plano de estudo 15
 dias (30 min/dia)</h2>
-<p><strong>Regra:</strong> 30 minutos diários valem mais que 4 horas
+<p><strong>Regra:</strong> 30 minutos diários valem mais que 4 horas na
 véspera. Se um dia falhar, <strong>não dobre no seguinte</strong> —
 apenas pegue o próximo dia da lista (e retome o perdido no fim).</p>
 <p>Use o ciclo de 25 min do §1.2 em cada dia. Os 5 min restantes são
@@ -3887,17 +3963,19 @@ traduzidos</h2>
 entrada chega perto.</li>
 <li><strong>Continuidade:</strong> curva sem pulo nem buraco no
 ponto.</li>
-<li><strong>Assíntota:</strong> reta ou valor-teto que a curva beira sem
-ultrapassar (meta teórica).</li>
+<li><strong>Assíntota:</strong> reta que a curva se aproxima quando a
+entrada cresce sem parar; o cruzamento depende da função e do
+domínio.</li>
 <li><strong>Indeterminação 0/0:</strong> sinal de que precisa de álgebra
 (fatorar/racionalizar), não de calculadora.</li>
 <li><strong>Limite lateral:</strong> limite chegando só pela esquerda ou
 só pela direita.</li>
 <li><strong>Derivada:</strong> taxa instantânea; quanto muda agora.</li>
-<li><strong>Custo marginal:</strong> derivada do custo total; estimativa
-local do custo de produzir mais uma unidade.</li>
-<li><strong>Receita marginal:</strong> derivada da receita total;
-estimativa local da receita trazida por mais uma unidade.</li>
+<li><strong>Custo marginal:</strong> derivada do custo total; taxa local
+aproximada. Para uma unidade inteira, use <code>C(x+1)−C(x)</code>.</li>
+<li><strong>Receita marginal:</strong> derivada da receita total; taxa
+local aproximada. O incremento exato de uma unidade inteira é
+<code>R(x+1)−R(x)</code>.</li>
 <li><strong>Taxa de vendas:</strong> derivada das vendas acumuladas;
 taxa instantânea de crescimento.</li>
 <li><strong>Custo médio:</strong> custo total dividido pela quantidade;
@@ -3920,8 +3998,8 @@ sinal.</li>
 zero.</li>
 <li><strong>Integral indefinida:</strong> antiderivada + C; desfaz a
 derivada.</li>
-<li><strong>Integral definida:</strong> número F(b) − F(a); área com
-sinal; total acumulado.</li>
+<li><strong>Integral definida:</strong> número <code>F(b)−F(a)</code>;
+área com sinal e total acumulado quando a taxa é não negativa.</li>
 <li><strong>TFC (Teorema Fundamental do Cálculo):</strong> derivar e
 integrar se desfazem.</li>
 <li><strong>EDO separável:</strong> equação com derivada que se resolve
@@ -3993,7 +4071,9 @@ interprete.</p>
 "meta" aqui.</p>
 <p><strong>B3 (U2 — custo marginal).</strong> Custo fictício C(x) =
 0,3x³ + 4x² + 25x + 200 (R$, número de exemplo). Ache C′(x) e C′(6).
-Compensa produzir a 7ª unidade se o preço for R$ 350 (fictício)?</p>
+Trate C′(6) como taxa local; para a 7ª unidade inteira, calcule
+<code>C(7)−C(6)</code> e decida se compensa com preço de R$ 350
+(fictício).</p>
 <p><strong>B4 (U2 — cadeia).</strong> Vendas por camadas fictícias V(t)
 = (0,5t + 4)³ (número de exemplo). Ache V′(t) e V′(4).</p>
 <p><strong>B5 (U3 — lucro máximo).</strong> Lucro fictício L(x) = −5x² +
@@ -4010,21 +4090,27 @@ receita r(t) = 40 + 8t (mil R$/mês, número de exemplo), de t = 0 a t =
 <p><strong>B9 (U5 — área).</strong> Taxa fictícia s(t) = 12 + 2t (mil
 R$/mês, número de exemplo), de t = 0 a t = 9. Calcule as vendas
 totais.</p>
-<p><strong>B10 (U5 — EDO).</strong> Base fictícia de clientes: dN/dt =
-0,05N, N(0) = 1500 (número de exemplo). Escreva N(t) e calcule N(10) com
-e^0,5 ≈ 1,64872. É crescimento ou decaimento?</p>
+<p><strong>B10 (U5 — EDO).</strong> Base fictícia de clientes:
+<code>dN/dt=0,05N</code>, com <code>t</code> em meses,
+<code>k=0,05 mês⁻¹</code> e <code>N(0)=1500</code> (número de exemplo).
+Escreva N(t) e calcule N(10) com e^0,5 ≈ 1,64872. É crescimento ou
+decaimento?</p>
 <details>
 <summary><strong>Clique para ver o gabarito do banco extra final (B1–B10)</strong></summary>
 <p><strong>B1 → 126 mil R$ (número de exemplo).</strong> 30 + 96 =
 <strong>126</strong>. Frase: "quando t chega perto de 8, as vendas
 acumuladas tendem a 126 mil R$ (número de exemplo)".</p>
-<p><strong>B2 → 1000 mil R$ (número de exemplo); meta/teto.</strong>
-Maior expoente 1/1 → 1000/1 = <strong>1000</strong>. "Meta" = assíntota
-que as vendas beiram sem ultrapassar no modelo.</p>
-<p><strong>B3 → C′(x) = 0,9x² + 8x + 25; C′(6) = 105,4 ≈ 105 (R$, número
-de exemplo); sim, compensa.</strong> C′(6) = 0,9·36 + 48 + 25 = 32,4 +
-73 = <strong>105,4</strong>. Como 105 &lt; 350, a próxima unidade traz
-mais do que custa no modelo.</p>
+<p><strong>B2 → 1000 mil R$ (número de exemplo); limite de longo prazo
+do modelo.</strong> Maior expoente 1/1 → 1000/1 = <strong>1000</strong>.
+A curva se aproxima de <code>y = 1000</code>; para <code>t≥0</code>, a
+fórmula <code>S(t)=1000−25000/(t+25)</code> mostra que os valores ficam
+abaixo de 1000. Esse comportamento vem do modelo, não da definição de
+assíntota.</p>
+<p><strong>B3 → C′(x) = 0,9x² + 8x + 25; C′(6)=105,4 (R$/un., taxa
+local).</strong> O incremento exato da 7ª unidade é
+<code>C(7)−C(6)=115,1</code> reais. Como <code>115,1&lt;350</code>, a 7ª
+unidade compensa no modelo; <code>105,4</code> é apenas a estimativa
+local.</p>
 <p><strong>B4 → V′(t) = 1,5(0,5t + 4)²; V′(4) = 54 (números de
 exemplo).</strong> Casca: 3(0,5t+4)²; miolo: 0,5; produto:
 <strong>1,5(0,5t+4)²</strong>. Em t = 4: 1,5·36 =
@@ -4080,8 +4166,10 @@ razão dos coeficientes após dividir por <code>t</code>.</li>
 <li><strong>Execução:</strong> <code>D(t) = 1800/(1 + 9/t)</code>, logo
 <code>lim(t→∞) D(t) = 1800</code> unidades/mês.</li>
 <li><strong>Interpretação e unidade:</strong> a assíntota horizontal é
-<code>D = 1800</code> unidades/mês; <code>D(9) = 1800·9/18 = 900</code>
-unidades/mês.</li>
+<code>D = 1800</code> unidades/mês. <code>D(9) = 1800·9/18 = 900</code>
+unidades/mês. Neste modelo, <code>D(t)=1800−16200/(t+9)&lt;1800</code>
+para <code>t≥0</code>; a assíntota, por si só, não impede cruzamentos em
+outros modelos.</li>
 <li><strong>Checagem:</strong> em <code>t = 900</code>,
 <code>D(900) ≈ 1782,18</code> unidades/mês, próxima de 1800 e ainda
 abaixo do limite; a tendência é coerente, mas não prova o futuro.</li>
@@ -4425,8 +4513,8 @@ situacionais</h3>
 <h4 id="v5-e13-u5-leiturainterpretação-contexto-consumoruptura-de-estoque">V5-E13
 — U5, leitura/interpretação; contexto: consumo/ruptura de estoque</h4>
 <p><strong>Enunciado.</strong> O estoque de um insumo fictício segue
-<code>dI/dt=−0,08I</code>, com <code>I(0)=500</code> unidades e
-<code>t</code> em semanas. (a) Resolva. (b) Calcule a meia-vida. (c)
+<code>dI/dt=−0,08 semana⁻¹·I</code>, com <code>I(0)=500</code> unidades
+e <code>t</code> em semanas. (a) Resolva. (b) Calcule a meia-vida. (c)
 Explique por que essa EDO não prevê uma ruptura finita.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
@@ -4451,9 +4539,10 @@ zero.</li>
 <h4 id="v5-e14-u5-aplicação-contextual-contexto-sensibilidade-do-lucro">V5-E14
 — U5, aplicação contextual; contexto: sensibilidade do lucro</h4>
 <p><strong>Enunciado.</strong> O lucro acumulado de uma linha fictícia
-segue <code>dL/dt=0,05L</code>, com <code>L(0)=1000 mil R\$</code>, em
-trimestres. (a) Calcule <code>L(4)</code>. (b) Repita com taxa
-<code>0,06</code>. (c) Compare aumento absoluto e relativo.</p>
+segue <code>dL/dt=0,05 trimestre⁻¹·L</code>, com
+<code>L(0)=1000 mil R\$</code> e <code>t</code> em trimestres. (a)
+Calcule <code>L(4)</code>. (b) Repita com <code>0,06 trimestre⁻¹</code>.
+(c) Compare aumento absoluto e relativo.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Raciocínio e método:</strong> resolver duas EDOs com o mesmo
@@ -4479,9 +4568,10 @@ sensibilidade positiva isolada não garante decisão de investimento.</li>
 rotulados</h4>
 <p><strong>Enunciado.</strong> Dois modelos fictícios para uma base de
 clientes são <code>N₁(t)=1000+80t</code> e
-<code>N₂(t)=1000e^(0,08t)</code>, com <code>t</code> em meses. (a)
-Calcule ambos em 10 meses. (b) Compare. (c) Critique a frase “a tabela
-prova que o crescimento real será exponencial”.</p>
+<code>N₂(t)=1000e^(0,08t)</code>, com <code>t</code> em meses e
+<code>0,08 mês⁻¹</code> no modelo exponencial. (a) Calcule ambos em 10
+meses. (b) Compare. (c) Critique a frase “a tabela prova que o
+crescimento real será exponencial”.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Raciocínio e método:</strong> resolver/avaliar os dois
@@ -4678,9 +4768,10 @@ estoque e sazonalidade.</li>
 — integral → EDO; contexto: consumo/ruptura de estoque</h4>
 <p><strong>Enunciado.</strong> O nível de estoque de um produto fictício
 é <code>S(t)=1500+500e^(0,05t)</code> unidades, com <code>t</code> em
-meses e <code>S(0)=2000</code>. (a) Derive <code>S(t)</code> e escreva
-uma EDO em forma separável. (b) Identifique o nível alvo. (c) Calcule
-<code>S(12)</code> e a taxa com <code>e^0,6≈1,82212</code>.</p>
+meses, <code>k=0,05 mês⁻¹</code> e <code>S(0)=2000</code>. (a) Derive
+<code>S(t)</code> e escreva uma EDO em forma separável. (b) Identifique
+o nível alvo. (c) Calcule <code>S(12)</code> e a taxa com
+<code>e^0,6≈1,82212</code>.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Raciocínio e método:</strong> diferenciar a expressão do
@@ -4707,10 +4798,10 @@ sua perpetuidade exige capacidade e reposição.</li>
 <h4 id="v5-e23-integral-edo-contexto-caixa-e-capital-de-giro">V5-E23 —
 integral → EDO; contexto: caixa e capital de giro</h4>
 <p><strong>Enunciado.</strong> O caixa acumulado fictício é
-<code>G(t)=5000(e^(0,04t)−1)</code> mil R$, com <code>t</code> em meses
-e <code>G(0)=0</code>. (a) Derive e reescreva a EDO. (b) Calcule
-<code>G(5)</code> e <code>G′(5)</code>. (c) Explique por que a taxa não
-é simplesmente <code>0,04G</code>.</p>
+<code>G(t)=5000(e^(0,04t)−1)</code> mil R$, com <code>t</code> em meses,
+<code>k=0,04 mês⁻¹</code> e <code>G(0)=0</code>. (a) Derive e reescreva
+a EDO. (b) Calcule <code>G(5)</code> e <code>G′(5)</code>. (c) Explique
+por que a taxa não é simplesmente <code>0,04G</code>.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Raciocínio e método:</strong> <code>G</code> é total
@@ -4736,10 +4827,11 @@ aparecem.</li>
 — EDO → leitura crítica; contexto: decisão com dados fictícios
 rotulados</h4>
 <p><strong>Enunciado.</strong> Uma base fictícia segue
-<code>N(t)=5000e^(0,05t)</code>, com <code>t</code> em períodos. Uma
-equipe usa <code>1,05^t</code> em vez de <code>e^(0,05t)</code>. (a)
-Calcule as duas previsões em 10 períodos. (b) Quantifique a diferença.
-(c) Qual hipótese precisa ser declarada?</p>
+<code>N(t)=5000e^(0,05t)</code>, com <code>t</code> em períodos e
+<code>k=0,05 período⁻¹</code>. Uma equipe usa <code>1,05^t</code> em vez
+de <code>e^(0,05t)</code>. (a) Calcule as duas previsões em 10 períodos.
+(b) Quantifique a diferença. (c) Qual hipótese precisa ser
+declarada?</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Raciocínio e método:</strong> crescimento contínuo e
@@ -4765,7 +4857,7 @@ de retenção.</li>
 <h4 id="v5-e25-edo-leitura-crítica-contexto-sensibilidade-do-lucro">V5-E25
 — EDO → leitura crítica; contexto: sensibilidade do lucro</h4>
 <p><strong>Enunciado.</strong> O valor acumulado fictício de uma linha
-segue <code>L′(t)=0,06L(t)</code>, com <code>t</code> em anos,
+segue <code>L′(t)=0,06 ano⁻¹·L(t)</code>, com <code>t</code> em anos,
 <code>L(0)=5000 mil R\$</code>, e uma reserva de
 <code>1500 mil R\$</code> seria retirada apenas no fim de 5 anos. (a)
 Calcule <code>L(5)</code>. (b) Calcule o saldo após uma retirada final.
@@ -4813,9 +4905,9 @@ o domínio observado.</li>
 contra 71 observado: erro <code>+3,5</code>. No mês 12, a reta daria
 <code>113,5</code> mil R$, contra 84 observado: erro
 <code>+29,5</code>.</li>
-<li><strong>Interpretação e unidade:</strong> a reta supera as vendas
-observadas e subestima a desaceleração; os números são mil R$ fictícios
-por mês, não previsão de mercado.</li>
+<li><strong>Interpretação e unidade:</strong> a reta superestima as
+vendas e o crescimento nos pontos comparados; os números são mil R$
+fictícios por mês, não previsão de mercado.</li>
 <li><strong>Checagem:</strong> o erro aumenta do mês 6 ao 12, sinal de
 perda de validade; a diferença entre a taxa média de 6,5 e a
 desaceleração observada é coerente.</li>
@@ -4859,10 +4951,10 @@ custo ou operação, não apenas obter um número de equilíbrio.</li>
 <h4 id="v5-e28-validade-contexto-consumoruptura-de-estoque">V5-E28 —
 validade; contexto: consumo/ruptura de estoque</h4>
 <p><strong>Enunciado.</strong> O estoque de um insumo fictício é
-<code>I(t)=200e^(−0,1t)</code> unidades, com <code>t</code> em dias. A
-política interna mantém pelo menos 10 unidades. (a) Quando o modelo
-cruza 10? (b) Quando realmente chega a zero? (c) Explique a diferença
-entre valor de política e ruptura física.</p>
+<code>I(t)=200e^(−0,1 dia⁻¹·t)</code> unidades, com <code>t</code> em
+dias. A política interna mantém pelo menos 10 unidades. (a) Quando o
+modelo cruza 10? (b) Quando realmente chega a zero? (c) Explique a
+diferença entre valor de política e ruptura física.</p>
 <p><strong>Gabarito.</strong></p>
 <ul>
 <li><strong>Raciocínio e método:</strong> limiar operacional → resolver
@@ -4885,8 +4977,8 @@ orienta a leitura, mas não substitui estoque discreto.</li>
 <h4 id="v5-e29-validade-contexto-caixa-e-capital-de-giro">V5-E29 —
 validade; contexto: caixa e capital de giro</h4>
 <p><strong>Enunciado.</strong> O caixa de uma empresa fictícia é
-<code>G(t)=4000e^(0,05t)−1000t</code> reais, com <code>t</code> em
-meses, <code>0≤t≤6</code> e <code>G(0)=4000</code>. (a) Verifique a
+<code>G(t)=4000e^(0,05 mês⁻¹·t)−1000t</code> reais, com <code>t</code>
+em meses, <code>0≤t≤6</code> e <code>G(0)=4000</code>. (a) Verifique a
 condição inicial. (b) Ache aproximadamente quando <code>G(t)=0</code> no
 intervalo modelado. (c) O que significa um valor negativo no modelo?</p>
 <p><strong>Gabarito.</strong></p>
@@ -4929,19 +5021,19 @@ validação?</p>
 laterais e valor definido; depois separar uma possível bonificação de um
 erro de modelo.</li>
 <li><strong>Execução:</strong> <code>P(50⁻)=−2500+4000+2000=3500</code>;
-<code>P(50⁺)=−2500+3000+4250=4750</code> reais. O valor definido no
-segundo ramo é <code>P(50)=4750</code>; logo, há salto de 1250 reais e
-descontinuidade.</li>
+<code>P(50)=3500</code> pelo primeiro ramo;
+<code>P(50⁺)=−2500+3000+4250=4750</code> reais. Logo, há salto de 1250
+reais e descontinuidade.</li>
 <li><strong>Interpretação e unidade:</strong> a promoção produz um ganho
-extra de R$ 1.250 ao passar de 50 para mais de 50 unidades, o que só é
-plausível se houver bônus, mudança de mix ou custo explicitamente
-justificado.</li>
+extra de R$ 1.250 imediatamente ao passar de 50 para mais de 50
+unidades, o que só é plausível se houver bônus, mudança de mix ou custo
+explicitamente justificado.</li>
 <li><strong>Checagem:</strong> a inclinação muda de <code>80−2q</code>
 para <code>60−2q</code>, mas é a diferença de nível que cria o salto;
 não basta olhar inclinação.</li>
 <li><strong>Erro comum:</strong> declarar continuidade porque as
 expressões são parábolas ou escolher o segundo valor em
-<code>q=50</code> sem comparar o primeiro.</li>
+<code>q=50</code> sem comparar os limites.</li>
 <li><strong>Limite do modelo:</strong> um bônus pontual pode ser real,
 mas a decisão só é válida se o modelo reproduzir cupons, elegibilidade e
 custos; a parábola não é evidência empírica por si só.</li>
