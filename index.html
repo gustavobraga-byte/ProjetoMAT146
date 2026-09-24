@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="CapyCalculus: apostilas de MAT 146 personalizadas por curso e uma trilha jogável de Cálculo I com 20 microaulas.">
+  <title>CapyCalculus | MAT 146 — Cálculo I</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="game-content.js" defer></script>
+  <script src="activity-generator.js" defer></script>
+  <script src="course-context.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar" id="topo">
+    <div class="container topbar-inner">
+      <a class="brand" href="#inicio" aria-label="CapyCalculus — início">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>
+          <strong>CapyCalculus</strong>
+          <small>MAT 146 · Cálculo I</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#cursos">Cursos</a>
+        <a href="#trilha">Trilha</a>
+        <a href="#apostila">Apostila</a>
+        <a href="#jogo">Jogo</a>
+        <a href="#liga">Liga</a>
+      </nav>
+
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Ativar tema escuro" title="Alternar tema">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.4 15.1A8.5 8.5 0 0 1 8.9 3.6 8.5 8.5 0 1 0 20.4 15.1Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Aprenda no seu ritmo. Use o cálculo no seu curso.</span>
+          <h1 id="heroTitle">Sua apostila. Sua trilha. Seu ritmo.</h1>
+          <p>Escolha o curso, estude com os materiais de MAT 146 e avance no CapyCalculus com exercícios ligados ao seu contexto.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" type="button" data-scroll-to="cursos">Escolher meu curso</button>
+            <button class="button button-secondary" type="button" data-start-game>Jogar demonstração</button>
+          </div>
+          <ul class="trust-list" aria-label="Recursos do site">
+            <li>Funciona no celular</li>
+            <li>Progresso salvo no aparelho</li>
+            <li>Sem ranking obrigatório</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" aria-label="Capi, a capivara mascote do CapyCalculus">
+          <div class="hero-doodle hero-doodle-a" aria-hidden="true"></div>
+          <div class="hero-doodle hero-doodle-b" aria-hidden="true"></div>
+          <div class="mascot-bubble">Hoje a corrente fica por nossa conta.</div>
+          <div class="mascot-wrap">
+            <img src="assets/mascote/capi-happy.png" alt="Capi, capivara minimalista em pé" width="512" height="512">
+          </div>
+          <div class="floating-card floating-card-xp" aria-hidden="true">
+            <span class="floating-icon">+10</span>
+            <span><strong>XP</strong><small>domínio cresce</small></span>
+          </div>
+          <div class="floating-card floating-card-streak" aria-hidden="true">
+            <span class="streak-dot"></span>
+            <span><strong>Ritmo</strong><small>sem culpa</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section course-picker" id="cursos" aria-labelledby="coursesTitle">
+      <div class="container">
+        <div class="section-heading heading-split">
+          <div>
+            <span class="eyebrow">Personalização curricular</span>
+            <h2 id="coursesTitle">Qual é o seu curso?</h2>
+            <p>A seleção troca a apostila, o personagem de apoio e o contexto matemático do jogo.</p>
+          </div>
+          <label class="search-box" for="courseSearch">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <span class="sr-only">Buscar curso</span>
+            <input id="courseSearch" type="search" placeholder="Buscar curso" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="course-grid" id="courseGrid" aria-live="polite"></div>
+        <p class="search-empty" id="searchEmpty" hidden>Nenhum curso encontrado. Tente outro termo.</p>
+      </div>
+    </section>
+
+    <section class="section workspace" id="painel" aria-labelledby="workspaceTitle">
+      <div class="container">
+        <div class="workspace-heading">
+          <div>
+            <span class="eyebrow">Seu painel</span>
+            <h2 id="workspaceTitle">MAT 146 personalizado</h2>
+          </div>
+          <button class="text-button" type="button" data-scroll-to="cursos">Trocar curso</button>
+        </div>
+
+        <div class="workspace-grid">
+          <article class="dashboard-card course-summary" aria-labelledby="courseSummaryTitle">
+            <div class="course-avatar" id="courseAvatar" aria-hidden="true">A</div>
+            <div>
+              <span class="pill" id="courseStatus">Curso selecionado</span>
+              <h3 id="courseSummaryTitle">Administração</h3>
+              <p id="courseGuide">Marina, a gerente</p>
+            </div>
+            <dl class="summary-stats">
+              <div>
+                <dt>XP</dt>
+                <dd id="xpValue">0</dd>
+              </div>
+              <div>
+                <dt>Ritmo</dt>
+                <dd><span id="streakValue">0</span> dias</dd>
+              </div>
+              <div>
+                <dt>Corações</dt>
+                <dd id="heartsValue">3/3</dd>
+              </div>
+            </dl>
+            <div class="daily-mission">
+              <div>
+                <span>Missão de hoje</span>
+                <strong id="missionTitle">Comece pela Regra da Cadeia</strong>
+              </div>
+              <span class="mission-reward">+30 XP</span>
+            </div>
+          </article>
+
+          <article class="dashboard-card apostila-card" id="apostila" aria-labelledby="apostilaTitle">
+            <div class="cover-wrap">
+              <img id="apostilaCover" src="assets/capas/capa_administracao.png" alt="Capa da apostila de Administração" width="1654" height="2339">
+            </div>
+            <div class="apostila-content">
+              <span class="pill pill-soft">Apostila acessível</span>
+              <h3 id="apostilaTitle">Cálculo I · Administração</h3>
+              <p id="apostilaDescription">Exemplos contextualizados, exercícios comentados e trilha de estudo.</p>
+              <div class="resource-actions">
+                <a class="button button-accent button-small" id="htmlLink" href="biblioteca/administracao/05_APOSTILA_ACESSIVEL.html" target="_blank" rel="noopener">Ler HTML</a>
+                <a class="button button-primary button-small" id="pdfLink" href="biblioteca/administracao/05_APOSTILA_ACESSIVEL.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+                <a class="button button-ghost button-small" id="docxLink" href="biblioteca/administracao/05_APOSTILA_ACESSIVEL.docx" download>Baixar DOCX</a>
+              </div>
+              <a class="inline-link" id="contextQuestionsLink" href="biblioteca/administracao/03_QUESTOES_CONTEXTUALIZADAS.pdf" target="_blank" rel="noopener">Ver questões contextualizadas</a>
+            </div>
+          </article>
+
+          <article class="dashboard-card game-dashboard" id="jogo" aria-labelledby="gameDashboardTitle">
+            <div class="game-dashboard-copy">
+              <div class="game-pill-row">
+                <span class="pill pill-dark">Trilha completa</span>
+                <span class="league-chip" id="dashboardLeague"><img src="assets/badges/badge-09.png" alt=""> Liga de Cauchy</span>
+              </div>
+              <h3 id="gameDashboardTitle">Trilha MAT 146</h3>
+              <p id="gameContext">Vinte microaulas ligando pré-cálculo, limites, derivadas e integrais ao seu curso.</p>
+              <ul class="game-meta" aria-label="Características da trilha">
+                <li>20 microaulas jogáveis</li>
+                <li>5 módulos e 5 mecânicas</li>
+                <li>Sem perder XP</li>
+              </ul>
+              <button class="button button-accent" type="button" data-start-game>Começar pela Regra da Cadeia</button>
+            </div>
+            <div class="game-dashboard-art" aria-hidden="true">
+              <img src="assets/illustrations/chain-rule.png" alt="">
+              <span class="path-chip path-chip-one">Limite</span>
+              <span class="path-chip path-chip-two">Derivada</span>
+              <span class="path-chip path-chip-three">Integral</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section trail-section" id="trilha" aria-labelledby="trailTitle">
+      <div class="container trail-grid">
+        <div class="trail-intro">
+          <span class="eyebrow">Skill tree</span>
+          <h2 id="trailTitle">Do operador ao cálculo integral</h2>
+          <p>Uma sequência curta, cumulativa e conectada à apostila selecionada.</p>
+          <div class="trail-summary" aria-label="Resumo da trilha">
+            <div><strong id="trailCompleted">0</strong><span>etapas concluídas</span></div>
+            <div><strong>5</strong><span>módulos</span></div>
+            <div><strong>20</strong><span>microaulas</span></div>
+          </div>
+          <button class="button button-primary" type="button" data-start-game>Experimentar a Regra da Cadeia</button>
+        </div>
+        <div class="skill-tree" id="skillTree"></div>
+      </div>
+    </section>
+
+    <section class="section mechanics-section" aria-labelledby="mechanicsTitle">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <span class="eyebrow">Aprender · tentar · explicar</span>
+          <h2 id="mechanicsTitle">O exercício universitário em interações rápidas</h2>
+          <p>Cada mecânica preserva o raciocínio matemático e remove apenas a fricção desnecessária.</p>
+        </div>
+        <div class="mechanics-grid" id="mechanicsGrid"></div>
+        <div class="badge-wall" aria-labelledby="badgeWallTitle">
+          <div class="badge-wall-heading">
+            <h3 id="badgeWallTitle">Conquistas visuais</h3>
+            <p>Medalhas do protótipo para representar progresso sem confundir com nota.</p>
+          </div>
+          <div class="badge-grid" id="badgeWall"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section league-section" id="liga" aria-labelledby="leagueTitle">
+      <div class="container">
+        <div class="section-heading heading-split">
+          <div>
+            <span class="eyebrow">Liga local</span>
+            <h2 id="leagueTitle">Sua faixa evolui com o XP real da semana</h2>
+            <p>Conclua microaulas para avançar de faixa. O progresso fica salvo apenas neste navegador.</p>
+          </div>
+          <span class="pill pill-soft" id="leagueWeek">Semana atual</span>
+        </div>
+        <div class="league-layout">
+          <article class="league-current-card" aria-labelledby="leagueName">
+            <img id="leagueBadge" src="assets/badges/badge-09.png" alt="Badge da Liga de Cauchy" width="96" height="96">
+            <div class="league-current-copy">
+              <span id="leagueTier">Faixa atual</span>
+              <h3 id="leagueName">Liga de Cauchy</h3>
+              <p id="leagueStatus">0 lições concluídas nesta semana.</p>
+            </div>
+            <div class="league-score"><strong id="leagueWeeklyXp">0</strong><span>XP semanal</span></div>
+          </article>
+          <article class="league-progress-card" aria-labelledby="leagueProgressTitle">
+            <div class="league-progress-heading">
+              <div><span>Progresso da faixa</span><h3 id="leagueProgressTitle">Próximo marco</h3></div>
+              <strong id="leagueNext">200 XP</strong>
+            </div>
+            <div class="league-progress" id="leagueProgress" role="progressbar" aria-label="Progresso para a próxima faixa" aria-valuemin="0" aria-valuemax="200" aria-valuenow="0">
+              <span id="leagueProgressBar"></span>
+            </div>
+            <div class="league-stats">
+              <div><span>Melhor semana</span><strong id="leagueBest">0 XP</strong></div>
+              <div><span>Faltam</span><strong id="leagueRemaining">200 XP</strong></div>
+              <div><span>Modo</span><strong>Local</strong></div>
+            </div>
+          </article>
+        </div>
+        <ol class="league-ladder" id="leagueLadder" aria-label="Faixas da liga"></ol>
+        <p class="league-disclaimer">Esta versão não cria competidores fictícios nem envia dados. A liga compara apenas o seu progresso local.</p>
+      </div>
+    </section>
+
+    <section class="section responsible-section" aria-labelledby="responsibleTitle">
+      <div class="container responsible-card">
+        <div>
+          <span class="eyebrow">Uso responsável</span>
+          <h2 id="responsibleTitle">O jogo amplia a prática; a validação continua sendo humana.</h2>
+        </div>
+        <p>Os modelos contextuais usam números didáticos e não representam recomendações técnicas, dados oficiais ou resultados experimentais. Em uso docente, recomenda-se incluir a Declaração de Uso de IA e revisão matemática antes da publicação.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>CapyCalculus</strong>
+        <span>Protótipo didático baseado no pacote MAT 146 já produzido.</span>
+      </div>
+      <nav aria-label="Links do rodapé">
+        <a href="docs/GAME_DESIGN.md">Documentação do jogo</a>
+        <a href="biblioteca/README.md">Pacote MAT 146</a>
+        <button class="text-button" type="button" id="resetProgress">Limpar progresso local</button>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="game-overlay" id="gameOverlay" hidden aria-hidden="true">
+    <section class="game-dialog" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+      <header class="game-header">
+        <button class="icon-button game-close" type="button" id="closeGame" aria-label="Fechar jogo">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+        <div class="game-header-center">
+          <span class="game-kicker" id="gameKicker">Módulo 3 · Regra da Cadeia</span>
+          <h2 id="gameTitle">Regra da Cadeia</h2>
+        </div>
+        <div class="game-stat" aria-label="Corações">
+          <span class="heart-icon" aria-hidden="true"></span>
+          <strong id="gameHearts">3</strong>
+        </div>
+      </header>
+
+      <div class="game-progress-wrap" role="progressbar" aria-label="Progresso da lição" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+        <div class="game-progress" id="gameProgress"></div>
+      </div>
+
+      <div class="game-layout">
+        <aside class="coach-panel" aria-label="Capi, guia da lição">
+          <div class="coach-mascot-wrap">
+            <img id="coachMascot" src="assets/mascote/capi-hint.png" alt="Capi, mascote do jogo" width="512" height="512">
+          </div>
+          <div class="coach-bubble" id="coachBubble" role="status" aria-live="polite">
+            Toda função composta abre um caminho: por fora e por dentro.
+          </div>
+          <div class="coach-formula" id="coachFormula" aria-label="Fórmula contextual"></div>
+        </aside>
+
+        <div class="game-main">
+          <div class="question-card" id="questionCard" aria-live="polite"></div>
+          <div class="feedback-card" id="feedbackCard" hidden aria-live="assertive"></div>
+          <div class="game-actions" id="gameActions">
+            <button class="button button-ghost" type="button" id="hintButton">Pedir pista</button>
+            <button class="button button-primary" type="button" id="checkAnswer">Verificar</button>
+            <button class="button button-primary" type="button" id="nextButton" hidden>Próxima tela</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
