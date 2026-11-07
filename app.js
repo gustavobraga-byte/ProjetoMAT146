@@ -3,6 +3,9 @@
 
   const data = window.CapyData;
   const lessons = window.CapyLessons || [];
+  const modules = (data.modules || []).concat(
+    window.CapyListas && window.CapyListas.module ? [window.CapyListas.module] : []
+  );
   const resolveCourseActivities = window.resolveCourseActivities;
   const storageKey = "capycalculus-progress-v1";
   const themeKey = "capycalculus-theme-v1";
@@ -54,6 +57,8 @@
     gameContext: document.getElementById("gameContext"),
     skillTree: document.getElementById("skillTree"),
     trailCompleted: document.getElementById("trailCompleted"),
+    trailModules: document.getElementById("trailModules"),
+    trailTotal: document.getElementById("trailTotal"),
     mechanicsGrid: document.getElementById("mechanicsGrid"),
     badgeWall: document.getElementById("badgeWall"),
     dashboardLeague: document.getElementById("dashboardLeague"),
@@ -117,6 +122,20 @@
     };
   }
 
+  function expandLegacyListProgress(ids) {
+    // Migração: quem concluiu uma fase-macro antiga (m6-1..m6-4, uma por lista)
+    // ganha as fases curtas correspondentes daquela lista.
+    const legadas = { "m6-1": 1, "m6-2": 2, "m6-3": 3, "m6-4": 4 };
+    const novas = new Set(ids);
+    for (const antiga of Object.keys(legadas)) {
+      if (!ids.includes(antiga)) continue;
+      for (const item of lessons) {
+        if (item.list && item.list.number === legadas[antiga]) novas.add(item.id);
+      }
+    }
+    return [...novas];
+  }
+
   function loadState() {
     try {
       const stored = JSON.parse(localStorage.getItem(storageKey));
@@ -126,8 +145,8 @@
       return {
         ...defaultState,
         ...stored,
-        completed: Array.isArray(stored.completed) ? stored.completed : [],
-        demoCompleted: Array.isArray(stored.demoCompleted) ? stored.demoCompleted : [],
+        completed: expandLegacyListProgress(Array.isArray(stored.completed) ? stored.completed : []),
+        demoCompleted: expandLegacyListProgress(Array.isArray(stored.demoCompleted) ? stored.demoCompleted : []),
         league: normalizeLeague(stored.league)
       };
     } catch (_error) {
@@ -164,6 +183,28 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  // LaTeX embutido: \( ... \) inline e \[ ... \] em bloco, renderizados pelo KaTeX local.
+  const mathMacros = {
+    "\\tg": "\\operatorname{tg}",
+    "\\cotg": "\\operatorname{cotg}",
+    "\\cossec": "\\operatorname{cossec}",
+    "\\sen": "\\operatorname{sen}"
+  };
+  function formatMath(text) {
+    const value = String(text == null ? "" : text);
+    const hasMath = value.includes("\\(") || value.includes("\\[");
+    if (!window.katex || !hasMath) return escapeHtml(value);
+    return value.split(/(\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g).map((part) => {
+      if (part.startsWith("\\(") && part.endsWith("\\)")) {
+        return window.katex.renderToString(part.slice(2, -2), { throwOnError: false, strict: false, trust: false, macros: mathMacros });
+      }
+      if (part.startsWith("\\[") && part.endsWith("\\]")) {
+        return window.katex.renderToString(part.slice(2, -2), { displayMode: true, throwOnError: false, strict: false, trust: false, macros: mathMacros });
+      }
+      return escapeHtml(part);
+    }).join("");
   }
 
   function getSelectedCourse() {
@@ -229,7 +270,7 @@
     elements.courseStatus.textContent = "Curso selecionado";
     elements.courseSummaryTitle.textContent = course.name;
     elements.courseGuide.textContent = `${course.guide} acompanha a trilha de Cálculo I.`;
-    const nextLesson = lessons.find((item) => !state.completed.includes(item.id));
+    const nextLesson = getNextLesson();
     elements.missionTitle.textContent = nextLesson
       ? `Continue: ${nextLesson.title}`
       : "Trilha completa — escolha uma microaula para revisar";
@@ -297,7 +338,7 @@
   }
 
   function renderSkillTree() {
-    elements.skillTree.innerHTML = data.modules.map((module, moduleIndex) => {
+    elements.skillTree.innerHTML = modules.map((module, moduleIndex) => {
       const units = module.units.map((unit) => {
         const completedUnits = new Set([...state.completed, ...state.demoCompleted]);
         const status = completedUnits.has(unit.id) ? "completed" : "featured";
@@ -328,7 +369,11 @@
     }).join("");
 
     const completedUnits = new Set([...state.completed, ...state.demoCompleted]);
-    elements.trailCompleted.textContent = String(completedUnits.size);
+    const validIds = new Set(lessons.map((item) => item.id));
+    const doneCount = [...completedUnits].filter((id) => validIds.has(id)).length;
+    elements.trailCompleted.textContent = `${doneCount}/${lessons.length}`;
+    if (elements.trailModules) elements.trailModules.textContent = String(modules.length);
+    if (elements.trailTotal) elements.trailTotal.textContent = String(lessons.length);
   }
 
   function renderMechanics() {
@@ -528,14 +573,78 @@
   }
 
   function buildLessonActivities(definition, course, attemptSeed) {
+    if (Array.isArray(definition.bank) && definition.bank.length) {
+      return definition.bank.map((activity) => contextualizeActivity({ ...activity }, course));
+    }
     const activities = typeof resolveCourseActivities === "function"
       ? resolveCourseActivities(definition, course, attemptSeed)
       : null;
-    return activities ? activities.map((activity) => contextualizeActivity(activity, course)) : null;
+    if (!activities) return null;
+    return activities.map((activity) => {
+      const localized = contextualizeActivity(activity, course);
+      localized.difficulty = "easy";
+      return localized;
+    });
   }
 
   function getLesson(lessonId) {
     return lessons.find((item) => item.id === lessonId) || null;
+  }
+
+  function completedIds() {
+    return new Set([...(state.completed || []), ...(state.demoCompleted || [])]);
+  }
+
+  // Primeira fase da trilha que o aluno ainda não fez (ordem da trilha).
+  function getNextLesson() {
+    const done = completedIds();
+    return lessons.find((item) => !done.has(item.id)) || null;
+  }
+
+  // Próxima fase das listas oficiais (módulo 6) ainda não feita.
+  function getNextListaLesson() {
+    const done = completedIds();
+    return lessons.find((item) => item.moduleId === "m6" && !done.has(item.id)) || null;
+  }
+
+  function startNextPhase() {
+    const next = getNextLesson();
+    if (!next) {
+      showToast("Trilha completa — você pode revisar a Regra da Cadeia.");
+      startGame("m3-3");
+      return;
+    }
+    startGame(next.id);
+  }
+
+  function startNextLista() {
+    const next = getNextListaLesson();
+    if (!next) {
+      showToast("Listas oficiais completas — você pode revisar a primeira fase da Lista 1.");
+      startGame("m6-1");
+      return;
+    }
+    startGame(next.id);
+  }
+
+  // Atualiza os botões principais com a próxima fase (trilha e listas oficiais).
+  function renderNextPhaseButtons() {
+    const next = getNextLesson();
+    const label = next ? `Ir para a próxima fase: ${next.title}` : "Trilha completa — revisar a Regra da Cadeia";
+    document.querySelectorAll("[data-start-game]").forEach((button) => {
+      button.textContent = label;
+      button.setAttribute("aria-label", label);
+      if (next) button.dataset.nextLesson = next.id;
+      else delete button.dataset.nextLesson;
+    });
+    const nextLista = getNextListaLesson();
+    const listaLabel = nextLista ? `Listas oficiais: ${nextLista.title}` : "Listas oficiais completas — revisar a Lista 1";
+    document.querySelectorAll("[data-next-lista]").forEach((button) => {
+      button.textContent = listaLabel;
+      button.setAttribute("aria-label", listaLabel);
+      if (nextLista) button.dataset.nextLista = nextLista.id;
+      else delete button.dataset.nextLista;
+    });
   }
 
   function startGame(lessonId = "m3-3") {
@@ -643,7 +752,7 @@
     elements.feedbackCard.className = `feedback-card ${isCorrect ? "is-correct" : "is-retry"}`;
     elements.feedbackCard.innerHTML = `
       <span class="feedback-icon" aria-hidden="true">${isCorrect ? "✓" : "↻"}</span>
-      <div><strong>${isCorrect ? "Isso!" : "Quase!"}</strong><p>${escapeHtml(message)}</p></div>`;
+      <div><strong>${isCorrect ? "Isso!" : "Quase!"}</strong><p>${formatMath(message)}</p></div>`;
   }
 
   function uniqueOptions(values) {
@@ -663,7 +772,24 @@
   function renderGenericExplanation() {
     const definition = lesson.definition;
     const course = lesson.course;
-    const moduleIndex = data.modules.findIndex((module) => module.id === definition.moduleId);
+    if (definition.list) {
+      const faseTag = definition.list.phase
+        ? `Lista oficial ${definition.list.number} · Fase ${definition.list.phase}/${definition.list.phases} · ${definition.bank.length} de ${definition.list.total} questões`
+        : `Lista oficial ${definition.list.number} · ${definition.bank.length} questões`;
+      setCoach("Esta fase é uma lista oficial: cada subitem é uma questão com resposta conferida no gabarito, ordenada do Fácil ao Avançado.", "neutral", course.formula);
+      elements.questionCard.innerHTML = `
+        <span class="question-tag">${escapeHtml(faseTag)}</span>
+        <h3>${escapeHtml(definition.title)}</h3>
+        <p class="question-lead">${escapeHtml(definition.explanation)}</p>
+        <div class="generic-visual list-visual">
+          <div><strong>Objetivo da fase</strong><p>${escapeHtml(definition.objective)}</p></div>
+        </div>
+        <div class="formula-callout"><span>Notação</span><strong>Fórmulas em LaTeX, renderizadas no próprio aparelho</strong></div>
+        <a class="button button-ghost button-small topic-link" href="${getApostilaTopicHref(definition, course)}" target="_blank" rel="noopener">Estudar o tópico na apostila</a>`;
+      setActions({ hint: false, check: false, next: true, nextLabel: "Começar a fase" });
+      return;
+    }
+    const moduleIndex = modules.findIndex((module) => module.id === definition.moduleId);
     const scenario = `assets/scenarios/module-${String(Math.max(0, moduleIndex) + 1).padStart(2, "0")}.png`;
     const contextModel = lesson.activities[0] && lesson.activities[0].contextModel
       ? lesson.activities[0].contextModel
@@ -704,7 +830,7 @@
     const zone = elements.questionCard.querySelector(".order-zone");
     if (!zone || !activity) return;
     zone.innerHTML = lesson.orderSelection.length
-      ? lesson.orderSelection.map((index, orderIndex) => `<button type="button" data-order-remove="${index}"><span>${orderIndex + 1}</span>${escapeHtml(activity.items[index])}</button>`).join("")
+      ? lesson.orderSelection.map((index, orderIndex) => `<button type="button" data-order-remove="${index}"><span>${orderIndex + 1}</span>${formatMath(activity.items[index])}</button>`).join("")
       : "<span>Selecione os passos na ordem correta.</span>";
     elements.questionCard.querySelectorAll("[data-order-remove]").forEach((button) => {
       button.addEventListener("click", () => {
@@ -729,18 +855,18 @@
     let controls = "";
     if (activity.type === "choice" || activity.type === "bug") {
       controls = `<div class="answer-options" role="radiogroup" aria-label="Alternativas">
-        ${activity.options.map((option, optionIndex) => `<label class="answer-option"><input type="radio" name="activity-answer" value="${optionIndex}"><span class="option-letter">${String.fromCharCode(65 + optionIndex)}</span><span>${escapeHtml(option)}</span></label>`).join("")}
+        ${activity.options.map((option, optionIndex) => `<label class="answer-option"><input type="radio" name="activity-answer" value="${optionIndex}"><span class="option-letter">${String.fromCharCode(65 + optionIndex)}</span><span>${formatMath(option)}</span></label>`).join("")}
       </div>`;
     } else if (activity.type === "fill") {
-      controls = `<div class="generic-fill-grid">${activity.fields.map((field) => `<label><span>${escapeHtml(field.label)}</span><select name="field-${escapeHtml(field.id)}"><option value="">Escolha</option>${field.options.map((option, optionIndex) => `<option value="${optionIndex}">${escapeHtml(option)}</option>`).join("")}</select></label>`).join("")}</div>`;
+      controls = `<div class="generic-fill-grid">${activity.fields.map((field) => `<label><span>${formatMath(field.label)}</span><select name="field-${escapeHtml(field.id)}"><option value="">Escolha</option>${field.options.map((option, optionIndex) => `<option value="${optionIndex}">${formatMath(option)}</option>`).join("")}</select></label>`).join("")}</div>`;
     } else if (activity.type === "order") {
-      controls = `<div class="order-board"><div class="order-zone" aria-live="polite"></div><div class="order-items">${activity.items.map((item, itemIndex) => `<button type="button" data-order-index="${itemIndex}">${escapeHtml(item)}</button>`).join("")}</div></div>`;
+      controls = `<div class="order-board"><div class="order-zone" aria-live="polite"></div><div class="order-items">${activity.items.map((item, itemIndex) => `<button type="button" data-order-index="${itemIndex}">${formatMath(item)}</button>`).join("")}</div></div>`;
     } else if (activity.type === "pair") {
-      controls = `<div class="pairing-list">${activity.pairs.map((pair, pairIndex) => `<div class="pair-row"><span class="pair-function">${escapeHtml(pair.left)}</span><span class="pair-line" aria-hidden="true"></span><label><span class="sr-only">Escolha o par ${pairIndex + 1}</span><select name="pair-${pairIndex}"><option value="">Escolha</option>${pair.options.map((option, optionIndex) => `<option value="${optionIndex}">${escapeHtml(option)}</option>`).join("")}</select></label></div>`).join("")}</div>`;
+      controls = `<div class="pairing-list">${activity.pairs.map((pair, pairIndex) => `<div class="pair-row"><span class="pair-function">${formatMath(pair.left)}</span><span class="pair-line" aria-hidden="true"></span><label><span class="sr-only">Escolha o par ${pairIndex + 1}</span><select name="pair-${pairIndex}"><option value="">Escolha</option>${pair.options.map((option, optionIndex) => `<option value="${optionIndex}">${formatMath(option)}</option>`).join("")}</select></label></div>`).join("")}</div>`;
     }
     elements.questionCard.innerHTML = `
-      <span class="question-tag">${activityTypeLabel(activity.type)}${difficulty ? ` · ${escapeHtml(difficulty)}` : ""}</span>
-      <h3>${escapeHtml(activity.prompt)}</h3>
+      <span class="question-tag">${activityTypeLabel(activity.type)}${difficulty ? ` · ${escapeHtml(difficulty)}` : ""}${activity.ref ? ` · ${escapeHtml(activity.ref)}` : ""}</span>
+      <h3>${formatMath(activity.prompt)}</h3>
       <p class="question-lead">${activity.contextResolved ? `Questão final contextualizada — ${escapeHtml(activity.contextLabel)}. Modelo e números são fictícios; não use como recomendação.` : activity.generated ? "Atividade aleatória: os valores serão diferentes quando você iniciar esta lição novamente." : "Leia com atenção, tente e depois confira."}</p>
       ${controls}`;
     if (activity.type === "order") {
@@ -837,9 +963,9 @@
       <div class="answer-options" role="radiogroup" aria-label="Alternativas para a função interna">
         ${options.map((option, index) => `
           <label class="answer-option">
-            <input type="radio" name="concept-answer" value="${escapeHtml(option)}">
+            <input type="radio" name="concept-answer" value="${formatMath(option)}">
             <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-            <span>${escapeHtml(option)}</span>
+            <span>${formatMath(option)}</span>
           </label>`).join("")}
       </div>`;
     setActions({ hint: true, check: true, next: false });
@@ -908,7 +1034,7 @@
       <div class="pairing-list">
         ${pairs.map((pair, index) => `
           <div class="pair-row">
-            <span class="pair-function">${escapeHtml(pair.left)}</span>
+            <span class="pair-function">${formatMath(pair.left)}</span>
             <span class="pair-line" aria-hidden="true"></span>
             <label>
               <span class="sr-only">Derivada do par ${index + 1}</span>
@@ -967,21 +1093,25 @@
 
   function retryCurrentActivity() {
     if (!lesson || !lesson.restartPending || lesson.completed) return;
-    const currentStep = lesson.step;
+    // Perder os três corações volta ao INÍCIO da fase (tela de explicação).
     state.hearts = 3;
     saveState();
     renderStats();
     elements.gameHearts.textContent = "3";
     lesson.attemptSeed = createAttemptSeed();
     lesson.activities = buildLessonActivities(lesson.definition, lesson.course, lesson.attemptSeed);
-    lesson.step = currentStep;
+    lesson.step = 0;
+    lesson.startedAt = Date.now();
+    lesson.firstTry = Array(lesson.activities.length + 1).fill(null);
+    lesson.errors = 0;
+    lesson.hints = 0;
     lesson.hearts = 3;
     lesson.solved = false;
     lesson.restartPending = false;
     lesson.orderSelection = [];
     renderLesson();
     playGameSound("start");
-    window.requestAnimationFrame(() => elements.checkAnswer.focus());
+    window.requestAnimationFrame(() => elements.nextButton.focus());
   }
 
   function restartActivityWithEncouragement() {
@@ -1000,9 +1130,9 @@
       <span class="feedback-icon" aria-hidden="true">↻</span>
       <div>
         <strong>Você perdeu os três corações, mas seu caminho não termina aqui.</strong>
-        <p>Seu progresso foi mantido. Clique no botão para tentar esta atividade novamente com novos valores.</p>
+        <p>Você voltará ao início desta fase. Clique no botão para recomeçar do começo, com novos valores.</p>
       </div>
-      <button class="button button-primary feedback-retry-button" id="retryActivityButton" type="button">Tentar novamente</button>`;
+      <button class="button button-primary feedback-retry-button" id="retryActivityButton" type="button">Recomeçar a fase</button>`;
     document.getElementById("retryActivityButton").addEventListener("click", retryCurrentActivity, { once: true });
     playGameSound("heartLoss");
     window.requestAnimationFrame(() => document.getElementById("retryActivityButton").focus());
@@ -1118,6 +1248,7 @@
     renderStats();
     renderLeague();
     renderSkillTree();
+    renderNextPhaseButtons();
   }
 
   function handleCourseGridClick(event) {
@@ -1151,7 +1282,11 @@
     });
 
     document.querySelectorAll("[data-start-game]").forEach((button) => {
-      button.addEventListener("click", () => startGame("m3-3"));
+      button.addEventListener("click", () => startNextPhase());
+    });
+
+    document.querySelectorAll("[data-next-lista]").forEach((button) => {
+      button.addEventListener("click", () => startNextLista());
     });
 
     document.querySelectorAll("[data-scroll-to]").forEach((button) => {
@@ -1201,6 +1336,7 @@
     renderSkillTree();
     renderMechanics();
     renderBadges();
+    renderNextPhaseButtons();
   }
 
   function registerServiceWorker() {

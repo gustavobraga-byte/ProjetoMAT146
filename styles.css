@@ -2974,3 +2974,16 @@ html[data-theme="dark"] .coach-mascot-wrap img {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Listas oficiais MAT 146 — notação matemática renderizada pelo KaTeX local */
+.question-card h3 { overflow-wrap: anywhere; }
+.question-card .katex { font-size: 1.02em; }
+.answer-option .katex { font-size: 1em; }
+.question-card .katex-display { margin: 0.4em 0; text-align: left; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.15em 0; }
+.answer-option span:last-child { overflow-x: auto; }
+.list-visual { display: block; }
+.list-visual p { max-width: 62ch; margin: 0.35em 0 0; }
+@media (max-width: 640px) {
+  .question-card .katex { font-size: 0.96em; }
+}

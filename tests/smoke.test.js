@@ -7,6 +7,9 @@ const vm = require("node:vm");
 
 const SITE = path.resolve(__dirname, "..");
 const OUTPUT_ROOT = path.resolve(SITE, "..");
+// O repositório traz apenas o site; as apostilas-fonte e o README da biblioteca
+// vivem no pacote MAT 146 completo, um nível acima de SITE.
+const packageRootReady = fs.existsSync(path.join(OUTPUT_ROOT, "administracao"));
 
 function loadData() {
   const sandbox = { window: {} };
@@ -46,12 +49,13 @@ function test(name, fn) {
 }
 
 test("o pacote contém onze cursos únicos", () => {
-  assert.equal(data.version, "1.3.0");
+  assert.equal(data.version, "1.5.0");
   assert.equal(data.courses.length, 11);
   assert.equal(new Set(data.courses.map((course) => course.slug)).size, 11);
 });
 
 test("todos os cursos possuem apostila, questão contextualizada e capa", () => {
+  if (!packageRootReady) return; // verificação do pacote completo, não do repositório
   for (const course of data.courses) {
     assertFile(path.join("..", course.slug, "05_APOSTILA_ACESSIVEL.pdf"), 10_000);
     assertFile(path.join("..", course.slug, "05_APOSTILA_ACESSIVEL.docx"), 5_000);
@@ -253,16 +257,51 @@ test("o jogo abre o tópico da apostila e possui liga local funcional", () => {
   assert.ok(app.includes("currentWeekKey"));
 });
 
-test("zerar os corações aguarda a tentativa e mantém a atividade atual", () => {
+test("zerar os corações volta ao início da fase", () => {
   const app = fs.readFileSync(path.join(SITE, "app.js"), "utf8");
   assert.ok(app.includes("function restartActivityWithEncouragement"));
   assert.ok(app.includes("function retryCurrentActivity"));
   assert.ok(app.includes("Você perdeu os três corações"));
-  assert.ok(app.includes("Tentar novamente"));
+  assert.ok(app.includes("Recomeçar a fase"));
+  assert.ok(app.includes("Você voltará ao início desta fase"));
   assert.ok(app.includes("lesson.restartPending"));
   assert.ok(app.includes("lesson.attemptSeed = createAttemptSeed()"));
-  assert.ok(app.includes("const currentStep = lesson.step"));
-  assert.ok(!app.includes("lesson.step = 0"), "não deve voltar ao início da lição após_zero corações");
+  assert.ok(app.includes("lesson.step = 0"), "perder os três corações deve voltar ao início da fase");
+  assert.ok(!app.includes("const currentStep = lesson.step"), "não deve manter a atividade atual após zerar os corações");
+  assert.ok(!app.includes("lesson.step = currentStep"), "não deve manter a atividade atual após zerar os corações");
+});
+
+test("botões principais vão para a próxima fase e para a próxima lista oficial", () => {
+  const app = fs.readFileSync(path.join(SITE, "app.js"), "utf8");
+  const html = fs.readFileSync(path.join(SITE, "index.html"), "utf8");
+  assert.ok(app.includes("function getNextLesson"));
+  assert.ok(app.includes("function startNextPhase"));
+  assert.ok(app.includes("function getNextListaLesson"));
+  assert.ok(app.includes("function startNextLista"));
+  assert.ok(app.includes("function renderNextPhaseButtons"));
+  assert.ok(app.includes("Ir para a próxima fase"));
+  assert.ok(app.includes("Listas oficiais:"));
+  assert.ok(app.includes("[data-start-game]"));
+  assert.ok(app.includes("[data-next-lista]"));
+  assert.ok(app.includes("startNextPhase()"));
+  assert.ok(app.includes("startNextLista()"));
+  assert.ok(!html.includes("Experimentar a Regra da Cadeia"), "rótulo antigo deve ter saído");
+  assert.ok(!html.includes("Começar pela Regra da Cadeia"), "rótulo antigo deve ter saído");
+  assert.ok(!html.includes("Jogar demonstração"), "rótulo antigo deve ter saído");
+  assert.ok(html.includes("Ir para a próxima fase"));
+  assert.ok(html.includes("data-next-lista"));
+  assert.ok(html.includes(">Listas oficiais<"));
+  // resumo da trilha: 6 módulos e 47 etapas (20 microaulas + 27 fases), dinâmico
+  assert.ok(html.includes('id="trailCompleted">0/47<'), "etapas concluídas deve mostrar X/47");
+  assert.ok(html.includes('id="trailModules">6<'), "módulos deve ser 6");
+  assert.ok(html.includes('id="trailTotal">47<'), "total de etapas deve ser 47");
+  assert.ok(html.includes("20 microaulas + 27 fases das listas"));
+  assert.ok(!html.includes("<strong>5</strong><span>módulos</span>"), "contagem antiga de módulos deve ter saído");
+  assert.ok(!html.includes("<strong>20</strong><span>microaulas</span>"), "contagem antiga de microaulas deve ter saído");
+  assert.ok(app.includes('getElementById("trailModules")'));
+  assert.ok(app.includes('getElementById("trailTotal")'));
+  assert.ok(app.includes("modules.length"));
+  assert.ok(app.includes("lessons.length"));
 });
 
 test("o jogo tem som discreto, botão de mute e preferência local", () => {
@@ -348,6 +387,7 @@ test("o shell e seus recursos principais existem", () => {
     "assets/icon-192.png",
     "assets/icon-512.png"
   ]) {
+    if (!packageRootReady && file.startsWith("biblioteca/README")) continue;
     assertFile(file, file.endsWith(".md") ? 1_000 : 100);
   }
 });
@@ -356,10 +396,13 @@ test("o cache do service worker aponta para recursos existentes", () => {
   const sw = fs.readFileSync(path.join(SITE, "sw.js"), "utf8");
   const resources = [...sw.matchAll(/"\.\/([^"?]+)"/g)].map((match) => match[1]).filter(Boolean);
   for (const resource of resources) assertFile(resource, 20);
-  assert.ok(sw.includes("capycalculus-v8"));
+  assert.ok(sw.includes("capycalculus-v11"));
   assert.ok(sw.includes("assets/mascote/capi-happy.png"));
   assert.ok(sw.includes("assets/scenarios/module-05.png"));
   assert.ok(sw.includes("assets/badges/badge-12.png"));
+  assert.ok(sw.includes("listas-mat146.js"));
+  assert.ok(sw.includes("katex/katex.min.js"));
+  assert.ok(sw.includes("assets/scenarios/module-06.png"));
 });
 
 test("os links de recursos não dependem da raiz do pacote MAT 146", () => {
@@ -410,6 +453,87 @@ test("a documentação contém a aula completa e os prompts de ativos", () => {
     assert.ok(doc.includes(term), `Seção ausente: ${term}`);
   }
   assert.ok(!/[\u4e00-\u9fff]/u.test(doc), "Documento contém caracteres CJK inesperados");
+});
+
+
+function loadAllLessons() {
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  vm.runInContext(fs.readFileSync(path.join(SITE, "game-content.js"), "utf8"), sandbox);
+  vm.runInContext(fs.readFileSync(path.join(SITE, "listas-mat146.js"), "utf8"), sandbox);
+  return sandbox.window.CapyLessons;
+}
+
+test("o módulo 6 traz as quatro listas oficiais em fases curtas por tema e nível", () => {
+  const all = loadAllLessons();
+  const listas = all.filter((lesson) => lesson.moduleId === "m6");
+  // 27 fases: L1×7, L2×6, L3×6, L4×8 — nenhuma fase longa (máx. 25 questões)
+  assert.equal(listas.length, 27);
+  assert.equal(listas.reduce((total, lesson) => total + lesson.bank.length, 0), 491);
+  assert.equal(new Set(listas.map((lesson) => lesson.id)).size, listas.length, "ids de fase repetidos");
+  const totaisPorLista = { 1: 119, 2: 118, 3: 116, 4: 138 };
+  const fasesPorLista = { 1: 7, 2: 6, 3: 6, 4: 8 };
+  const ordem = { easy: 0, medium: 1, hard: 2 };
+  const ids = [];
+  for (const lesson of listas) {
+    assert.ok(lesson.list && lesson.list.number >= 1 && lesson.list.number <= 4, `${lesson.id}: metadados da lista`);
+    assert.ok(lesson.list.phase >= 1 && lesson.list.phase <= lesson.list.phases, `${lesson.id}: fase fora do intervalo`);
+    assert.ok(lesson.list.theme, `${lesson.id}: tema ausente`);
+    assert.ok(Array.isArray(lesson.list.questions) && lesson.list.questions.length >= 1, `${lesson.id}: questões de origem ausentes`);
+    assert.ok(lesson.bank.length >= 8 && lesson.bank.length <= 25, `${lesson.id}: fase longa demais (${lesson.bank.length})`);
+    // dentro da fase: Fácil → Intermediária → Avançada (não decrescente)
+    for (let i = 1; i < lesson.bank.length; i += 1) {
+      assert.ok(ordem[lesson.bank[i].difficulty] >= ordem[lesson.bank[i - 1].difficulty], `${lesson.id}: ordem de nível quebrada em ${lesson.bank[i].id}`);
+    }
+    for (const activity of lesson.bank) {
+      ids.push(activity.id);
+      assert.equal(activity.type, "choice", `${activity.id}: tipo inesperado`);
+      assert.match(activity.ref, /^Lista \d/u, `${activity.id}: referência ausente`);
+      assert.ok(activity.options.length >= 2, `${activity.id}: alternativas insuficientes`);
+      assert.equal(new Set(activity.options).size, activity.options.length, `${activity.id}: alternativas repetidas`);
+      assert.ok(Number.isInteger(activity.answer) && activity.answer >= 0 && activity.answer < activity.options.length, `${activity.id}: resposta inválida`);
+      assert.ok(["easy", "medium", "hard"].includes(activity.difficulty), `${activity.id}: dificuldade inválida`);
+      assert.ok(activity.prompt && activity.hint && activity.correct && activity.retry, `${activity.id}: feedback incompleto`);
+    }
+  }
+  assert.equal(new Set(ids).size, ids.length, "ids de questão repetidos");
+  // cobertura completa de cada lista, sem repetição, em fases sequenciais
+  for (const numero of [1, 2, 3, 4]) {
+    const daLista = listas.filter((lesson) => lesson.list.number === numero);
+    assert.equal(daLista.length, fasesPorLista[numero], `Lista ${numero}: número de fases divergente`);
+    assert.equal(daLista.reduce((total, lesson) => total + lesson.bank.length, 0), totaisPorLista[numero], `Lista ${numero}: cobertura incompleta`);
+    assert.equal(daLista.map((lesson) => lesson.list.phase).join(","), Array.from({ length: fasesPorLista[numero] }, (_, i) => i + 1).join(","), `Lista ${numero}: fases fora de ordem`);
+    const qs = daLista.flatMap((lesson) => lesson.list.questions);
+    assert.equal(new Set(qs).size, qs.length, `Lista ${numero}: questão de origem repetida entre fases`);
+    const maxQ = Math.max(...qs);
+    assert.equal(new Set(qs).size, maxQ, `Lista ${numero}: falta questão de origem (1..${maxQ})`);
+  }
+  // o app exibe fase/tema e migra o progresso das fases-macro antigas
+  const app = fs.readFileSync(path.join(SITE, "app.js"), "utf8");
+  assert.ok(app.includes("expandLegacyListProgress"), "migração de progresso ausente");
+  assert.ok(app.includes("definition.list.phase"), "etiqueta de fase ausente");
+  assert.ok(app.includes("Começar a fase"), "botão da fase ausente");
+});
+
+test("as listas usam LaTeX e o KaTeX local, sem caret exposto", () => {
+  const html = fs.readFileSync(path.join(SITE, "index.html"), "utf8");
+  const listas = loadAllLessons().filter((lesson) => lesson.moduleId === "m6");
+  assert.ok(html.includes("katex/katex.min.css"));
+  assert.ok(html.includes("katex/katex.min.js"));
+  assert.ok(html.includes("listas-mat146.js"));
+  assertFile("katex/katex.min.js", 100_000);
+  assertFile("katex/katex.min.css", 10_000);
+  assertFile("katex/fonts/KaTeX_Main-Regular.woff2", 1_000);
+  let snippets = 0;
+  for (const lesson of listas) {
+    for (const activity of lesson.bank) {
+      for (const text of [activity.prompt, ...activity.options, activity.hint, activity.correct, activity.retry]) {
+        assert.ok(!/[\\^]/u.test(text.replace(/\\[[\s\S]*?\\]|\\\([\s\S]*?\\\)/g, "")), `${activity.id}: caret fora de LaTeX`);
+        snippets += (text.match(/\\\(/g) || []).length;
+      }
+    }
+  }
+  assert.ok(snippets > 2000, `poucas fórmulas em LaTeX: ${snippets}`);
 });
 
 let passed = 0;

@@ -4,12 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#173f35">
-  <meta name="description" content="CapyCalculus: apostilas de MAT 146 personalizadas por curso e uma trilha jogável de Cálculo I com 20 microaulas.">
+  <meta name="description" content="CapyCalculus: apostilas de MAT 146 personalizadas por curso e uma trilha jogável de Cálculo I com 20 microaulas e as 4 listas oficiais de MAT 146 em 27 fases curtas por tema e nível (491 questões).">
   <title>CapyCalculus | MAT 146 — Cálculo I</title>
+  <link rel="icon" href="assets/icon-192.png" type="image/png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="katex/katex.min.css">
   <script src="data.js" defer></script>
+  <script src="katex/katex.min.js" defer></script>
   <script src="game-content.js" defer></script>
+  <script src="listas-mat146.js" defer></script>
   <script src="activity-generator.js" defer></script>
   <script src="course-context.js" defer></script>
   <script src="app.js" defer></script>
@@ -52,7 +56,7 @@
           <p>Escolha o curso, estude com os materiais de MAT 146 e avance no CapyCalculus com exercícios ligados ao seu contexto.</p>
           <div class="hero-actions">
             <button class="button button-primary" type="button" data-scroll-to="cursos">Escolher meu curso</button>
-            <button class="button button-secondary" type="button" data-start-game>Jogar demonstração</button>
+            <button class="button button-secondary" type="button" data-start-game>Ir para a próxima fase</button>
           </div>
           <ul class="trust-list" aria-label="Recursos do site">
             <li>Funciona no celular</li>
@@ -135,7 +139,7 @@
             <div class="daily-mission">
               <div>
                 <span>Missão de hoje</span>
-                <strong id="missionTitle">Comece pela Regra da Cadeia</strong>
+                <strong id="missionTitle">Ir para a próxima fase</strong>
               </div>
               <span class="mission-reward">+30 XP</span>
             </div>
@@ -165,13 +169,14 @@
                 <span class="league-chip" id="dashboardLeague"><img src="assets/badges/badge-09.png" alt=""> Liga de Cauchy</span>
               </div>
               <h3 id="gameDashboardTitle">Trilha MAT 146</h3>
-              <p id="gameContext">Vinte microaulas ligando pré-cálculo, limites, derivadas e integrais ao seu curso.</p>
+              <p id="gameContext">Vinte microaulas ligando pré-cálculo, limites, derivadas e integrais ao seu curso — mais as quatro listas oficiais de MAT 146 em 27 fases curtas por tema e nível, com 491 questões.</p>
               <ul class="game-meta" aria-label="Características da trilha">
-                <li>20 microaulas jogáveis</li>
-                <li>5 módulos e 5 mecânicas</li>
+                <li>20 microaulas jogáveis + 4 listas em 27 fases curtas</li>
+                <li>6 módulos e 5 mecânicas</li>
                 <li>Sem perder XP</li>
               </ul>
-              <button class="button button-accent" type="button" data-start-game>Começar pela Regra da Cadeia</button>
+              <button class="button button-accent" type="button" data-start-game>Ir para a próxima fase</button>
+              <button class="button button-secondary" type="button" data-next-lista>Listas oficiais</button>
             </div>
             <div class="game-dashboard-art" aria-hidden="true">
               <img src="assets/illustrations/chain-rule.png" alt="">
@@ -189,13 +194,14 @@
         <div class="trail-intro">
           <span class="eyebrow">Skill tree</span>
           <h2 id="trailTitle">Do operador ao cálculo integral</h2>
-          <p>Uma sequência curta, cumulativa e conectada à apostila selecionada.</p>
+          <p>47 etapas cumulativas — 20 microaulas e 27 fases das listas oficiais — conectadas à apostila selecionada.</p>
           <div class="trail-summary" aria-label="Resumo da trilha">
-            <div><strong id="trailCompleted">0</strong><span>etapas concluídas</span></div>
-            <div><strong>5</strong><span>módulos</span></div>
-            <div><strong>20</strong><span>microaulas</span></div>
+            <div><strong id="trailCompleted">0/47</strong><span>etapas concluídas</span></div>
+            <div><strong id="trailModules">6</strong><span>módulos</span></div>
+            <div><strong id="trailTotal">47</strong><span>20 microaulas + 27 fases das listas</span></div>
           </div>
-          <button class="button button-primary" type="button" data-start-game>Experimentar a Regra da Cadeia</button>
+          <button class="button button-primary" type="button" data-start-game>Ir para a próxima fase</button>
+          <button class="button button-secondary" type="button" data-next-lista>Listas oficiais</button>
         </div>
         <div class="skill-tree" id="skillTree"></div>
       </div>
