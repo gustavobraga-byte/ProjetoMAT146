@@ -183,6 +183,78 @@
       box-shadow: none !important;
     }
     body button[class*="bg-blue-600"]:hover { background: var(--ufv-vermelho-escuro) !important; }
+
+    /* --- Sem azuis no tema claro: chips numerados e sliders na paleta UFV --- */
+    body span[class*="bg-blue-600"] {
+      background: var(--ufv-vermelho) !important;
+      color: #FFFFFF !important;
+    }
+    body input[type="range"] { accent-color: var(--ufv-vermelho); }
+    body.dark-mode input[type="range"] { accent-color: #E8B9B2; }
+
+    /* --- Fórmulas sempre em tinta forte (legibilidade no tema claro) --- */
+    body .katex { color: var(--ink) !important; }
+
+    /* --- Checkboxes/radios na paleta UFV (Laboratório PVI) --- */
+    body input[type="checkbox"], body input[type="radio"] { accent-color: var(--ufv-vermelho); }
+    body.dark-mode input[type="checkbox"], body.dark-mode input[type="radio"] { accent-color: #E8B9B2; }
+
+    /* --- Chips numerados âmbar do Roteiro: mesma linguagem das outras abas --- */
+    body span[class*="bg-amber-600"] {
+      background: var(--ufv-vermelho) !important;
+      color: #FFFFFF !important;
+    }
+
+    /* --- Caixa passo a passo (métodos de integração) --- */
+    body .passo-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--ufv-vermelho);
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin: 10px 0;
+    }
+    body .passo-titulo {
+      font-weight: 700;
+      color: var(--ufv-vermelho);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: 10px;
+    }
+    body .passo-lista {
+      list-style: none;
+      counter-reset: passo;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    body .passo-lista li {
+      position: relative;
+      padding-left: 42px;
+      color: var(--ink);
+      line-height: 1.65;
+      min-height: 28px;
+    }
+    body .passo-lista li::before {
+      counter-increment: passo;
+      content: counter(passo);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--ufv-vermelho);
+      color: #FFFFFF;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     body button[class*="border-slate-300"], body button[class*="border-slate-600"] { border-color: var(--line) !important; }
     body #btn-modo-aula[style*="D1A705"] { color: var(--ink) !important; }
 
@@ -249,9 +321,124 @@
     body .lista5-grid b, body .lista5-list b { color: var(--ufv-vermelho); font-weight: 800; }
     body #gabarito-lista5 .lista5-grid { font-size: .82rem; }
 
-    /* --- Rodapé com as Quatro Pilastras --- */
+    /* --- Rodapé --- */
     body footer svg { display: none; }
-    body .pilastras-img { display: block; width: 100%; max-width: 720px; height: auto; margin: 0 auto; }
+
+
+    /* =========================================================================
+       REFINAMENTOS DE DESIGN — v2 (Edição Zen)
+       ========================================================================= */
+    /* Faixa de identidade UFV no topo */
+    body .ufv-strip {
+      height: 7px;
+      background: linear-gradient(90deg,
+        var(--ufv-vermelho) 0%, var(--ufv-vermelho) 58%,
+        var(--ufv-amarelo) 58%, var(--ufv-amarelo) 76%,
+        var(--ufv-verde) 76%, var(--ufv-verde) 100%);
+    }
+    /* Selo dourado da Edição Zen */
+    body .zen-badge {
+      display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .02em;
+      padding: .18rem .55rem; border-radius: 999px; white-space: nowrap;
+      color: #8A6A05; background: linear-gradient(135deg, rgba(209,167,5,.16), rgba(209,167,5,.30));
+      border: 1px solid rgba(209,167,5,.45);
+    }
+    body.dark-mode .zen-badge { color: #E7C55A; background: rgba(209,167,5,.14); border-color: rgba(209,167,5,.4); }
+
+    /* Barra de abas fixa no topo ao rolar */
+    body .nav-abas { position: sticky; top: 0; z-index: 60; border-radius: 0; border-left: 0; border-right: 0; box-shadow: 0 6px 18px rgba(37,34,30,.08); }
+    body.dark-mode .nav-abas { box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+    body .nav-abas::before {
+      content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(209,167,5,.7), transparent);
+    }
+
+    /* Abas: pill moderno, ativa com elevação */
+    body .tab-btn { transition: transform .16s ease, background-color .16s ease, color .16s ease, box-shadow .16s ease !important; }
+    body .tab-btn:hover { transform: translateY(-1px); }
+    body .tab-btn.bg-blue-600 {
+      background: var(--ufv-vermelho) !important; color: #fff !important;
+      box-shadow: 0 8px 18px rgba(144,24,18,.30) !important; transform: translateY(-1px);
+    }
+    body .tab-btn.bg-blue-600::after { content: ' ·'; opacity: .55; }
+
+    /* Entrada suave ao trocar de aba */
+    @keyframes zenAbaEntrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    body .aba-conteudo { animation: zenAbaEntrar .3s ease both; }
+    @media (prefers-reduced-motion: reduce) { body .aba-conteudo, body .tab-btn { animation: none !important; transition: none !important; } }
+
+    /* Cartões com leve hover (apenas nos títulos de seção) */
+    body .surface-card { transition: box-shadow .2s ease, border-color .2s ease; }
+
+    /* Botões de fase: chips com elevação */
+    body .jogo-fase {
+      font-size: .74rem; padding: .42rem .72rem; border-radius: .6rem;
+      box-shadow: 0 1px 2px rgba(37,34,30,.07);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background-color .16s ease, color .16s ease;
+    }
+    body .jogo-fase:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(37,34,30,.14);
+      border-color: var(--ufv-vermelho); color: var(--ufv-vermelho);
+    }
+    body .jogo-fase-ativa {
+      background: linear-gradient(135deg, var(--ufv-vermelho), #A93B31) !important;
+      border-color: var(--ufv-amarelo) !important; color: #fff !important;
+      box-shadow: 0 8px 18px rgba(144,24,18,.34);
+      transform: translateY(-1px);
+    }
+
+    /* Cartão explicativo: moldura de polaroid com fita */
+    body .explicacao-jogo {
+      border: 1px solid rgba(209,167,5,.55);
+      background: linear-gradient(180deg, var(--ufv-amarelo-claro), #FFFDF6 120%);
+      position: relative;
+    }
+    body .explicacao-jogo::before {
+      content: '✦ imagens da Capi'; position: absolute; top: 8px; right: 12px;
+      font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(138,106,5,.55); pointer-events: none;
+    }
+    body .explicacao-img {
+      border: 6px solid #fff; outline: 1px solid var(--line); border-radius: .5rem;
+      box-shadow: 0 12px 26px rgba(37,34,30,.17);
+      transform: rotate(-.6deg); transition: transform .2s ease, box-shadow .2s ease;
+      background: #fff;
+    }
+    body .explicacao-img:hover { transform: rotate(0deg) scale(1.02); box-shadow: 0 16px 34px rgba(37,34,30,.2); }
+    body.dark-mode .explicacao-img { border-color: #2A2E30; }
+
+    /* Botão "Jogar agora" */
+    body .bloco-jogo button[onclick^="abrirJogo"] {
+      background: linear-gradient(135deg, var(--ufv-vermelho), #B04238) !important;
+      box-shadow: 0 12px 24px rgba(144,24,18,.36) !important;
+      letter-spacing: .01em; transition: transform .16s ease, box-shadow .16s ease;
+    }
+    body .bloco-jogo button[onclick^="abrirJogo"]:hover { transform: translateY(-2px) scale(1.015); box-shadow: 0 16px 30px rgba(144,24,18,.44) !important; }
+    body .bloco-jogo button[onclick^="abrirJogo"]:active { transform: translateY(0); }
+
+    /* Modal do jogo: gradiente + moldura dourada */
+    body .modal-jogo-dialog {
+      border: 2px solid var(--ufv-vermelho);
+      outline: 1px solid rgba(209,167,5,.5); outline-offset: -5px;
+      box-shadow: 0 40px 110px rgba(0,0,0,.5);
+    }
+    body .modal-jogo-header { background: linear-gradient(135deg, #76140F, var(--ufv-vermelho) 58%, #A93B31); }
+    body .modal-jogo-header button { border-radius: 999px; transition: background-color .15s ease; }
+    body .modal-jogo-header button:hover { background: rgba(255,255,255,.18); }
+    body .modal-jogo[hidden] { display: none; }
+    @keyframes zenModalEntrar { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+    body .modal-jogo:not([hidden]) .modal-jogo-dialog { animation: zenModalEntrar .28s ease both; }
+
+    /* Gabarito da Lista 5 */
+    body #gabarito-lista5 { border-top-color: var(--ufv-amarelo) !important; }
+
+    /* Barra de rolagem discreta */
+    body ::-webkit-scrollbar { width: 10px; height: 10px; }
+    body ::-webkit-scrollbar-thumb { background: rgba(144,24,18,.32); border-radius: 999px; border: 2px solid var(--paper); }
+    body ::-webkit-scrollbar-thumb:hover { background: rgba(144,24,18,.5); }
+    body ::-webkit-scrollbar-track { background: transparent; }
+    body.dark-mode ::-webkit-scrollbar-thumb { background: rgba(209,167,5,.3); }
 
     /* --- Fallback caso o KaTeX falte --- */
     body .math-fallback {
@@ -351,6 +538,88 @@
     }
     body #iframe-jogo { flex: 1; width: 100%; border: 0; background: #fff; }
 
+
+    /* =========================================================================
+       v3 — SIMPLES E ELEGANTE (override final)
+       ========================================================================= */
+    html body {
+      background-image:
+        linear-gradient(to right, transparent 0, transparent 56px,
+                        rgba(144,24,18,.16) 56px, rgba(144,24,18,.16) 58px,
+                        transparent 58px),
+        repeating-linear-gradient(to bottom, transparent 0, transparent 31px,
+                        rgba(86,126,176,.09) 31px, rgba(86,126,176,.09) 32px) !important;
+    }
+    body .notebook-sketches-layer { opacity: .32; }
+    body .ufv-strip { height: 5px; }
+    body .zen-badge { background: rgba(209,167,5,.12); font-weight: 700; }
+
+    /* Abas: pills limpas, ativa só com cor */
+    body .tab-btn { border-radius: 999px !important; padding: .4rem .95rem !important; }
+    body .tab-btn:hover { transform: none !important; }
+    body .tab-btn.bg-blue-600 {
+      background: var(--ufv-vermelho-claro) !important; color: var(--ufv-vermelho) !important;
+      box-shadow: inset 0 0 0 1px rgba(144,24,18,.28) !important; transform: none !important;
+    }
+    body .tab-btn.bg-blue-600::after { content: none; }
+
+    /* Títulos de seção em serif elegante */
+    body .aba-conteudo h1, body .aba-conteudo h2 {
+      font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif;
+      font-weight: 600; letter-spacing: -.005em;
+    }
+    body .bloco-jogo h2, body .explicacao-jogo h3 { letter-spacing: 0; }
+
+    /* Cartões: borda fina, sombra mínima */
+    body .surface-card { box-shadow: 0 1px 2px rgba(37,34,30,.05); border-radius: 16px; }
+
+    /* Caixas didáticas: neutras, acento só na borda */
+    body .surface-blue, body .surface-amber, body .surface-emerald { background: var(--card); }
+
+    /* Bloco do jogo: branco, topo vermelho fino */
+    body .bloco-jogo { background: var(--card) !important; border-top: 3px solid var(--ufv-vermelho); }
+    body .bloco-jogo::before { display: none; }
+
+    /* Cartão do cartaz: fundo areia claro, sem selo decorativo */
+    body .explicacao-jogo { background: #FFFCF2; border: 1px solid rgba(209,167,5,.35); }
+    body .explicacao-jogo::before { content: none; }
+    body.dark-mode .explicacao-jogo { background: #27251D; border-color: rgba(209,167,5,.3); }
+
+    /* Chips: neutros, sem salto */
+    body .jogo-fase { box-shadow: none; }
+    body .jogo-fase:hover { transform: none; box-shadow: none; }
+    body .jogo-fase-ativa {
+      background: var(--ufv-vermelho) !important; border-color: var(--ufv-vermelho) !important;
+      box-shadow: none; transform: none;
+    }
+
+    /* Polaroid: leve e calma */
+    body .explicacao-img { transform: rotate(-.4deg); box-shadow: 0 8px 20px rgba(37,34,30,.14); }
+    body .explicacao-img:hover { transform: rotate(0deg); }
+
+    /* Botão principal: sólido, discreto */
+    body .bloco-jogo button[onclick^="abrirJogo"] {
+      background: var(--ufv-vermelho) !important; box-shadow: 0 4px 12px rgba(144,24,18,.25) !important;
+    }
+    body .bloco-jogo button[onclick^="abrirJogo"]:hover {
+      transform: none; box-shadow: 0 6px 16px rgba(144,24,18,.32) !important;
+    }
+
+    /* Modal: sólido */
+    body .modal-jogo-header { background: var(--ufv-vermelho); }
+    body .modal-jogo-dialog { outline: none; }
+
+    /* Entrada de aba: só um fade */
+    @keyframes zenAbaEntrar { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Vocabulário: pontilhado discreto */
+    body .kw-term { border-bottom: 1px dotted rgba(209,167,5,.85); }
+
+    /* Barra de rolagem neutra */
+    body ::-webkit-scrollbar-thumb { background: rgba(37,34,30,.22); border: 2px solid var(--paper); }
+    body ::-webkit-scrollbar-thumb:hover { background: rgba(37,34,30,.34); }
+    body.dark-mode ::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); }
+
   </style>
 
 </head>
@@ -443,7 +712,7 @@
 
     <!-- Filete discreto nas cores oficiais UFV (Vermelho #901812 e Amarelo #D1A705) -->
 
-    <div class="h-1 w-full" style="background: linear-gradient(90deg, #901812 0%, #901812 72%, #D1A705 72%, #D1A705 100%);"></div>
+    <div class="ufv-strip" aria-hidden="true"></div>
 
     <!-- Linha 1: Logotipo Oficial UFV + Título + Autoria + Controles Compactos -->
 
@@ -497,6 +766,8 @@
 
               </span>
 
+              <span class="zen-badge">✦ Edição Zen · 2026/II</span>
+
             </div>
 
             <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 truncate mt-0.5">
@@ -545,7 +816,7 @@
 
     <!-- Linha 2: Barra de Navegação com as 3 Abas Principais -->
 
-    <nav class="surface-card border-b px-3 sm:px-6 py-1.5" aria-label="Navegação dos Tópicos">
+    <nav class="surface-card nav-abas border-b px-3 sm:px-6 py-1.5" aria-label="Navegação dos Tópicos">
 
       <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
 
@@ -1272,27 +1543,14 @@
             </p>
 
             <!-- Passo a passo numerado das anotações -->
-
-            <div class="bg-white/85 dark:bg-slate-800/90 rounded-xl p-3.5 border border-blue-200 dark:border-slate-600 space-y-1.5 text-sm sm:text-base">
-
-              <div class="font-bold text-blue-800 dark:text-blue-300 text-xs sm:text-sm uppercase tracking-wide">
-
-                Passo a passo para a resolução:
-
-              </div>
-
-              <ol class="list-decimal list-inside space-y-1 text-slate-700 dark:text-slate-200">
-
+            <div class="passo-box">
+              <div class="passo-titulo">Passo a passo para a resolução</div>
+              <ol class="passo-lista">
                 <li>Na composição, identifique a função interna $u = g(x)$ e determine $du$;</li>
-
                 <li>Escreva a integral inicial em termos de $u$ (na nova variável);</li>
-
                 <li>Resolva a integral obtida;</li>
-
                 <li>No resultado, substitua $u = g(x)$, obtendo $F(g(x)) + C$.</li>
-
               </ol>
-
             </div>
 
           </div>
@@ -1484,15 +1742,15 @@
       <!-- SUA VEZ! — SOMENTE JOGO (fases oficiais + exercícios do caderno) -->
       <div id="pratica-indefinida" class="bloco-jogo surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 space-y-5">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de Praticar • Lista MAT 146</span>
-          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez! (Pegue papel e lápis)</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Resolva no caderno e jogue: primitivas, substituição e integração por partes.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de praticar</span>
+          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Primitivas, substituição e integração por partes.</p>
         </div>
 
         <div class="explicacao-jogo rounded-xl p-3 sm:p-4">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div class="space-y-1 min-w-[14rem] flex-1">
-              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">🖼️ Antes de jogar · imagem explicativa da fase</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">Antes de jogar · cartaz da fase</span>
               <h3 id="titulo-explicacao-indefinida" class="text-sm sm:text-base font-extrabold">Primitivas + C, substituição e LIATE</h3>
               <p id="texto-explicacao-indefinida" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Cartaz de lousa em 4 quadros: linearidade com regra da potência; tabela com ∫1/x = ln|x| e ∫cos x = sen x; substituição u = g(x) com du = g'(x)dx; integração por partes ∫u dv = uv − ∫v du com a ordem LIATE. Cada quadro traz o resultado de um dos cinco exercícios do caderno.</p>
             </div>
@@ -1506,15 +1764,16 @@
         <div class="space-y-2">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <span class="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">Escolha a fase:</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">🎮 INTEGRAL INDEFINIDA</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">Fases da lista oficial</span>
           </div>
           <div id="fases-indefinida" class="jogo-fases">
-            <button type="button" data-fase="m7-1" onclick="selecionarFase('indefinida', 'm7-1', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Indefinida (5 exercícios do caderno)</button>
-            <button type="button" data-fase="m6-21" onclick="selecionarFase('indefinida', 'm6-21', this)" class="jogo-fase ">Lista 4 · 2/8 — Antiderivadas e PVI (19)</button>
-            <button type="button" data-fase="m6-22" onclick="selecionarFase('indefinida', 'm6-22', this)" class="jogo-fase ">Lista 4 · 3/8 — Exponenciais e trigonométricas (15)</button>
-            <button type="button" data-fase="m6-23" onclick="selecionarFase('indefinida', 'm6-23', this)" class="jogo-fase ">Lista 4 · 4/8 — Substituição (22) ⭐</button>
-            <button type="button" data-fase="m6-24" onclick="selecionarFase('indefinida', 'm6-24', this)" class="jogo-fase ">Lista 4 · 5/8 — Integração por partes (16)</button>
-            <button type="button" data-fase="m6-25" onclick="selecionarFase('indefinida', 'm6-25', this)" class="jogo-fase ">Lista 4 · 6/8 — Potências trigonométricas (14)</button>
+            <button type="button" data-fase="m7-1" onclick="selecionarFase('indefinida', 'm7-1', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Indefinida</button>
+            <button type="button" data-fase="m7-4" onclick="selecionarFase('indefinida', 'm7-4', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m6-21" onclick="selecionarFase('indefinida', 'm6-21', this)" class="jogo-fase ">Antiderivadas e PVI · 19</button>
+            <button type="button" data-fase="m6-22" onclick="selecionarFase('indefinida', 'm6-22', this)" class="jogo-fase ">Exponenciais e trigonométricas · 15</button>
+            <button type="button" data-fase="m6-23" onclick="selecionarFase('indefinida', 'm6-23', this)" class="jogo-fase ">Substituição · 22 · com dica</button>
+            <button type="button" data-fase="m6-24" onclick="selecionarFase('indefinida', 'm6-24', this)" class="jogo-fase ">Integração por partes · 16</button>
+            <button type="button" data-fase="m6-25" onclick="selecionarFase('indefinida', 'm6-25', this)" class="jogo-fase ">Potências trigonométricas · 14</button>
           </div>
         </div>
 
@@ -1522,33 +1781,11 @@
           <button type="button" onclick="abrirJogo('indefinida')"
                   class="whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-xs"
                   style="background: var(--ufv-vermelho);">▶ Jogar agora</button>
-          <span class="text-xs text-slate-600 dark:text-slate-300">A dica da fase também aparece dentro do jogo (botão “📖 Dica passo a passo”). Errou 3 corações? A fase recomeça.</span>
+          <span class="text-xs text-slate-600 dark:text-slate-300">A fase abre com o cartaz; a dica fica disponível dentro do jogo.</span>
         </div>
       </div>
 
-      <!-- 1.6 AUTOAVALIAÇÃO RÁPIDA (4 QUESTÕES DIAGNÓSTICAS - INTEGRAL INDEFINIDA) -->
-
-      <div id="quiz-indefinida" class="surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 border-t-blue-600 space-y-5">
-
-        <div>
-
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">Check-up de Aprendizagem</span>
-
-          <h2 class="text-lg sm:text-xl font-extrabold">Autoavaliação Rápida — Integral Indefinida</h2>
-
-          <p class="text-sm text-slate-600 dark:text-slate-300">
-
-            Pense e responda diretamente no campo aberto! Se precisar, clique em <strong>"Pedir Dica"</strong> ou <strong>"Ver Alternativas"</strong>.
-
-          </p>
-
-        </div>
-
-        <div id="lista-quiz-indefinida" class="space-y-4"></div>
-
-      </div>
-
-    </section>
+      </section>
 
     <!-- =======================================================================
 
@@ -2135,15 +2372,15 @@
       <!-- SUA VEZ! — SOMENTE JOGO (fases oficiais + exercícios do caderno) -->
       <div id="pratica-definida" class="bloco-jogo surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 space-y-5">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de Praticar • Lista MAT 146</span>
-          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez! (Pegue papel e lápis)</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Calcule o valor exato no caderno e jogue: TFC, propriedades e troca de limites.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de praticar</span>
+          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300">TFC, propriedades e troca de limites — no caderno e no jogo.</p>
         </div>
 
         <div class="explicacao-jogo rounded-xl p-3 sm:p-4">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div class="space-y-1 min-w-[14rem] flex-1">
-              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">🖼️ Antes de jogar · imagem explicativa da fase</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">Antes de jogar · cartaz da fase</span>
               <h3 id="titulo-explicacao-definida" class="text-sm sm:text-base font-extrabold">TFC, propriedades e troca de limites</h3>
               <p id="texto-explicacao-definida" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Cartaz de lousa em 4 quadros: F(b)−F(a) numa curva com área sombreada; regra da potência com expoente negativo; quebra de ∫₀³|x−2| em dois triângulos; substituição com limites mudando de 0→2 para 1→5.</p>
             </div>
@@ -2157,14 +2394,15 @@
         <div class="space-y-2">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <span class="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">Escolha a fase:</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">🎮 INTEGRAL DEFINIDA</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">Fases da lista oficial</span>
           </div>
           <div id="fases-definida" class="jogo-fases">
-            <button type="button" data-fase="m7-2" onclick="selecionarFase('definida', 'm7-2', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Definida (5 exercícios do caderno)</button>
-            <button type="button" data-fase="m6-26" onclick="selecionarFase('definida', 'm6-26', this)" class="jogo-fase ">Lista 4 · 7/8 — Integral definida e propriedades (24)</button>
-            <button type="button" data-fase="m6-27" onclick="selecionarFase('definida', 'm6-27', this)" class="jogo-fase ">Lista 4 · 8/8 — Áreas e EDO separáveis (16)</button>
-            <button type="button" data-fase="m6-8" onclick="selecionarFase('definida', 'm6-8', this)" class="jogo-fase ">Lista 2 · 1/6 — Limites por gráfico (23)</button>
-            <button type="button" data-fase="m6-11" onclick="selecionarFase('definida', 'm6-11', this)" class="jogo-fase ">Lista 2 · 4/6 — Limites infinitos (23)</button>
+            <button type="button" data-fase="m7-2" onclick="selecionarFase('definida', 'm7-2', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Definida</button>
+            <button type="button" data-fase="m7-5" onclick="selecionarFase('definida', 'm7-5', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m6-26" onclick="selecionarFase('definida', 'm6-26', this)" class="jogo-fase ">Integral definida · 24</button>
+            <button type="button" data-fase="m6-27" onclick="selecionarFase('definida', 'm6-27', this)" class="jogo-fase ">Áreas e EDO · 16</button>
+            <button type="button" data-fase="m6-8" onclick="selecionarFase('definida', 'm6-8', this)" class="jogo-fase ">Limites por gráfico · 23</button>
+            <button type="button" data-fase="m6-11" onclick="selecionarFase('definida', 'm6-11', this)" class="jogo-fase ">Limites infinitos · 23</button>
           </div>
         </div>
 
@@ -2172,29 +2410,11 @@
           <button type="button" onclick="abrirJogo('definida')"
                   class="whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-xs"
                   style="background: var(--ufv-vermelho);">▶ Jogar agora</button>
-          <span class="text-xs text-slate-600 dark:text-slate-300">A dica da fase também aparece dentro do jogo (botão “📖 Dica passo a passo”). Errou 3 corações? A fase recomeça.</span>
+          <span class="text-xs text-slate-600 dark:text-slate-300">A fase abre com o cartaz; a dica fica disponível dentro do jogo.</span>
         </div>
       </div>
 
-      <!-- 2.5 AUTOAVALIAÇÃO RÁPIDA (4 QUESTÕES DIAGNÓSTICAS - INTEGRAL DEFINIDA) -->
-
-      <div id="quiz-definida" class="surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 border-t-blue-600 space-y-5">
-
-        <div>
-
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">Check-up de Aprendizagem</span>
-
-          <h2 class="text-lg sm:text-xl font-extrabold">Autoavaliação Rápida — Integral Definida</h2>
-
-          <p class="text-sm text-slate-600 dark:text-slate-300">Responda no campo aberto ou clique em <strong>"Pedir Dica"</strong> ou <strong>"Ver Alternativas"</strong>.</p>
-
-        </div>
-
-        <div id="lista-quiz-definida" class="space-y-4"></div>
-
-      </div>
-
-    </section>
+      </section>
 
     <!-- =======================================================================
 
@@ -2617,15 +2837,15 @@
       <!-- SUA VEZ! — SOMENTE JOGO (fases oficiais + exercícios do caderno) -->
       <div id="pratica-aplicacoes" class="bloco-jogo surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 space-y-5">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de Praticar • Lista MAT 146</span>
-          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez! (Pegue papel e lápis)</h2>
-          <p class="text-sm text-slate-600 dark:text-slate-300">Calcule áreas e grandezas no caderno e jogue: aplicações da integral definida.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de praticar</span>
+          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Áreas e grandezas: as aplicações da integral definida.</p>
         </div>
 
         <div class="explicacao-jogo rounded-xl p-3 sm:p-4">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <div class="space-y-1 min-w-[14rem] flex-1">
-              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">🖼️ Antes de jogar · imagem explicativa da fase</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">Antes de jogar · cartaz da fase</span>
               <h3 id="titulo-explicacao-aplicacoes" class="text-sm sm:text-base font-extrabold">Área, valor médio, vazão e crescimento</h3>
               <p id="texto-explicacao-aplicacoes" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Cartaz de lousa em 4 quadros: área sob 3x² em [1,3]; região entre 4−x² e 3; retângulo de altura f_méd; e um tanque recebendo vazão Q(t)=6t+2 ao lado de uma curva bacteriana 200e^(0,5t).</p>
             </div>
@@ -2639,14 +2859,15 @@
         <div class="space-y-2">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <span class="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">Escolha a fase:</span>
-            <span class="text-[11px] text-slate-500 dark:text-slate-400">🎮 APLICAÇÕES</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">Fases da lista oficial</span>
           </div>
           <div id="fases-aplicacoes" class="jogo-fases">
-            <button type="button" data-fase="m7-3" onclick="selecionarFase('aplicacoes', 'm7-3', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Aplicações (5 exercícios do caderno)</button>
-            <button type="button" data-fase="m6-20" onclick="selecionarFase('aplicacoes', 'm6-20', this)" class="jogo-fase ">Lista 4 · 1/8 — Otimização (12)</button>
-            <button type="button" data-fase="m6-27" onclick="selecionarFase('aplicacoes', 'm6-27', this)" class="jogo-fase ">Lista 4 · 8/8 — Áreas e EDO separáveis (16)</button>
-            <button type="button" data-fase="m6-19" onclick="selecionarFase('aplicacoes', 'm6-19', this)" class="jogo-fase ">Lista 3 · 6/6 — Taxas relacionadas (13)</button>
-            <button type="button" data-fase="m6-18" onclick="selecionarFase('aplicacoes', 'm6-18', this)" class="jogo-fase ">Lista 3 · 5/6 — Monotonia e concavidade (24)</button>
+            <button type="button" data-fase="m7-3" onclick="selecionarFase('aplicacoes', 'm7-3', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Aplicações</button>
+            <button type="button" data-fase="m7-6" onclick="selecionarFase('aplicacoes', 'm7-6', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m6-20" onclick="selecionarFase('aplicacoes', 'm6-20', this)" class="jogo-fase ">Otimização · 12</button>
+            <button type="button" data-fase="m6-27" onclick="selecionarFase('aplicacoes', 'm6-27', this)" class="jogo-fase ">Áreas e EDO · 16</button>
+            <button type="button" data-fase="m6-19" onclick="selecionarFase('aplicacoes', 'm6-19', this)" class="jogo-fase ">Taxas relacionadas · 13</button>
+            <button type="button" data-fase="m6-18" onclick="selecionarFase('aplicacoes', 'm6-18', this)" class="jogo-fase ">Monotonia e concavidade · 24</button>
           </div>
         </div>
 
@@ -2654,29 +2875,11 @@
           <button type="button" onclick="abrirJogo('aplicacoes')"
                   class="whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-xs"
                   style="background: var(--ufv-vermelho);">▶ Jogar agora</button>
-          <span class="text-xs text-slate-600 dark:text-slate-300">A dica da fase também aparece dentro do jogo (botão “📖 Dica passo a passo”). Errou 3 corações? A fase recomeça.</span>
+          <span class="text-xs text-slate-600 dark:text-slate-300">A fase abre com o cartaz; a dica fica disponível dentro do jogo.</span>
         </div>
       </div>
 
-      <!-- 3.5 AUTOAVALIAÇÃO RÁPIDA (4 QUESTÕES DIAGNÓSTICAS - APLICAÇÕES) -->
-
-      <div id="quiz-aplicacoes" class="surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 border-t-emerald-600 space-y-5">
-
-        <div>
-
-          <span class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Check-up de Aprendizagem</span>
-
-          <h2 class="text-lg sm:text-xl font-extrabold">Autoavaliação Rápida — Aplicações</h2>
-
-          <p class="text-sm text-slate-600 dark:text-slate-300">Responda no campo aberto ou clique em <strong>"Pedir Dica"</strong> ou <strong>"Ver Alternativas"</strong>.</p>
-
-        </div>
-
-        <div id="lista-quiz-aplicacoes" class="space-y-4"></div>
-
-      </div>
-
-    </section>
+      </section>
 
   
     <!-- =======================================================================
@@ -2688,8 +2891,7 @@
         <span class="inline-block text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full">Roteiro original · MAT 146 · 2026/II</span>
         <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">4. Roteiro de Integral — programa e cobertura</h1>
         <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-          Transcrição do roteiro fornecido para a unidade de integrais. Cada item traz um atalho para a seção
-          correspondente deste material interativo, de modo que o planejamento e a prática fiquem no mesmo lugar.
+          Roteiro da unidade de integrais, com atalhos para as seções correspondentes deste material.
         </p>
       </div>
 
@@ -2769,6 +2971,56 @@
         </div>
       </div>
 
+      <!-- SUA VEZ! — JOGO NAS ABAS 4/5 -->
+      <div id="pratica-roteiro" class="bloco-jogo surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 space-y-5">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de praticar</span>
+          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300">As fases seguem o programa do roteiro, tópico a tópico.</p>
+        </div>
+
+        <div class="explicacao-jogo rounded-xl p-3 sm:p-4">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div class="space-y-1 min-w-[14rem] flex-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">Antes de jogar · cartaz da fase</span>
+              <h3 id="titulo-explicacao-roteiro" class="text-sm sm:text-base font-extrabold">Primitivas + C, substituição e LIATE</h3>
+              <p id="texto-explicacao-roteiro" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Do caderno à lista oficial: o roteiro inteiro revisitado em fases curtas, com a imagem explicativa antes de cada uma.</p>
+            </div>
+            <img id="img-explicacao-roteiro" src="assets/explicacao-m7-1.png"
+                 onerror="this.onerror=null;this.src='assets/explicacao-placeholder.svg'"
+                 alt="Imagem explicativa da fase selecionada" loading="lazy" class="explicacao-img" />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">Escolha a fase:</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">Fases da lista oficial</span>
+          </div>
+          <div id="fases-roteiro" class="jogo-fases">
+            <button type="button" data-fase="m7-1" onclick="selecionarFase('roteiro', 'm7-1', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Indefinida</button>
+            <button type="button" data-fase="m7-4" onclick="selecionarFase('roteiro', 'm7-4', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m6-21" onclick="selecionarFase('roteiro', 'm6-21', this)" class="jogo-fase ">Antiderivadas e PVI · 19</button>
+            <button type="button" data-fase="m6-23" onclick="selecionarFase('roteiro', 'm6-23', this)" class="jogo-fase ">Substituição · 22 · com dica</button>
+            <button type="button" data-fase="m6-24" onclick="selecionarFase('roteiro', 'm6-24', this)" class="jogo-fase ">Integração por partes · 16</button>
+            <button type="button" data-fase="m6-25" onclick="selecionarFase('roteiro', 'm6-25', this)" class="jogo-fase ">Potências trigonométricas · 14</button>
+            <button type="button" data-fase="m7-2" onclick="selecionarFase('roteiro', 'm7-2', this)" class="jogo-fase ">Sua vez! · Definida</button>
+            <button type="button" data-fase="m7-5" onclick="selecionarFase('roteiro', 'm7-5', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m6-26" onclick="selecionarFase('roteiro', 'm6-26', this)" class="jogo-fase ">Integral definida · 24</button>
+            <button type="button" data-fase="m6-27" onclick="selecionarFase('roteiro', 'm6-27', this)" class="jogo-fase ">Áreas e EDO · 16</button>
+            <button type="button" data-fase="m7-3" onclick="selecionarFase('roteiro', 'm7-3', this)" class="jogo-fase ">Sua vez! · Aplicações</button>
+            <button type="button" data-fase="m7-6" onclick="selecionarFase('roteiro', 'm7-6', this)" class="jogo-fase ">Check-up · 4 questões</button>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button type="button" onclick="abrirJogo('roteiro')"
+                  class="whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-xs"
+                  style="background: var(--ufv-vermelho);">▶ Jogar agora</button>
+          <span class="text-xs text-slate-600 dark:text-slate-300">A fase abre com o cartaz; a dica fica disponível dentro do jogo.</span>
+        </div>
+      </div>
+
     </section>
 
     <!-- =======================================================================
@@ -2783,12 +3035,18 @@
           Universidade Federal de Viçosa · CCE · Departamento de Matemática · MAT 146 — Cálculo I · Período 2026/II.
         </p>
         <p class="text-sm text-slate-600 dark:text-slate-300">
-          Notação original mantida ($\sen$, $\tg$, $\cossec$, $\cotg$). O gabarito publicado pela lista
-          pode ser aberto ao final.
+          Notação original mantida ($\sen$, $\tg$, $\cossec$, $\cotg$); o gabarito oficial abre ao final.
         </p>
-        <button onclick="toggleGabarito()" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-2xs transition">
-          📌 Mostrar / ocultar gabarito
-        </button>
+        <div class="flex flex-wrap items-center gap-2">
+          <button onclick="toggleGabarito()" class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-2xs transition">
+            📌 Mostrar / ocultar gabarito
+          </button>
+          <a href="assets/lista5-p3.pdf" download="lista5-p3-mat146.pdf" target="_blank" rel="noopener"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-2xs transition"
+            title="Baixar a lista completa em PDF (com gabarito)">
+            ⬇ Baixar a lista em PDF
+          </a>
+        </div>
       </div>
 
       <div class="space-y-5">
@@ -3220,6 +3478,54 @@
         </p>
       </div>
 
+      <!-- SUA VEZ! — JOGO NAS ABAS 4/5 -->
+      <div id="pratica-lista5" class="bloco-jogo surface-card rounded-2xl p-5 sm:p-6 shadow-xs border-t-4 space-y-5">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Hora de praticar</span>
+          <h2 class="text-lg sm:text-xl font-extrabold">Sua vez!</h2>
+          <p class="text-sm text-slate-600 dark:text-slate-300">Fases correspondentes aos blocos da 3ª prova.</p>
+        </div>
+
+        <div class="explicacao-jogo rounded-xl p-3 sm:p-4">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div class="space-y-1 min-w-[14rem] flex-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider" style="color: var(--ufv-vermelho);">Antes de jogar · cartaz da fase</span>
+              <h3 id="titulo-explicacao-lista5" class="text-sm sm:text-base font-extrabold">TFC, propriedades e troca de limites</h3>
+              <p id="texto-explicacao-lista5" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">Da Lista 5 para o jogo: relacione cada bloco da prova com a fase da lista oficial e confira o gabarito jogando.</p>
+            </div>
+            <img id="img-explicacao-lista5" src="assets/explicacao-m7-2.png"
+                 onerror="this.onerror=null;this.src='assets/explicacao-placeholder.svg'"
+                 alt="Imagem explicativa da fase selecionada" loading="lazy" class="explicacao-img" />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">Escolha a fase:</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">Fases da lista oficial</span>
+          </div>
+          <div id="fases-lista5" class="jogo-fases">
+            <button type="button" data-fase="m7-2" onclick="selecionarFase('lista5', 'm7-2', this)" class="jogo-fase jogo-fase-ativa">Sua vez! · Definida</button>
+            <button type="button" data-fase="m7-5" onclick="selecionarFase('lista5', 'm7-5', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m7-1" onclick="selecionarFase('lista5', 'm7-1', this)" class="jogo-fase ">Sua vez! · Indefinida</button>
+            <button type="button" data-fase="m7-4" onclick="selecionarFase('lista5', 'm7-4', this)" class="jogo-fase ">Check-up · 4 questões</button>
+            <button type="button" data-fase="m6-24" onclick="selecionarFase('lista5', 'm6-24', this)" class="jogo-fase ">Integração por partes · 16</button>
+            <button type="button" data-fase="m6-25" onclick="selecionarFase('lista5', 'm6-25', this)" class="jogo-fase ">Potências trigonométricas · 14</button>
+            <button type="button" data-fase="m6-26" onclick="selecionarFase('lista5', 'm6-26', this)" class="jogo-fase ">Integral definida · 24</button>
+            <button type="button" data-fase="m6-27" onclick="selecionarFase('lista5', 'm6-27', this)" class="jogo-fase ">Áreas e EDO · 16</button>
+            <button type="button" data-fase="m7-3" onclick="selecionarFase('lista5', 'm7-3', this)" class="jogo-fase ">Sua vez! · Aplicações</button>
+            <button type="button" data-fase="m7-6" onclick="selecionarFase('lista5', 'm7-6', this)" class="jogo-fase ">Check-up · 4 questões</button>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button type="button" onclick="abrirJogo('lista5')"
+                  class="whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-bold text-white shadow-xs"
+                  style="background: var(--ufv-vermelho);">▶ Jogar agora</button>
+          <span class="text-xs text-slate-600 dark:text-slate-300">A fase abre com o cartaz; a dica fica disponível dentro do jogo.</span>
+        </div>
+      </div>
+
     </section>
 
   </main>
@@ -3234,7 +3540,7 @@
     <div class="modal-jogo-dialog">
       <header class="modal-jogo-header">
         <div>
-          <span>🎮 CapyCalculus · listas oficiais MAT 146</span>
+          <span>CapyCalculus · MAT 146</span>
           <h2 id="modal-jogo-titulo">Fase da lista oficial</h2>
         </div>
         <button type="button" onclick="fecharJogo()" aria-label="Fechar jogo">✕</button>
@@ -3254,14 +3560,6 @@
   <footer class="relative z-10 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/95 py-8 px-4 mt-12 text-center aula-hide">
 
     <div class="max-w-4xl mx-auto space-y-3">
-
-      <!-- Ilustração das Quatro Pilastras da Entrada Principal da UFV em traço Bic azul + grafite sobre fundo claro sem pautas -->
-
-      <div class="mx-auto max-w-2xl bg-white rounded-2xl border border-slate-200/80 p-3 shadow-2xs overflow-hidden" title="As Quatro Pilastras da Entrada Principal da UFV — Estudar, Saber, Agir, Vencer">
-
-        <img class="pilastras-img" src="assets/pilastras-ufv.png" data-asset="pilastras-ufv.png" alt="Quatro Pilastras da UFV: ESTUDAR, SABER, AGIR, VENCER" loading="lazy" />
-
-      </div>
 
       <div class="text-xs text-slate-600 dark:text-slate-300 space-y-1">
 
@@ -4080,7 +4378,7 @@
 
       if (showField) {
 
-        ctx.strokeStyle = 'rgba(100, 116, 139, 0.45)';
+        ctx.strokeStyle = 'rgba(110, 108, 94, 0.5)';
 
         ctx.lineWidth = 1.3;
 
@@ -4114,7 +4412,7 @@
 
         [-2, -1, 0, 1, 2].forEach(cVal => {
 
-          ctx.strokeStyle = 'rgba(59, 130, 246, 0.28)';
+          ctx.strokeStyle = 'rgba(94, 138, 106, 0.45)';
 
           ctx.lineWidth = 1.5;
 
@@ -4392,9 +4690,9 @@
 
         const pyTop = toPxY(altura);
 
-        ctx.fillStyle = altura >= 0 ? 'rgba(59, 130, 246, 0.26)' : 'rgba(245, 158, 11, 0.30)';
+        ctx.fillStyle = altura >= 0 ? 'rgba(94, 138, 106, 0.26)' : 'rgba(209, 167, 5, 0.30)';
 
-        ctx.strokeStyle = altura >= 0 ? '#2563eb' : '#d97706';
+        ctx.strokeStyle = altura >= 0 ? '#5E8A6A' : '#D1A705';
 
         ctx.lineWidth = n <= 25 ? 1.2 : 0.6;
 
@@ -4548,13 +4846,13 @@
 
         const pyG = toPxY(cen.g(xm));
 
-        ctx.fillStyle = diff >= 0 ? 'rgba(59, 130, 246, 0.32)' : 'rgba(245, 158, 11, 0.35)';
+        ctx.fillStyle = diff >= 0 ? 'rgba(94, 138, 106, 0.32)' : 'rgba(209, 167, 5, 0.38)';
 
         ctx.fillRect(px1, Math.min(pyF, pyG), Math.max(1, px2 - px1 + 0.6), Math.abs(pyF - pyG));
 
       }
 
-      ctx.strokeStyle = '#2563eb';
+      ctx.strokeStyle = '#5E8A6A';
 
       ctx.lineWidth = 2.6;
 
@@ -5862,6 +6160,8 @@
 
         const container = document.getElementById(`lista-quiz-${aba}`);
 
+        if (!container) return;
+
         container.innerHTML = '';
 
         AUTOAVALIACAO_DADOS[aba].forEach((q, idx) => {
@@ -6060,6 +6360,9 @@
        ========================================================================= */
 
     var FASES_JOGO = {
+      'm7-4': 'Check-up · Integral Indefinida',
+      'm7-5': 'Check-up · Integral Definida',
+      'm7-6': 'Check-up · Aplicações',
       'm6-11': 'Limites infinitos e assíntotas',
       'm6-18': 'Monotonia, concavidade e traçado',
       'm6-19': 'Taxas relacionadas',
@@ -6078,6 +6381,9 @@
     };
 
     var EXPLICACOES_JOGO = {
+      'm7-4': { titulo: 'Check-up · Integral Indefinida', texto: 'Quatro perguntas rápidas: integral de sen(x) com o sinal correto, a escolha de u pelo critério LIATE, a constante C de um PVI e a substituição dx = du/3.', imagem: 'assets/explicacao-m7-4.png' },
+      'm7-5': { titulo: 'Check-up · Integral Definida', texto: 'Limites coincidentes, inversão de limites trocando o sinal, quebra do módulo em x = 1 e o TFC avaliando F(b) − F(a).', imagem: 'assets/explicacao-m7-5.png' },
+      'm7-6': { titulo: 'Check-up · Aplicações', texto: 'Área com a curva abaixo do eixo, diferença f − g entre curvas, fórmula do valor médio e o significado de k < 0.', imagem: 'assets/explicacao-m7-6.png' },
       'm6-11': { titulo: 'Limites infinitos e assíntotas', texto: 'Gráfico de uma racional com assíntota vertical tracejada em x=a e ramos subindo a +∞ / descendo a −∞, com notação lim x→a⁻ f(x)=−∞ e lim x→a⁺ f(x)=+∞.', imagem: 'assets/explicacao-m6-11.png' },
       'm6-18': { titulo: 'Monotonia, concavidade e traçado', texto: 'Gráfico com quatro zonas sombreadas (crescente/côncava para cima etc.), derivada primeira acima do eixo em verde, derivada segunda em laranja e pontos de inflexão marcados.', imagem: 'assets/explicacao-m6-18.png' },
       'm6-19': { titulo: 'Taxas relacionadas', texto: 'Diagrama de um triângulo retângulo com x, y e hipotenusa s, setas dx/dt e dy/dt, e a equação 2x dx/dt + 2y dy/dt = 2s ds/dt em destaque.', imagem: 'assets/explicacao-m6-19.png' },
@@ -6095,7 +6401,7 @@
       'm7-3': { titulo: 'Área, valor médio, vazão e crescimento', texto: 'Cartaz de lousa em 4 quadros: área sob 3x² em [1,3]; região entre 4−x² e 3; retângulo de altura f_méd; e um tanque recebendo vazão Q(t)=6t+2 ao lado de uma curva bacteriana 200e^(0,5t).', imagem: 'assets/explicacao-m7-3.png' },
     };
 
-    var faseAtual = { indefinida: 'm7-1', definida: 'm7-2', aplicacoes: 'm7-3' };
+    var faseAtual = { indefinida: 'm7-1', definida: 'm7-2', aplicacoes: 'm7-3', roteiro: 'm7-1', lista5: 'm7-2' };
 
     function selecionarFase(aba, id, botao) {
       faseAtual[aba] = id;
@@ -6119,7 +6425,7 @@
       var titulo = document.getElementById('modal-jogo-titulo');
       if (titulo) titulo.textContent = FASES_JOGO[fase] || ('Fase ' + fase);
       var frame = document.getElementById('iframe-jogo');
-      var dica = (fase === 'm6-23' || fase === 'm7-1' || fase === 'm7-3') ? '&dica=1' : '';
+      var dica = ''; // dica/vídeo agora só sob demanda: botão Dica ou ao perder 2 corações
       if (frame) frame.src = 'jogo/index.html?lesson=' + encodeURIComponent(fase) + dica;
       var modal = document.getElementById('modal-jogo');
       if (modal) modal.hidden = false;
