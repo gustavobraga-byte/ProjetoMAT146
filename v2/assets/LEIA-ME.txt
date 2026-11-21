@@ -6,15 +6,22 @@ Assets aplicados na Edição Zen MAT 146 (20/11/2026 — v2):
   capivara-aplicacoes.png       -> aba 3 (boas-vindas)
   capivara-balao.png            -> blocos "Hora de Jogar"
   dica-integracao-substituicao.jpeg -> dica dentro do jogo
-  pilastras-ufv.png             -> rodapé (PLACEHOLDER provisório)
-  explicacao-placeholder.svg    -> placeholder dos cartazes explicativos das fases
+  pilastras-ufv.png             -> rodapé (DEFINITIVA em 21/11 — line-art SVG: ESTUDAR · SABER · AGIR · VENCER)
+  explicacao-placeholder.svg    -> fallback dos cartazes (não exibido: todos existem)
 
-Cartazes JÁ INSTALADOS (13:25):
+Cada cartaz aparece numa CAPA antes de iniciar a fase, dentro do jogo (jogo/index.html).
+Blocos "Hora de Jogar" presentes nas 5 abas: indefinida, definida, aplicacoes, roteiro, lista5.
+
+Cartazes — 18/18 INSTALADOS (21/11):
+  8 gerados no Gemini pelo autor:
   explicacao-m7-1.png   explicacao-m6-21.png  explicacao-m6-22.png  explicacao-m6-23.png
   explicacao-m6-24.png  explicacao-m6-25.png  explicacao-m6-26.png  explicacao-m7-2.png
-
-Ainda pendentes (placeholder ativo): m7-3, m6-27, m6-8, m6-11, m6-20, m6-19, m6-18.
-Prompts em ../prompts-imagens-fases.md (✅ = pronta, ⏳ = pendente).
+  10 desenhados em SVG vetorial -> PNG (21/11; fórmulas nítidas, paleta oficial):
+  explicacao-m7-3.png   explicacao-m6-27.png  explicacao-m6-8.png   explicacao-m6-11.png
+  explicacao-m6-20.png  explicacao-m6-19.png  explicacao-m6-18.png  explicacao-m7-4.png
+  explicacao-m7-5.png   explicacao-m7-6.png
+Para regenerar qualquer um por IA: prompt em ../prompts-imagens-fases.md
+(itens 9-18) e salvar com o MESMO nome de arquivo — substituição direta.
 
 Os 5 personagens foram recortados do preview "WhatsApp Image 2026-11-17 at 17.24.43.jpeg"
 com fundo transparente. A dica veio de "WhatsApp Image 2026-11-17 at 17.38.45.jpeg".
