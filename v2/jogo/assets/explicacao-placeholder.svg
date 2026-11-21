@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#FBF9F4"/>
+  <rect x="26" y="26" width="1148" height="623" rx="22" fill="#FFFDF8" stroke="#901812" stroke-width="4" stroke-dasharray="14 9"/>
+  <rect x="60" y="62" width="1080" height="96" rx="12" fill="#901812"/>
+  <text x="600" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#FFFFFF">IMAGEM EXPLICATIVA DA FASE</text>
+  <rect x="60" y="190" width="640" height="420" rx="12" fill="#2F5D4E" stroke="#25221E" stroke-width="3"/>
+  <text x="380" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#FBF9F4">espaço reservado para o passo a passo</text>
+  <text x="380" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#D1A705">gere com o prompt do arquivo prompts-imagens-fases.md</text>
+  <circle cx="920" cy="330" r="120" fill="#FBF9F4" stroke="#D1A705" stroke-width="5"/>
+  <text x="920" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#901812">CAPY</text>
+  <text x="920" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#25221E">estuda com você</text>
+  <text x="600" y="640" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#6E685E">MAT 146 · Edição Zen · CapyCalculus</text>
+</svg>
